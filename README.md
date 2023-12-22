@@ -5,14 +5,29 @@
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
 
-> A mobile app for ordering coffee on-the-go, making it easier for coffee lovers to get their favorite beverages without waiting in line.
+> InnovativeML is a brilliant website that teaches machine learning throught games like puzzle.
 >
-> Coffee Express aims to streamline the coffee-ordering process by providing a user-friendly platform for customers to place orders and pick up their coffee at their convenience. We believe in enhancing the coffee experience by saving time and ensuring customer satisfaction.
-
+>InnovativeML strives to elevate the AI landscape and streamline the machine learning process by offering an intuitive platform. Users can effortlessly instruct machine learning models using text, images, and videos. As a firm believer in the transformative potential of AI, InnovativeML is dedicated to ensuring continual improvement and updates in the field. Embracing AI as the future, our platform provides a user-friendly space for users to actively contribute to the advancement and refinement of machine learning technologies.
 ### User Stories
-- As a user, I want to browse the menu, so I can find my favorite coffee drinks.
-- As a user, I want to customize my order, so I can add or remove ingredients according to my preferences.
-- As a user, I want to pay for my order through the app, so I can avoid waiting in line at the store.
+- As a learner, I want to explore a variety of machine learning puzzles, so I can gain a comprehensive understanding of different concepts and applications.
+
+- As a user, I want to receive instant feedback on my puzzle-solving attempts, so I can understand how machine learning algorithms analyze my input.
+
+- As a beginner, I want access to tutorials and educational resources, so I can build a solid foundation in machine learning principles.
+
+- As an enthusiast, I want to track my progress and achievements, so I can monitor my learning journey and set personal goals.
+
+- As a developer, I want to contribute my own machine learning puzzles to the platform, so I can share my knowledge and challenge the community.
+
+- As a user, I want the platform to support multiple media types (text, images, and videos) for teaching machine learning, so I can choose the most suitable method for my learning style.
+
+- As an educator, I want to use InnovativeML as a supplementary tool in my machine learning courses, so I can provide students with interactive and practical learning experiences.
+
+- As a user, I want the platform to regularly update its content and challenges, so I can stay informed about the latest developments in the field of machine learning.
+
+- As a learner, I want the user interface to be visually appealing and easy to navigate, so I can focus on the content without unnecessary distractions.
+
+- As a user, I want the option to connect with a community of learners, so I can exchange ideas, seek help, and collaborate on machine learning projects.
 
 <br><br>
 
