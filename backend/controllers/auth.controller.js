@@ -1,9 +1,35 @@
 const User = require("../models/user.model");
 const bcrypt =require("bcrypt");
-const login=(req,res)=>{
+const jwt=require("jsonwebtoken")
 
+
+
+const login=async(req,res)=>{
+    const{username,password}=req.body;
+    
+    const user= await User.findOne({username})
+    console.log('User:', user);
+    if(!user){ res.status(400).send({message:"username or password incorrect"})}
+    // else{ res.status(200).send({message:`logged in, welcome ${username}`})}
+  const isValidPassword = await bcrypt.compare(password, user.password);
+if (!isValidPassword)
+  res.status(400).send({ message: "Invalid username/password" });
+
+const { password: hashedPassword, _id, ...userDetails } = user.toJSON();
+// generate JWT token
+const token = jwt.sign(
+    {
+      ...userDetails,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "2 days" }
+  );
+
+  res.status(200).send({
+    user: userDetails,
+    token,
+  });
 }
-
 const register = async (req, res) => {
     const { first_name, last_name, username, password, user_type } = req.body;
 
