@@ -60,8 +60,45 @@ const register = async (req, res) => {
         res.status(500).send({ message: "Cannot create user" });
     }
 };
+const updateProfile = async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { first_name, last_name, username,password } = req.body;
+  
+      // Validate that the user making the request is the owner of the profile
+      if (req.user._id.toString() !== id) {
+        return res.status(403).send({ message: 'Forbidden: You are not allowed to update this profile.' });
+      }
+  
+      // Update the user profile
+      const updatedUser = await User.findByIdAndUpdate(
+        id,
+        { first_name, last_name, username,password },
+        { new: true, runValidators: true }
+      );
+  
+      if (!updatedUser) {
+        return res.status(404).send({ message: 'User not found.' });
+      }
+  
+      res.status(200).send({ message: 'Profile updated successfully', user: updatedUser });
+    } catch (error) {
+      console.error('Error updating profile:', error);
+      res.status(500).send({ message: 'Internal server error while updating profile.' });
+    }
+  };
+ 
+  const logout = (req, res) => {
+    try {
+      // No need to interact with the database or perform any complex logic for logout.
+      res.status(200).send({ message: 'Logout successful' });
+    } catch (error) {
+      console.error('Error during logout:', error);
+      res.status(500).send({ message: 'Internal server error during logout.' });
+    }
+  };
 
-module.exports = { login, register };
+module.exports = { login, register,updateProfile,logout };
 
 
     
