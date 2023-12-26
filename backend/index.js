@@ -5,6 +5,9 @@ app.use(express.json());//these 2 lines add middleware this parse incoming json 
 app.use(express.urlencoded({ extended: true }));//parses incoming requests with URL-encoded payloads. 
 require("dotenv").config();//we used the dotenv package we downloaded to use the url from the .env file
 
+const authRoutes = require("./routes/auth.rout");
+app.use("/auth", authRoutes);
+
 // Start the server we should get a message displaying the PORT and the Function connectToMongoDB
 app.listen(8000, () => {
     console.log("Server listening on PORT: ", 8000);

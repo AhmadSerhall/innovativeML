@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
 const bcrypt=require("bcrypt");//npm install bcrypt
-const userShema=new mongoose.Schema({
+const userSchema=new mongoose.Schema({
     first_name:{
         type:String,
         required:"enter your first name",
@@ -37,16 +37,23 @@ const userShema=new mongoose.Schema({
     }
 }
 )
-userShema.pre("save",async function(next){
-    try{
-    const salt= await bcrypt.genSalt(10);
-    this.password=await bcrypt.hash(this.password,salt)
-    next();
-    }catch(error){
+userSchema.pre(
+    "save",
+    async function (next) {
+      try {
+        const salt = await bcrypt.genSalt(10);
+        this.password = await bcrypt.hash(this.password, salt);
+        next();
+      } catch (error) {
+        console.log(error);
         next(error);
+      }
+    },
+    {
+      timestamps: true,
     }
-})
+  );
 
-const User=mongoose.model("User",userShema)
+const User=mongoose.model("User",userSchema)
 module.exports=User;
     

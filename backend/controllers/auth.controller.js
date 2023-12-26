@@ -1,29 +1,41 @@
 const User = require("../models/user.model");
-
+const bcrypt =require("bcrypt");
 const login=(req,res)=>{
 
 }
 
-const register=async(req,res)=>{
-    const {first_name,last_name,username,password,created_at,user_type}=req.body;
-    if(!first_name || !last_name || !username || !password || !user_type){
-        res.status(400).send({message:"error, all fields are required"})
+const register = async (req, res) => {
+    const { first_name, last_name, username, password, user_type } = req.body;
+
+    if (!first_name || !last_name || !username || !password || !user_type) {
+        return res.status(400).send({ message: "Error, all fields are required" });
     }
-    try{
-        const user=await User.create(
+
+    try {
+        // Check if the username already exists
+        const existingUser = await User.findOne({ username });
+
+        if (existingUser) {
+            return res.status(400).send({ message: "Username already exists" });
+        }
+
+        
+        const user = await User.create({
             first_name,
             last_name,
             username,
             password,
-            created_at,
             user_type
-        )
-        res.status(200).send({message:"user created successfully"})
-    }
-    catch{
-        res.status(500).send({message:"cannot create user"})
-    }
-    }
+        });
 
-    module.exports={login,register}
+        res.status(200).send({ message: "User created successfully" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ message: "Cannot create user" });
+    }
+};
+
+module.exports = { login, register };
+
+
     
