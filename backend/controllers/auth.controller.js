@@ -2,8 +2,6 @@ const User = require("../models/user.model");
 const bcrypt =require("bcrypt");
 const jwt=require("jsonwebtoken")
 
-
-
 const login=async(req,res)=>{
     const{username,password}=req.body;
     
@@ -44,8 +42,6 @@ const register = async (req, res) => {
         if (existingUser) {
             return res.status(400).send({ message: "Username already exists" });
         }
-
-        
         const user = await User.create({
             first_name,
             last_name,
