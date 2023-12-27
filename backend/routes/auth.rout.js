@@ -9,7 +9,11 @@ router.post("/login",login)
 router.post("/register",register)
 router.put("/users/:id/update-profile", authMiddleware, updateProfile);
 router.post("/logout",authMiddleware,logout)
-router.get("/auth/google",passport.authenticate('google',{scope:['profile','email']}))
+// router.get('/auth/google',passport.authenticate('google',{scope:['profile','email']}))
+router.get("/auth/google", (req, res) => {
+  console.log('Accessing /auth/google route');
+  passport.authenticate('google', { scope: ['profile', 'email'] })(req, res);
+});
 router.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
     res.redirect('/landing');//rediret them to landing page is authentication is successful 
   });

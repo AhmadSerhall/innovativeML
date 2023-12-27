@@ -5,18 +5,33 @@ app.use(express.json());//these 2 lines add middleware this parse incoming json 
 app.use(express.urlencoded({ extended: true }));//parses incoming requests with URL-encoded payloads. 
 require("dotenv").config();//we used the dotenv package we downloaded to use the url from the .env file
 
+const cors=require("cors")
+const cookiesession=require("cookie-session")
+
 const passport =require("passport")
 const session =require("express-session")
 const configurePassport = require('./config/passport');//imported configrePassport
 
 // Configure Passport
-configurePassport();
+configurePassport(passport);
 
+app.use(
+    cookiesession({
+        name:"session",
+        keys:["ahmad"]
+    })
+)
 app.use(session({ secret: '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', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+app.use(
+    cors({
+        origin:"http://localhost:8000",
+        methods:"GET,POST,PUT,DELETE",
+        credentials:true
+    })
+)
 
 const authRoutes = require("./routes/auth.rout");
 app.use("/auth", authRoutes);
