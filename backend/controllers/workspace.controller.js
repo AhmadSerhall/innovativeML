@@ -17,7 +17,7 @@ const createWorkspace = async (req, res) => {
 
 const getWorkspacesByUser = async (req, res) => {
   try {
-    const { _id: user_id } = req.user; // Assuming user information is stored in req.user after authentication
+    const { _id: user_id } = req.user;
 
     const workspaces = await Workspace.find({ user_id });
     
@@ -32,7 +32,7 @@ const updateWorkspace = async (req, res) => {
   try {
     const { id } = req.params;
     const { workspace_data } = req.body;
-    const { _id: user_id } = req.user; // Assuming user information is stored in req.user after authentication
+    const { _id: user_id } = req.user; 
 
     const updatedWorkspace = await Workspace.findOneAndUpdate(
       { _id: id, user_id },
@@ -54,7 +54,7 @@ const updateWorkspace = async (req, res) => {
 const deleteWorkspace = async (req, res) => {
   try {
     const { id } = req.params;
-    const { _id: user_id } = req.user; // Assuming user information is stored in req.user after authentication
+    const { _id: user_id } = req.user;
 
     const deletedWorkspace = await Workspace.findOneAndDelete({ _id: id, user_id });
 

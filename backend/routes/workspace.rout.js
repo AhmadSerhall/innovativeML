@@ -7,5 +7,4 @@ router.get('/get/:userId', workspaceController.getWorkspacesByUser);
 router.put('/edit/:id',workspaceController.updateWorkspace);
 router.delete('/delete/:id',workspaceController.deleteWorkspace);
 
-
 module.exports = router;
