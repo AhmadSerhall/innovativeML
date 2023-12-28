@@ -5,8 +5,8 @@ app.use(express.json());//these 2 lines add middleware this parse incoming json 
 app.use(express.urlencoded({ extended: true }));//parses incoming requests with URL-encoded payloads. 
 require("dotenv").config();//we used the dotenv package we downloaded to use the url from the .env file
 
-const cors=require("cors")
-const cookiesession=require("cookie-session")
+const cors=require("cors")//trying to use cors extension to solve auth via google
+const cookiesession=require("cookie-session")//using cookie-session to solve auth via google also
 
 const passport =require("passport")
 const session =require("express-session")
@@ -37,7 +37,8 @@ const authRoutes = require("./routes/auth.rout");
 app.use("/auth", authRoutes);
 const adminRoutes=require("./routes/admin.rout");
 app.use('/admin', adminRoutes);
-
+const workspaceRoutes=require("./routes/workspace.rout");
+app.use('/workspace',workspaceRoutes)
 // Start the server we should get a message displaying the PORT and the Function connectToMongoDB
 app.listen(8000, () => {
     console.log("Server listening on PORT: ", 8000);
