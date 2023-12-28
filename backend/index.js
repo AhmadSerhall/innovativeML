@@ -35,6 +35,8 @@ app.use(
 
 const authRoutes = require("./routes/auth.rout");
 app.use("/auth", authRoutes);
+const adminRoutes=require("./routes/admin.rout");
+app.use('/admin', adminRoutes);
 
 // Start the server we should get a message displaying the PORT and the Function connectToMongoDB
 app.listen(8000, () => {
