@@ -1,18 +1,46 @@
 const Workspace = require('../models/workspace.model');
 
-const createWorkspace = async (req, res) => {
-  try {
-    const { workspace_data } = req.body;
-    const { _id: user_id } = req.user;
+// const createWorkspace = async (req, res) => {
+//   try {
+//     console.log('Received data:', req.body);
+//     const { workspace_data } = req.body;
+//     const { _id: user_id } = req.user;
 
-    const workspace = await Workspace.create({ workspace_data, user_id });
+//     const workspace = await Workspace.create({ workspace_data, user_id });
     
-    res.status(201).json({ message: 'Workspace created successfully', workspace });
-  } catch (error) {
-    console.error('Error creating workspace:', error);
-    res.status(500).json({ message: 'Internal server error while creating workspace' });
-  }
-};
+//     res.status(201).json({ message: 'Workspace created successfully', workspace });
+//   } catch (error) {
+//     console.error('Error creating workspace:', error);
+//     res.status(500).json({ message: 'Internal server error while creating workspace' });
+//   }
+// };
+const createWorkspace = async (req, res) => {
+    try {
+      console.log('Received data:', req.body);
+      console.log(JSON.stringify(req.body, null, 2))
+      const { workspace_data } = req.body;
+      const { _id: user_id } = req.user;
+  
+      // Ensure that blocks is an array of objects
+      workspace_data.blocks = workspace_data.blocks.map((block) => {
+        return {
+          id: block.id,
+          type: block.type,
+          position: block.position,
+          properties: block.properties,
+          inputs: block.inputs,
+        };
+      });
+  
+      const workspace = await Workspace.create({ workspace_data, user_id });
+      
+      res.status(201).json({ message: 'Workspace created successfully', workspace });
+    } catch (error) {
+      console.error('Error creating workspace:', error);
+      res.status(500).json({ message: 'Internal server error while creating workspace' });
+    }
+  };
+  
 
 const getWorkspacesByUser = async (req, res) => {
   try {

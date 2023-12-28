@@ -38,7 +38,8 @@ app.use("/auth", authRoutes);
 const adminRoutes=require("./routes/admin.rout");
 app.use('/admin', adminRoutes);
 const workspaceRoutes=require("./routes/workspace.rout");
-app.use('/workspace',workspaceRoutes)
+const { authMiddleware } = require("./middlewares/auth.middleware");
+app.use('/workspace',authMiddleware,workspaceRoutes)//daroure nhot el authMiddleware la ya3rif el workspace la ayya user
 // Start the server we should get a message displaying the PORT and the Function connectToMongoDB
 app.listen(8000, () => {
     console.log("Server listening on PORT: ", 8000);
