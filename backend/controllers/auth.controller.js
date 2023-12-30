@@ -2,13 +2,6 @@ const User = require("../models/user.model");
 const bcrypt =require("bcrypt");
 const jwt=require("jsonwebtoken")
 //firebase messages
-const admin = require("firebase-admin");
-const serviceAccount = require("path/to/your/serviceAccountKey.json"); // Update with your service account key
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
-
 const login = async (req, res) => {
   const { username, password } = req.body;
 
