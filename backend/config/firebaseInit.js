@@ -1,10 +1,9 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getMessaging } from "firebase/messaging";
+const initializeFirebase = async () => {
+const { initializeApp }=await import ("firebase/app");
+const { getAnalytics } =await import ("firebase/analytics");
+const { getMessaging } = await import ("firebase/messaging");
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCRDkGwL_EHP9AvnOB-ynBRaNgISvirpRI",
   authDomain: "innovativeml.firebaseapp.com",
@@ -19,4 +18,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const messaging = getMessaging(app);
-export default {app,analytics,messaging};
+console.log("Firebase initialized");
+return  {app,analytics,messaging};
+};
+
+module.exports={initializeFirebase}

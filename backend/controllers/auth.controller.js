@@ -1,52 +1,66 @@
 const User = require("../models/user.model");
 const bcrypt =require("bcrypt");
 const jwt=require("jsonwebtoken")
+//firebase messages
+const admin = require("firebase-admin");
+const serviceAccount = require("path/to/your/serviceAccountKey.json"); // Update with your service account key
 
-const login=async(req,res)=>{
-    const{username,password}=req.body;
-    
-    const user= await User.findOne({username})
-    console.log('User:', user);
-    if(!user){ res.status(400).send({message:"username or password incorrect"})}
-    // else{ res.status(200).send({message:`logged in, welcome ${username}`})}
-  const isValidPassword = await bcrypt.compare(password, user.password);
-if (!isValidPassword)
-  res.status(400).send({ message: "Invalid username/password" });
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
 
-const { password: hashedPassword, _id, ...userDetails } = user.toJSON();
-// generate JWT token
-const token = jwt.sign(
-    {
-      ...userDetails,
-    },
-    process.env.JWT_SECRET,
-    { expiresIn: "2 days" }
-  );
+const login = async (req, res) => {
+  const { username, password } = req.body;
 
-  res.status(200).send({
-    user: userDetails,
-    token,
-  });
-  //trying the firebase cloud messaging integration in the login after adding fcmToken in usermodel
   try {
-    const permission = await Notification.requestPermission();
-    if (permission === "granted") {
-      console.log("Notification permission granted!");
+      const user = await User.findOne({ username });
 
-      const token = await messaging.getToken();
-      console.log("FCM Token:", token);
+      if (!user) {
+          return res.status(400).send({ message: "Username or password incorrect" });
+      }
 
-      // Save the FCM token to the user document
-      user.fcmToken = token;
-      await user.save();
-  
-    } else {
-      console.log("Notification permission denied.");
-    }
+      const isValidPassword = await bcrypt.compare(password, user.password);
+      if (!isValidPassword) {
+          return res.status(400).send({ message: "Invalid username/password" });
+      }
+
+        // Trying the firebase cloud messaging integration in the login after adding fcmToken in usermodel
+        try {
+          const messaging = require("firebase/messaging"); // Import messaging module
+
+          // Check if FCM token already exists in the user model
+          if (!user.fcmToken) {
+              const token = await messaging.getToken();
+              console.log("FCM Token:", token);
+
+              // Save the FCM token to the user document
+              user.fcmToken = token;
+              await user.save();
+          }
+      } catch (error) {
+          console.error("Error getting FCM token:", error);
+      }
+
+      // generate JWT token
+      const { password: hashedPassword, _id, ...userDetails } = user.toJSON();
+      const token = jwt.sign(
+          { ...userDetails },
+          process.env.JWT_SECRET,
+          { expiresIn: "2 days" }
+      );
+
+      res.status(200).send({
+          user: userDetails,
+          token,
+          fcmToken: user.fcmToken // Include the FCM token in the response
+      });
+
   } catch (error) {
-    console.error("Error requesting notification permission:", error);
+      console.error('Error during login:', error);
+      res.status(500).send({ message: 'Internal server error during login.' });
   }
-}
+};
+
 
 const register = async (req, res) => {
     const { first_name, last_name, username, password, user_type } = req.body;

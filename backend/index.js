@@ -13,8 +13,9 @@ const session =require("express-session")
 const configurePassport = require('./config/passport');//imported configrePassport
 
 //firebase configs to be modified
-const firebase=require("./config/firebaseInit") 
-
+const  initializeApp=async()=>{
+const initializeFirebase = await import("./config/firebaseInit.js");
+// const firebase = await initializeFirebase.default();
 
 // Configure Passport
 configurePassport(passport);
@@ -49,3 +50,5 @@ app.listen(8000, () => {
     console.log("Server listening on PORT: ", 8000);
     connectToMongoDB(process.env.MONGODB_URL);
 });
+};
+initializeApp();
