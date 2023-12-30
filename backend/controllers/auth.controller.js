@@ -27,7 +27,27 @@ const token = jwt.sign(
     user: userDetails,
     token,
   });
+  //trying the firebase cloud messaging integration in the login after adding fcmToken in usermodel
+  try {
+    const permission = await Notification.requestPermission();
+    if (permission === "granted") {
+      console.log("Notification permission granted!");
+
+      const token = await messaging.getToken();
+      console.log("FCM Token:", token);
+
+      // Save the FCM token to the user document
+      user.fcmToken = token;
+      await user.save();
+  
+    } else {
+      console.log("Notification permission denied.");
+    }
+  } catch (error) {
+    console.error("Error requesting notification permission:", error);
+  }
 }
+
 const register = async (req, res) => {
     const { first_name, last_name, username, password, user_type } = req.body;
 
@@ -86,7 +106,6 @@ const updateProfile = async (req, res) => {
  
   const logout = (req, res) => {
     try {
-      // No need to interact with the database or perform any complex logic for logout.
       res.status(200).send({ message: 'Logout successful' });
     } catch (error) {
       console.error('Error during logout:', error);

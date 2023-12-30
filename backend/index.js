@@ -12,6 +12,10 @@ const passport =require("passport")
 const session =require("express-session")
 const configurePassport = require('./config/passport');//imported configrePassport
 
+//firebase configs to be modified
+const firebase=require("./config/firebaseInit") 
+
+
 // Configure Passport
 configurePassport(passport);
 

@@ -34,6 +34,10 @@ const userSchema=new mongoose.Schema({
         type:String,
         enum:["user","admin"],
         default:"user"
+    },
+    //added the fcm token for firebase message sending
+    fcmToken:{
+      type:String
     }
 }
 )
