@@ -1,6 +1,7 @@
 const User = require("../models/user.model");
 const bcrypt =require("bcrypt");
-const jwt=require("jsonwebtoken")
+const jwt=require("jsonwebtoken");
+const admin=require("firebase-admin");
 //firebase messages
 const login = async (req, res) => {
   const { username, password } = req.body;
