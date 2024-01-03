@@ -16,12 +16,12 @@ const authMiddleware = async (req, res, next) => {
 };
 const adminMiddleware = (req, res, next) => {
   if (req.user && req.user.user_type === 'admin') {
-    next(); // Admin is authorized, proceed to the next middleware/route
+    next(); 
   } else {
     res.status(403).json({ message: 'Forbidden: Admin access required' });
   }
 };
-
+//make admin middleware file inside the middleware
 module.exports = {
   authMiddleware,adminMiddleware
 };

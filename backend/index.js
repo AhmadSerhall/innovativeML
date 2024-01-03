@@ -37,7 +37,7 @@ app.use(
         credentials:true
     })
 )
-
+//adjust the rout name put e
 const authRoutes = require("./routes/auth.rout");
 app.use("/auth", authRoutes);
 const adminRoutes=require("./routes/admin.rout");

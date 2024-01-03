@@ -23,9 +23,8 @@ const configurePassport = () => {
           if (!user) {
             // If the user doesn't exist, create a new user in your database
             user = await User.create({
-              username: profile.emails[0].value, // Use email as username or any unique identifier from the Google profile
-              password: profile.id, // Use Google ID as the password or any other suitable approach
-              // Add other relevant user information from the Google profile
+              username: profile.emails[0].value, 
+              password: profile.id,
             });
           }
           console.log('GoogleStrategy Callback - End');
@@ -52,8 +51,6 @@ const configurePassport = () => {
   });
 };
 
-// Call the configurePassport function to set up the passport strategies
 configurePassport();
 
-// Export the passport object for use in other parts of your application
 module.exports =configurePassport;

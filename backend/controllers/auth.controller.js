@@ -1,59 +1,102 @@
 const User = require("../models/user.model");
 const bcrypt =require("bcrypt");
 const jwt=require("jsonwebtoken");
-const admin=require("firebase-admin");
+// const admin=require("firebase-admin");
 //firebase messages
+// const login = async (req, res) => {
+//   const { username, password } = req.body;
+
+//   try {
+//       const user = await User.findOne({ username });
+
+//       if (!user) {
+//           return res.status(400).send({ message: "Username or password incorrect" });
+//       }
+
+//       const isValidPassword = await bcrypt.compare(password, user.password);
+//       if (!isValidPassword) {
+//           return res.status(400).send({ message: "Invalid username/password" });
+//       }
+
+//         // Trying the firebase cloud messaging integration in the login after adding fcmToken in usermodel
+//         try {
+//           const messaging = require("firebase/messaging"); // Import messaging module
+
+//           // Check if FCM token already exists in the user model
+//           if (!user.fcmToken) {
+//               const token = await messaging.getToken();
+//               console.log("FCM Token:", token);
+
+//               // Save the FCM token to the user document
+//               user.fcmToken = token;
+//               await user.save();
+//           }
+//       } catch (error) {
+//           console.error("Error getting FCM token:", error);
+//       }
+
+//       // generate JWT token
+//       const { password: hashedPassword, _id, ...userDetails } = user.toJSON();
+//       const token = jwt.sign(
+//           { ...userDetails },
+//           process.env.JWT_SECRET,
+//           { expiresIn: "2 days" }
+//       );
+
+//       res.status(200).send({
+//           user: userDetails,
+//           token,
+//           fcmToken: user.fcmToken // Include the FCM token in the response
+//       });
+
+//   } catch (error) {
+//       console.error('Error during login:', error);
+//       res.status(500).send({ message: 'Internal server error during login.' });
+//   }
+// };
+const admin = require("../config/firebaseAdminInit");
+
 const login = async (req, res) => {
   const { username, password } = req.body;
 
   try {
-      const user = await User.findOne({ username });
+    const user = await User.findOne({ username });
 
-      if (!user) {
-          return res.status(400).send({ message: "Username or password incorrect" });
-      }
+    if (!user) {
+      return res.status(400).send({ message: "Username or password incorrect" });
+    }
 
-      const isValidPassword = await bcrypt.compare(password, user.password);
-      if (!isValidPassword) {
-          return res.status(400).send({ message: "Invalid username/password" });
-      }
+    const isValidPassword = await bcrypt.compare(password, user.password);
+    if (!isValidPassword) {
+      return res.status(400).send({ message: "Invalid username/password" });
+    }
 
-        // Trying the firebase cloud messaging integration in the login after adding fcmToken in usermodel
-        try {
-          const messaging = require("firebase/messaging"); // Import messaging module
+    // Save the FCM token to the user document (if available in the request or from the client)
+    const { fcmToken } = req.body;
+    if (fcmToken) {
+      user.fcmToken = fcmToken;
+      await user.save();
+    }
 
-          // Check if FCM token already exists in the user model
-          if (!user.fcmToken) {
-              const token = await messaging.getToken();
-              console.log("FCM Token:", token);
+    // Generate JWT token
+    const { password: hashedPassword, _id, ...userDetails } = user.toJSON();
+    const token = jwt.sign(
+      { ...userDetails },
+      process.env.JWT_SECRET,
+      { expiresIn: "2 days" }
+    );
 
-              // Save the FCM token to the user document
-              user.fcmToken = token;
-              await user.save();
-          }
-      } catch (error) {
-          console.error("Error getting FCM token:", error);
-      }
-
-      // generate JWT token
-      const { password: hashedPassword, _id, ...userDetails } = user.toJSON();
-      const token = jwt.sign(
-          { ...userDetails },
-          process.env.JWT_SECRET,
-          { expiresIn: "2 days" }
-      );
-
-      res.status(200).send({
-          user: userDetails,
-          token,
-          fcmToken: user.fcmToken // Include the FCM token in the response
-      });
-
+    res.status(200).send({
+      user: userDetails,
+      token,
+      fcmToken: user.fcmToken,
+    });
   } catch (error) {
-      console.error('Error during login:', error);
-      res.status(500).send({ message: 'Internal server error during login.' });
+    console.error('Error during login:', error);
+    res.status(500).send({ message: 'Internal server error during login.' });
   }
 };
+
 
 
 const register = async (req, res) => {

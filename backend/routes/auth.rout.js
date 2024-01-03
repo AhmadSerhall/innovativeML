@@ -10,7 +10,7 @@ router.post("/register",register)
 router.put("/users/:id/update-profile", authMiddleware, updateProfile);
 router.post("/logout",authMiddleware,logout)
 // router.get('/auth/google',passport.authenticate('google',{scope:['profile','email']}))
-router.get("/auth/google", (req, res) => {
+router.get("/google", (req, res) => {
   console.log('Accessing /auth/google route');
   passport.authenticate('google', { scope: ['profile', 'email'] })(req, res);
 });
