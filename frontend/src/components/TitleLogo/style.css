@@ -1,3 +1,9 @@
-.titlelogo{
-    gap:5%;
-}
+.title-logo {
+    align-items: center;
+  }
+  
+  .title-logo img {
+    width: 4rem; 
+    margin-right: 10px;
+  }
+  
