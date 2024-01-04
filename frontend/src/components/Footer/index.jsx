@@ -10,12 +10,12 @@ const Footer = () => {
     <div>
       <div className='footer-container full-width flex'>
         <div className='first-col flex column'>
-            <TitleLogo/>
-            <div className='icons flex'>
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-slack"></i>
-            <i class="fa-brands fa-linkedin"></i>
+            <div className='title-logo'><TitleLogo/></div>
+            <div className='social-icons flex'>
+            <Link to="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></Link>
+            <Link to="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></Link>
+            <Link to="https://www.slack.com/"><i class="fa-brands fa-slack"></i></Link>
+            <Link to="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></Link>
             </div>
         </div>
         <div className='second-col flex column'>

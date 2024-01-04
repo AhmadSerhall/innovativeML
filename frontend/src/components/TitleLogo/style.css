@@ -1,8 +1,13 @@
 .title-logo {
     align-items: center;
+    @media (max-width: 768px) {
+      font-size: 1.5rem; /* Adjust the font size for smaller screens */
+      /* Add any other styles or adjustments as needed */
+    }
   }
   .title-logo img {
     width: 4rem; 
     margin-right: 10px;
   }
+
   
