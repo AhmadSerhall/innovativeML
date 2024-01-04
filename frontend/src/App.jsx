@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import TitleLogo from './components/TitleLogo';
 import './styles/global.css'
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           {/* <Route className="test" path="/test" element={<TitleLogo/>}/> */}
           {/* <Route className="test" path='/test' element={<NavBar/>}/> */}
+          <Route className="test" path="/test" element={<Footer/>}/>
           
 
         </Routes>
