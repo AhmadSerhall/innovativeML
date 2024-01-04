@@ -1,7 +1,6 @@
 import React from 'react'
 import TitleLogo from '../TitleLogo'
 import { Link } from 'react-router-dom';
-// index.js or App.js
 import '@fortawesome/fontawesome-free/css/all.css';
 import './style.css'
 

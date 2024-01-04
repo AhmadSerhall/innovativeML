@@ -1,5 +1,3 @@
-/* Footer.css */
-
 .footer-container {
     display: flex;
     justify-content: space-around;
@@ -8,7 +6,6 @@
     color: #fff;
     flex-wrap: wrap;
   }
-  
   .column {
     display: flex;
     flex-direction: column;
@@ -19,56 +16,42 @@
   .social-icons {
     margin-top: 10px;
   }
-  
   .social-icons i {
     font-size: 2.5rem;
     margin-right: 10px;
   }
-  
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  
   ul li {
     margin-bottom: 10px;
-  }
-  
+  } 
   a {
     text-decoration: none;
     color: #fff;
   }
-  
   a:hover {
     color: gainsboro;
     transition: background-color 0.3s ease;
-  }
-  
-  /* Media query for smaller screens */
+  } 
   @media (max-width: 768px) {
-    /* .title-logo{
-        width:15%;
-        height:15%;
-    } */
     .column {
       flex-direction: row;
       justify-content: center;
       text-align: center;
     }
-  
     .column ul {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-  
     .column ul li {
       margin-bottom: 5px;
     }
-  
     .social-icons i {
-      font-size: 1.5rem; /* Adjust the font size for smaller screens */
+      font-size: 1.5rem;
     }
   }
   
