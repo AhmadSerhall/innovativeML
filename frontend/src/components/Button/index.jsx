@@ -13,5 +13,4 @@ const Button = ({ text, textColor, bgColor, onClick }) => {
     </button>
   );
 };
-
 export default Button;
