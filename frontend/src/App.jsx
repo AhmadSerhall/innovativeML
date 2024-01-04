@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* <Route className="test" path="/test" element={<TitleLogo/>}/> */}
-          <Route className="test" path='/test' element={<NavBar/>}/>
+          {/* <Route className="test" path='/test' element={<NavBar/>}/> */}
           
 
         </Routes>
