@@ -10,8 +10,7 @@ const Landing = () => {
       <NavBar/>
       <div className='hero-container flex row'>
         <div className='left-section flex column'>
-            <h1>The best way to learn</h1>
-            <br/>
+            <h1>The best way to learn</h1>         
             <h1>Machine Learning</h1>
             <div className='button-container flex row'>
                 <Button text="Train Machine" textColor="white" onClick={console.log("sup")}/>

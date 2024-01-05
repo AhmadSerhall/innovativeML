@@ -1,26 +1,60 @@
+/* Base styles for larger screens */
 .hero-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 80px 20px;
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
   }
+  
   .left-section {
     flex: 1;
     max-width: 500px;
     margin-right: 20px;
   }
+  
   .left-section h1 {
     font-size: 36px;
     color: #333;
   }
+  
   .button-container {
     margin-top: 20px;
   }
+  
   .img-container {
     flex: 1;
     max-width: 600px;
   }
+  
   .img-container img {
     border-radius: 8px;
   }
+  
+  @media (max-width: 768px) {
+    .hero-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px; 
+    }
+  
+    .left-section {
+      max-width: none; 
+      margin-right: 0;
+      text-align: center; 
+    }
+  
+    .left-section h1 {
+      font-size: 24px; 
+    }
+  
+    .button-container {
+      margin-top: 10px; 
+    }
+  
+    .img-container {
+      max-width: none; 
+      margin-top: 20px; 
+    }
+  }
+  
