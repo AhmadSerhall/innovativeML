@@ -32,16 +32,17 @@ const Landing = () => {
         <Button text="get started for free" bgColor="#FFD700" textColor={"black"}/>
         </div>
       </div>
-      <br/>
-      <br/>
+      {/* <br/>
+      <br/> */}
       <div className='ml-mastery flex'>
         <div className='ml-img-container'>
         <img src={mlMastery} alt="img"/>
         </div>
         <div className='ml-text flex column center'>
             <h2>Your Gateaway to Machine Learning Mastery</h2>
-            <p>Uncover the intricacies of machine learning through guided learning that demystifies complex concepts, making the experience both convenient and engaging.
-               Explore the Future of Intelligence Now! </p>
+            <h4>Uncover the intricacies of machine learning through guided learning that demystifies complex concepts, making the experience both convenient and engaging.
+               Explore the Future of Intelligence Now! </h4>
+               <Button text="More about us"/>
         </div>
 
       </div>
