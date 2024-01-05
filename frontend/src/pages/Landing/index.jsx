@@ -12,8 +12,8 @@ const Landing = () => {
             <br/>
             <h1>machine learning</h1>
             <div className='button-container flex row'>
-                <Button text="Train Machine" textColor="white"/>
-                <Button/>
+                <Button text="Train Machine" textColor="white" onClick={console.log("sup")}/>
+                <Button text="Learn by Playing" textColor="black" bgColor="#FFD700"/>
             </div>
         </div>
 
