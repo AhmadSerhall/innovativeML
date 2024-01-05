@@ -89,7 +89,7 @@
     gap:4%;
     margin-right:4%;
   }
-.ml-maestro{
+/* .ml-maestro{
     justify-content: center;
     gap:4%;
     align-items: center;
@@ -102,5 +102,38 @@
 }
 .profile-container img{
     object-fit: cover;
+
+} */
+/* Add this to your existing style.css or create a new one for the ml-maestro component */
+.ml-maestro {
+    text-align: center;
+    gap:4%;
+    margin:5%;
+  }
+  
+  .profile-container {
+    width: 120px; /* Adjust the size of the circular container */
+    height: 120px; /* Adjust the size of the circular container */
+    overflow: hidden; /* Ensure the image doesn't overflow the circular container */
+    margin: 20px auto; /* Center the circular container and add spacing */
+  }
+  
+  .profile-container img {
+    width: 100%; /* Make the image fill the circular container */
+    height: 100%; /* Make the image fill the circular container */
+    object-fit: cover; /* Maintain aspect ratio while covering the circular container */
     
-}
+  }
+  
+  /* Additional styles for headings */
+  .ml-maestro h2 {
+    font-size: 24px;
+    /* margin-bottom: 10px; */
+  }
+  
+  .ml-maestro h4 {
+    font-size: 16px;
+    color: #555; /* Darker text color for the description */
+    /* margin-bottom: 20px; */
+  }
+  

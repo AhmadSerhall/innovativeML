@@ -7,6 +7,7 @@ import bannerImage from '../../assets/image2.webp'
 import mlMastery from '../../assets/image5.png'
 import me from '../../assets/me.jpeg'
 import './style.css'
+import Footer from '../../components/Footer'
 const Landing = () => {
   return (
     <div>
@@ -58,6 +59,7 @@ const Landing = () => {
         <h2>Ahmad Serhal</h2>
         <h4>Founder</h4>
       </div>
+      <Footer/>
 
       
     </div>
