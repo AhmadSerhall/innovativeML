@@ -66,8 +66,6 @@
     background-position: center; */
   }
   .banner-img-container{
-    /* height:-40vh; */
-    /* flex:1; */
   }
   .banner-txt-btn{
     flex:3;
@@ -109,31 +107,27 @@
     text-align: center;
     gap:4%;
     margin:5%;
+    margin-right:20%;
+    margin-left:20%;
   }
-  
   .profile-container {
-    width: 120px; /* Adjust the size of the circular container */
-    height: 120px; /* Adjust the size of the circular container */
-    overflow: hidden; /* Ensure the image doesn't overflow the circular container */
-    margin: 20px auto; /* Center the circular container and add spacing */
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin: 20px auto;
   }
-  
   .profile-container img {
-    width: 100%; /* Make the image fill the circular container */
-    height: 100%; /* Make the image fill the circular container */
-    object-fit: cover; /* Maintain aspect ratio while covering the circular container */
-    
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
   }
-  
-  /* Additional styles for headings */
   .ml-maestro h2 {
     font-size: 24px;
-    /* margin-bottom: 10px; */
   }
   
   .ml-maestro h4 {
     font-size: 16px;
-    color: #555; /* Darker text color for the description */
-    /* margin-bottom: 20px; */
+    color: #555;
+    
   }
   
