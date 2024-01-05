@@ -89,9 +89,18 @@
     gap:4%;
     margin-right:4%;
   }
-  .ml-text h2{
-    /* margin-bottom: 2%; */
-  }
-  .ml-text h4{
-    /* margin-bottom:2%; */
-  }
+.ml-maestro{
+    justify-content: center;
+    gap:4%;
+    align-items: center;
+}
+.profile-container{
+    width:200px;
+    height:200px;
+    border-radius: 50;
+
+}
+.profile-container img{
+    object-fit: cover;
+    
+}

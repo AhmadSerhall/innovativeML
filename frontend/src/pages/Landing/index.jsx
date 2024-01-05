@@ -5,6 +5,7 @@ import Button from '../../components/Button'
 import heroImage from '../../assets/image6.webp'
 import bannerImage from '../../assets/image2.webp'
 import mlMastery from '../../assets/image5.png'
+import me from '../../assets/me.jpeg'
 import './style.css'
 const Landing = () => {
   return (
@@ -32,8 +33,6 @@ const Landing = () => {
         <Button text="get started for free" bgColor="#FFD700" textColor={"black"}/>
         </div>
       </div>
-      {/* <br/>
-      <br/> */}
       <div className='ml-mastery flex'>
         <div className='ml-img-container'>
         <img src={mlMastery} alt="img"/>
@@ -45,6 +44,19 @@ const Landing = () => {
                <Button text="More about us"/>
         </div>
 
+      </div>
+      <div className='ml-maestro flex column'>
+        <h2>
+            Solo Ml Maestro
+        </h2>
+        <h4>
+        In the solo venture of growth, I guide the evolution of machine learning education. Crafting strategic pathways independently, I focus on propelling impactful strides towards success in our educational journey.
+        </h4>
+        <div className='profile-container circular'>
+            <img src={me} alt="me"/>
+        </div>
+        <h2>Ahmad Serhal</h2>
+        <h4>Founder</h4>
       </div>
 
       

@@ -33,3 +33,6 @@
 .white-clr{
     background-color: white;
 }
+.circular{
+    border-radius: 100%;
+}
