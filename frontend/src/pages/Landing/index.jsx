@@ -3,6 +3,7 @@ import NavBar from '../../components/NavBar'
 import '../../styles/global.css'
 import Button from '../../components/Button'
 import heroImage from '../../assets/image4.jpg'
+import './style.css'
 const Landing = () => {
   return (
     <div>
