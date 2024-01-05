@@ -17,6 +17,7 @@ const Input = ({ name, type, value, onChange, placeholder }) => {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        required
       />
       {type === 'password' && (
         <i

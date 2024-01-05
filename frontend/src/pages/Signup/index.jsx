@@ -41,6 +41,7 @@ const SignUp = () => {
           value={firstname}
           onChange={handleFirstnameChange}
           placeholder="enter your first name"
+          
         />
          <Input
           name="last name"
