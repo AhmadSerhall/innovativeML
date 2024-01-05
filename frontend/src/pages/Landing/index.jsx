@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from '../../components/NavBar'
 import '../../styles/global.css'
 import Button from '../../components/Button'
+import heroImage from '../../assets/image4.jpg'
 const Landing = () => {
   return (
     <div>
@@ -14,7 +15,10 @@ const Landing = () => {
             <div className='button-container flex row'>
                 <Button text="Train Machine" textColor="white" onClick={console.log("sup")}/>
                 <Button text="Learn by Playing" textColor="black" bgColor="#FFD700"/>
-            </div>
+            </div>          
+        </div>
+        <div className='img-container'>
+            <img src={heroImage} alt="img"></img>
         </div>
 
       </div>
