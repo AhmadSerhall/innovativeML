@@ -4,6 +4,7 @@ import '../../styles/global.css'
 import Button from '../../components/Button'
 import heroImage from '../../assets/image6.webp'
 import bannerImage from '../../assets/image2.webp'
+import mlMastery from '../../assets/image5.png'
 import './style.css'
 const Landing = () => {
   return (
@@ -30,6 +31,19 @@ const Landing = () => {
         <h3>Learn machine learning at your own pace with guided,bitesized education thats effective and enjoyable</h3>
         <Button text="get started for free" bgColor="#FFD700" textColor={"black"}/>
         </div>
+      </div>
+      <br/>
+      <br/>
+      <div className='ml-mastery flex'>
+        <div className='ml-img-container'>
+        <img src={mlMastery} alt="img"/>
+        </div>
+        <div className='ml-text flex column center'>
+            <h2>Your Gateaway to Machine Learning Mastery</h2>
+            <p>Uncover the intricacies of machine learning through guided learning that demystifies complex concepts, making the experience both convenient and engaging.
+               Explore the Future of Intelligence Now! </p>
+        </div>
+
       </div>
 
       
