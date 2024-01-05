@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '../../components/NavBar'
 import '../../styles/global.css'
 import Button from '../../components/Button'
-import heroImage from '../../assets/image4.jpg'
+import heroImage from '../../assets/image6.webp'
 import './style.css'
 const Landing = () => {
   return (
@@ -12,7 +12,7 @@ const Landing = () => {
         <div className='left-section flex column'>
             <h1>The best way to learn</h1>
             <br/>
-            <h1>machine learning</h1>
+            <h1>Machine Learning</h1>
             <div className='button-container flex row'>
                 <Button text="Train Machine" textColor="white" onClick={console.log("sup")}/>
                 <Button text="Learn by Playing" textColor="black" bgColor="#FFD700"/>
