@@ -1,4 +1,3 @@
-/* Base styles for larger screens */
 .hero-container {
     display: flex;
     justify-content: space-around;
@@ -56,5 +55,10 @@
       max-width: none; 
       margin-top: 20px; 
     }
+  }
+  .banner{
+    background-color: #333;
+    height:12rem;
+
   }
   
