@@ -21,7 +21,7 @@ function App() {
           {/* <Route className="test" path="/test" element={<Input/>}/> */}
           <Route className="login" path="/login" element={<Login/>}/>
           <Route className="signup" path="/signup" element={<SignUp/>}/>
-          <Route className="landing" path="/landing" elemeent={<Landing/>}/>
+          <Route className="landing" path="/landing" element={<Landing/>}/>
           
         </Routes>
       </BrowserRouter>
