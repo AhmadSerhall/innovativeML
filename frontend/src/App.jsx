@@ -5,6 +5,7 @@ import Input from './components/Input';
 import NavBar from './components/NavBar';
 import TitleLogo from './components/TitleLogo';
 import Login from './pages/Login';
+import SignUp from './pages/Signup';
 import './styles/global.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -18,6 +19,7 @@ function App() {
           {/* <Route className="test" path="/test" element={<Button/>}/> */}
           {/* <Route className="test" path="/test" element={<Input/>}/> */}
           <Route className="login" path="/login" element={<Login/>}/>
+          <Route className="signup" path="/signup" element={<SignUp/>}/>
           
         </Routes>
       </BrowserRouter>
