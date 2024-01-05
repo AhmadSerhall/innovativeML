@@ -58,7 +58,13 @@
   }
   .banner{
     background-color: #333;
-    height:12rem;
-
+    height:40vw;
+    justify-content: center;
+    align-items:flex-start;
+    flex-wrap: wrap;
+    gap:1.5em;
+    /* background-image: url("../../assets/image7.webp"); */
+    background-size: cover;
+    background-position: center;
   }
   

@@ -3,6 +3,7 @@ import NavBar from '../../components/NavBar'
 import '../../styles/global.css'
 import Button from '../../components/Button'
 import heroImage from '../../assets/image6.webp'
+import bannerImage from '../../assets/image2.webp'
 import './style.css'
 const Landing = () => {
   return (
@@ -22,6 +23,9 @@ const Landing = () => {
         </div>
       </div>
       <div className='banner full-width flex column'>
+        <div className='banner-img-container'>
+            <img src={bannerImage} alt="img"></img>
+        </div>
         <h3>Learn machine learning at your own pace with guided,bitesized education thats effective and enjoyable</h3>
         <Button text="get started for free" bgColor="#000"/>
       </div>
