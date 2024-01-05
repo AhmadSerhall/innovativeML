@@ -1,5 +1,3 @@
-// Login.jsx
-
 import React, { useState } from 'react';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -26,7 +24,6 @@ const Login = () => {
 
   const responseGoogle = (response) => {
     console.log('Google Sign-In Response:', response);
-    // Handle Google Sign-In response
   };
 
   return (
