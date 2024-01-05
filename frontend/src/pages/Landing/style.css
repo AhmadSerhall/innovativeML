@@ -57,22 +57,29 @@
     }
   }
   .banner{
-    background-color: #333;
+    background-color: #1261A9;
     height:20vw;
-    justify-content: center;
+    justify-content: space-between;
     align-items:center;
-    gap:1em;
-    background-size: cover;
-    background-position: center;
+    /* flex-wrap: wrap; */
+    /* background-size: cover;
+    background-position: center; */
   }
   .banner-img-container{
-    /* height:100%; */
+    /* height:-40vh; */
+    /* flex:1; */
+  }
+  .banner-txt-btn{
+    flex:3;
   }
   .banner h3 {
-    font-size: 24px;
+    font-size: 1.2rem;
     margin-bottom: 20px;
+    color:#f0f0f0
   }
   .banner .custom-button {
-    background-color: #000;
-    color: #fff;
+    
+    color: black;
+    font-size:1em ;
+
   }

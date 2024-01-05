@@ -22,12 +22,14 @@ const Landing = () => {
             <img src={heroImage} alt="img"></img>
         </div>
       </div>
-      <div className='banner full-width flex column'>
+      <div className='banner full-width flex '>
         <div className='banner-img-container'>
             <img src={bannerImage} alt="img"></img>
         </div>
+        <div className='banner-txt-btn flex column'>
         <h3>Learn machine learning at your own pace with guided,bitesized education thats effective and enjoyable</h3>
-        <Button text="get started for free" bgColor="#000"/>
+        <Button text="get started for free" bgColor="#FFD700" textColor={"black"}/>
+        </div>
       </div>
 
       
