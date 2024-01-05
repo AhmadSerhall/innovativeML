@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Input from './components/Input';
 import NavBar from './components/NavBar';
 import TitleLogo from './components/TitleLogo';
+import Landing from './pages/Landing';
 import Login from './pages/Login';
 import SignUp from './pages/Signup';
 import './styles/global.css'
@@ -20,6 +21,7 @@ function App() {
           {/* <Route className="test" path="/test" element={<Input/>}/> */}
           <Route className="login" path="/login" element={<Login/>}/>
           <Route className="signup" path="/signup" element={<SignUp/>}/>
+          <Route className="landing" path="/landing" elemeent={<Landing/>}/>
           
         </Routes>
       </BrowserRouter>
