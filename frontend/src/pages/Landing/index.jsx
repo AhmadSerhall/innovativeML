@@ -1,70 +1,113 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react';
 import { Link } from 'react-scroll';
 import ScrollAnimation from 'react-animate-on-scroll';
-import NavBar from '../../components/NavBar'
-import '../../styles/global.css'
-import Button from '../../components/Button'
-import heroImage from '../../assets/image6.webp'
-import bannerImage from '../../assets/image2.webp'
-import mlMastery from '../../assets/image5.png'
-import me from '../../assets/me.jpeg'
-import './style.css'
-import Footer from '../../components/Footer'
+import '../../styles/animate.css';
+import NavBar from '../../components/NavBar';
+import '../../styles/global.css';
+import Button from '../../components/Button';
+import heroImage from '../../assets/image6.webp';
+import bannerImage from '../../assets/image2.webp';
+import mlMastery from '../../assets/image5.png';
+import me from '../../assets/me.jpeg';
+import './style.css';
+import Footer from '../../components/Footer';
+
 const Landing = () => {
+  useEffect(() => {
+    // Initialize react-scroll
+    require('react-scroll/modules/mixins/animate-scroll');
+
+    // Initialize animations on scroll
+    ScrollAnimation.init();
+  }, []);
+
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <div className='hero-container flex row'>
         <div className='left-section flex column'>
-            <h1>The best way to learn</h1>         
+          <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+            <h1>The best way to learn</h1>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
             <h1>Machine Learning</h1>
-            <div className='button-container flex row'>
-                <Button text="Train Machine" textColor="white" onClick={console.log("sup")}/>
-                <Button text="Learn by Playing" textColor="black" bgColor="#FFD700"/>
-            </div>          
+          </ScrollAnimation>
+          <div className='button-container flex row'>
+            <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+              <Button text='Train Machine' textColor='white' onClick={() => console.log('sup')} />
+            </ScrollAnimation>
+            <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+              <Button text='Learn by Playing' textColor='black' bgColor='#FFD700' />
+            </ScrollAnimation>
+          </div>
         </div>
         <div className='img-container'>
-            <img src={heroImage} alt="img"></img>
+          <ScrollAnimation animateIn='fadeInRight' duration={1} animateOnce>
+            <img src={heroImage} alt='img' />
+          </ScrollAnimation>
         </div>
       </div>
-      <div className='banner full-width flex '>
-        <div className='banner-img-container'>
-            <img src={bannerImage} alt="img"></img>
-        </div>
-        <div className='banner-txt-btn flex column'>
-        <h3>Learn machine learning at your own pace with guided,bitesized education thats effective and enjoyable</h3>
-        <Button text="get started for free" bgColor="#FFD700" textColor={"black"}/>
-        </div>
+      <div className='banner full-width flex'>
+        <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+          <div className='banner-img-container'>
+            <img src={bannerImage} alt='img' />
+          </div>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+          <div className='banner-txt-btn flex column'>
+            <h3>Learn machine learning at your own pace with guided, bitesized education that's effective and enjoyable</h3>
+            <Button text='get started for free' bgColor='#FFD700' textColor={'black'} />
+          </div>
+        </ScrollAnimation>
       </div>
       <div className='ml-mastery flex'>
         <div className='ml-img-container'>
-        <img src={mlMastery} alt="img"/>
+          <ScrollAnimation animateIn='fadeInLeft' duration={1} animateOnce>
+            <img src={mlMastery} alt='img' />
+          </ScrollAnimation>
         </div>
         <div className='ml-text flex column center'>
-            <h2>Your Gateaway to Machine Learning Mastery</h2>
-            <h4>Uncover the intricacies of machine learning through guided learning that demystifies complex concepts, making the experience both convenient and engaging.
-               Explore the Future of Intelligence Now! </h4>
-               <Button text="More about us"/>
+          <ScrollAnimation animateIn='fadeInRight' duration={1} animateOnce>
+            <h2>Your Gateway to Machine Learning Mastery</h2>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn='fadeInUp' duration={1} animateOnce>
+            <h4>
+              Uncover the intricacies of machine learning through guided learning that demystifies complex concepts, making
+              the experience both convenient and engaging. Explore the Future of Intelligence Now!
+            </h4>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn='fadeInUp' duration={1} animateOnce>
+            <Link to='ml-maestro' smooth={true} duration={1000}>
+              <Button text='More about us' />
+            </Link>
+          </ScrollAnimation>
         </div>
       </div>
       <div className='ml-maestro flex column'>
-        <h2>
-            Solo Ml Maestro
-        </h2>
-        <h4>
-        In the solo venture of growth, I guide the evolution of machine learning education. Crafting strategic pathways independently, I focus on propelling impactful strides towards success in our educational journey.
-        </h4>
-        <div className='profile-container circular'>
-            <img src={me} alt="me"/>
-        </div>
-        <h2>Ahmad Serhal</h2>
-        <h4>Founder</h4>
+        <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+          <h2>Solo ML Maestro</h2>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+          <h4>
+            In the solo venture of growth, I guide the evolution of machine learning education. Crafting strategic pathways
+            independently, I focus on propelling impactful strides towards success in our educational journey.
+          </h4>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+          <div className='profile-container circular'>
+            <img src={me} alt='me' />
+          </div>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+          <h2>Ahmad Serhal</h2>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+          <h4>Founder</h4>
+        </ScrollAnimation>
       </div>
-      <Footer/>
-
-      
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;
