@@ -8,6 +8,7 @@ import Landing from './pages/Landing';
 import Login from './pages/Login';
 import SignUp from './pages/Signup';
 import './styles/global.css'
+import Aboutus from './pages/About';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route className="login" path="/login" element={<Login/>}/>
           <Route className="signup" path="/signup" element={<SignUp/>}/>
           <Route className="landing" path="/landing" element={<Landing/>}/>
+          <Route className="about" path="/about" element={<Aboutus/>}/>
           
         </Routes>
       </BrowserRouter>
