@@ -9,6 +9,8 @@
     transition: background-color 0.3s ease, color 0.3s ease;
     height: 2.5rem;
     width:auto;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
     
   }
   
@@ -19,7 +21,7 @@
   @media (max-width: 768px) {
     .custom-button {
       width: 100%;
-    padding: 10px; 
-    font-size: 0.9rem; 
+      padding: 10px; 
+      font-size: 0.8rem; 
     }
   }
