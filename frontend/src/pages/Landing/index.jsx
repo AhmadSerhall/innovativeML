@@ -44,7 +44,6 @@ const Landing = () => {
                Explore the Future of Intelligence Now! </h4>
                <Button text="More about us"/>
         </div>
-
       </div>
       <div className='ml-maestro flex column'>
         <h2>
