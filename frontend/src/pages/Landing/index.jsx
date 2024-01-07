@@ -12,14 +12,15 @@ import me from '../../assets/me.jpeg';
 import './style.css';
 import Footer from '../../components/Footer';
 
-const Landing = () => {
-  useEffect(() => {
-    // Initialize react-scroll
-    require('react-scroll/modules/mixins/animate-scroll');
 
-    // Initialize animations on scroll
-    ScrollAnimation.init();
-  }, []);
+const Landing = () => {
+  // useEffect(() => {
+  //   // Initialize react-scroll
+  //   require('react-scroll/modules/mixins/animate-scroll');
+
+  //   // Initialize animations on scroll
+  //   ScrollAnimation.init();
+  // }, []);
 
   return (
     <div>
