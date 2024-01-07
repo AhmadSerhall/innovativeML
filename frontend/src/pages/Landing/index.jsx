@@ -1,4 +1,6 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import { Link } from 'react-scroll';
+import ScrollAnimation from 'react-animate-on-scroll';
 import NavBar from '../../components/NavBar'
 import '../../styles/global.css'
 import Button from '../../components/Button'
