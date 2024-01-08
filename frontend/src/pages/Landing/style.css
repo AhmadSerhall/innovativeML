@@ -5,7 +5,6 @@
     padding: 80px 20px;
     background-color: #f5f5f5;
   }
-  
   .left-section {
     flex: 1;
     max-width: 500px;
@@ -130,15 +129,17 @@
     align-items:center;
   }
   .banner-img-container{
-
+    
   }
   .banner-txt-btn{
-    flex:2;
+    
+    
   }
   .banner h3 {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     margin-bottom: 20px;
-    color:#f0f0f0
+    color:#f0f0f0;
+    padding-right: 50px;
   }
   .banner .custom-button {
     color: black;
