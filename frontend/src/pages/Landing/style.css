@@ -216,10 +216,12 @@
 }
 .ml-maestro {
   text-align: center;
-  gap: 4%;
   margin: 5%;
   margin-right: 20%;
   margin-left: 20%;
+}
+.ml-maestro h2{
+  padding-bottom: 6%;
 }
 
 .profile-container {
