@@ -54,12 +54,7 @@ const Landing = () => {
         </ScrollAnimation>
       </div>
       <div className='ml-mastery flex'>
-        <div className='ml-img-container'>
-          <ScrollAnimation animateIn='fadeInLeft' duration={1} animateOnce>
-            <img src={mlMastery} alt='img' />
-          </ScrollAnimation>
-        </div>
-        <div className='ml-text flex column center'>
+      <div className='ml-text flex column center'>
           <ScrollAnimation animateIn='fadeInRight' duration={1} animateOnce>
             <h2>Your Gateway to Machine Learning Mastery</h2>
           </ScrollAnimation>
@@ -75,6 +70,12 @@ const Landing = () => {
             </Link>
           </ScrollAnimation>
         </div>
+        <div className='ml-img-container'>
+          <ScrollAnimation animateIn='fadeInLeft' duration={1} animateOnce>
+            <img src={mlMastery} alt='img' />
+          </ScrollAnimation>
+        </div>
+        
       </div>
       <div className='ml-maestro flex column'>
         <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
