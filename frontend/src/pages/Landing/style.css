@@ -189,6 +189,13 @@
   margin-right: 4%;
   margin-left: 4%;
 }
+.ml-text h2{
+  margin-bottom: 4%;
+}
+.ml-text h4{
+  margin-bottom: 3%;
+}
+
 @media (max-width: 985px) {
   .ml-mastery .ml-text h2 {
     font-size: 1.2rem;
