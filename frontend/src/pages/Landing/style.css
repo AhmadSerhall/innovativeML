@@ -186,9 +186,8 @@
   align-items: center;
 }
 .ml-text {
-  gap: 4%;
   margin-right: 4%;
-  margin-left: 2%;
+  margin-left: 4%;
 }
 @media (max-width: 985px) {
   .ml-mastery .ml-text h2 {
