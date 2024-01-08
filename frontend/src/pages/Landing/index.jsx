@@ -14,14 +14,6 @@ import Footer from '../../components/Footer';
 
 
 const Landing = () => {
-  // useEffect(() => {
-  //   // Initialize react-scroll
-  //   require('react-scroll/modules/mixins/animate-scroll');
-
-  //   // Initialize animations on scroll
-  //   ScrollAnimation.init();
-  // }, []);
-
   return (
     <div>
       <NavBar />
@@ -30,7 +22,7 @@ const Landing = () => {
           <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
             <h1>The best way to learn</h1>
           </ScrollAnimation>
-          <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
+          <ScrollAnimation animateIn='fadeIn' duration={2} animateOnce>
             <h1>Machine Learning</h1>
           </ScrollAnimation>
           <div className='button-container flex row'>
