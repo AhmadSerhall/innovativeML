@@ -1,11 +1,12 @@
-import '../../styles/global.css'
+import React from 'react'
 import './style.css'
 import NavBar from '../../components/NavBar'
-const AboutUs = () => {
-  <div>
-    <h1>hi</h1>
-  <NavBar/>
-  </div>
+const About = () => {
+  return (
+    <div>
+      <NavBar/>
+    </div>
+  )
 }
 
-export default AboutUs;
+export default About

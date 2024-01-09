@@ -8,7 +8,8 @@ import Landing from './pages/Landing';
 import Login from './pages/Login';
 import SignUp from './pages/Signup';
 import './styles/global.css'
-import AboutUs from './pages/About';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
           <Route className="login" path="/login" element={<Login/>}/>
           <Route className="signup" path="/signup" element={<SignUp/>}/>
           <Route className="landing" path="/landing" element={<Landing/>}/>
-          <Route className="about" path="/about" element={<AboutUs/>}/>
+          <Route className="about" path="/about" element={<About/>}/>
+          <Route className="contact" path="/contact" element={<Contact/>}/>
           
         </Routes>
       </BrowserRouter>
