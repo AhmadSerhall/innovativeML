@@ -4,6 +4,7 @@ import NavBar from '../../components/NavBar'
 import AboutContainers from '../../components/AboutContainers'
 import '../../styles/global.css'
 import aboutpic from '../../assets/aboutus hero.jpg'
+import aboutpic2 from '../../assets/aboutus hero2.webp'
 const About = () => {
   return (
     <div>
@@ -19,7 +20,7 @@ const About = () => {
         </div>
         </div>
         <div className='aboutus-img-container'>
-          <img src={aboutpic} alt="about pic"></img>
+          <img src={aboutpic2} alt="about pic"></img>
         </div>
         
 

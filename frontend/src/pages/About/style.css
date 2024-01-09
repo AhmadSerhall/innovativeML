@@ -2,10 +2,13 @@
   justify-content: space-between;
   margin:4%;
   height:40vh;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
 }
 .aboutus-text{
   width:50%;
+}
+.aboutus-text h2{
+  padding-bottom:2%;
 }
 .aboutus-img-container{
   width:40%;
