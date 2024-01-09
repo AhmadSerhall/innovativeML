@@ -9,13 +9,16 @@ const About = () => {
       <NavBar/>
       <div className='aboutus-hero flex'>
         <div className='aboutus-text flex column'>
-          <h1>Our Vision</h1>
+          <h2>Our Vision</h2>
           <p>At InnovativeML, we believe in transforming the landscape of learning through the fusion of cutting-edge technology and education. Our vision is to empower individuals to master the art of coding and machine learning in an interactive, engaging, and innovative way.</p>
           <div className='aboutus-containers flex'>
           <AboutContainers title={"ho"} text={"supp supp"}/>
           <AboutContainers/>
           <AboutContainers/>
         </div>
+        </div>
+        <div className='aboutus-img-container'>
+          
         </div>
         
 
