@@ -8,12 +8,11 @@
     transition: all 0.3 sec;
     margin: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor:default;
   }
   .text-container :hover{
-    transform: scale(1.1); /* Scale the container on hover */
-    
+    transform: scale(1.1); 
   }
-  
   .text-container p {
     margin: 0;
     font-size: 16px;
