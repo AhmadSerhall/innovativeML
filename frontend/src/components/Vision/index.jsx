@@ -4,12 +4,12 @@ import '../../styles/global.css'
 const Vision = () => {
   return (
     <div className='vision-container flex'>
-        <div className='values-text flex column'>
+        <div className='values-text flex column center'>
             <h2>My Values</h2>
             <p>My story is one of continous growth and evolution i started alone with big dreams determmined to create a  platform that transcended the ordinary</p>
         </div>
         <div className="grid">
-            <div class="card">
+            <div className="card">
                 <h3>Trust</h3>
                 <p>Trust is the cornerstone of every successful real estate transaction.</p>
             </div>

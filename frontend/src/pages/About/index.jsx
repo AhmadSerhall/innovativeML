@@ -5,6 +5,7 @@ import AboutContainers from '../../components/AboutContainers'
 import '../../styles/global.css'
 import aboutpic from '../../assets/aboutus hero.jpg'
 import aboutpic2 from '../../assets/aboutus hero2.webp'
+import Vision from '../../components/Vision'
 const About = () => {
   return (
     <div>
@@ -23,8 +24,8 @@ const About = () => {
           <img src={aboutpic2} alt="about pic"></img>
         </div>
         
-
       </div>
+      <Vision/>
     </div>
   )
 }
