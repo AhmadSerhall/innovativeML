@@ -1,9 +1,9 @@
 import React from 'react'
 import './style.css'
-const AboutContainers = () => {
+const AboutContainers = ({text}) => {
   return (
-    <div>
-      
+    <div className='text-container'>
+      <p>{text}</p>
     </div>
   )
 }
