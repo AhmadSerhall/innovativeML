@@ -10,6 +10,7 @@ import SignUp from './pages/Signup';
 import './styles/global.css'
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Vision from './components/Vision';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
           <Route className="landing" path="/landing" element={<Landing/>}/>
           <Route className="about" path="/about" element={<About/>}/>
           <Route className="contact" path="/contact" element={<Contact/>}/>
-          
+          <Route className="vision" path="/vision" element={<Vision/>}/>
         </Routes>
       </BrowserRouter>
     </div>
