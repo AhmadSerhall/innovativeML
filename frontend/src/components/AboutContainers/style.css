@@ -9,6 +9,7 @@
     margin: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor:default;
+    max-width: 200px;;
   }
   .text-container :hover{
     transform: scale(1.1); 
