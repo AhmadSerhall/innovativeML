@@ -13,6 +13,10 @@
   .text-container :hover{
     transform: scale(1.1); 
   }
+  .text-container h2{
+    font-weight: 800;
+    font-size:1.2 rem;
+  }
   .text-container p {
     margin: 0;
     font-size: 16px;
