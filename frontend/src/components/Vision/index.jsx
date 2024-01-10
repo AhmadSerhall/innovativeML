@@ -11,15 +11,15 @@ const Vision = () => {
         </div>
         <div className="grid">
             <div className="card">
-                <h3>Trust</h3>
+                <h3><i class="fa-solid fa-star"></i>Trust</h3>
                 <p>Trust is the cornerstone of every successful real estate transaction.</p>
             </div>
             <div class="card">
-                <h3>Client-Centric</h3>
+                <h3><i class="fa-solid fa-people-group"></i>Client-Centric</h3>
                 <p>Your dreams and needs are at the center of our universe. We listen, understand.</p>
             </div>
             <div class="card">
-                <h3>Excellence</h3>
+                <h3><i class="fa-solid fa-graduation-cap"></i>Excellence</h3>
                 <p>We set the bar high for ourselves. From the properties we list to the services we provide.</p>
             </div>
             <div class="card">
