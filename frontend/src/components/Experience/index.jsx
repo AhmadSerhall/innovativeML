@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './style.css'
 const Experience = () => {
   return (
     <div className='experience-container flex column'>
@@ -8,7 +8,7 @@ const Experience = () => {
         <p>At InnovativeML we created a eye catching user friendly interface that allows Users to either Experience machine learning , or learn coding throughtout a new experience</p>
       </div>
       <div className='experience-card-container flex'>
-        
+
       </div>
     </div>
   )

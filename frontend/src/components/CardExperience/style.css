@@ -1,0 +1,27 @@
+    .CardExperience {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    background-color: #fff;
+   }
+   .CardExperience__step {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+   }
+   
+   .CardExperience__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #000;
+   }
+   
+   .CardExperience__text {
+    font-size: 1rem;
+    color: #333;
+   }
