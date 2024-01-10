@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.css'
 import '../../styles/global.css'
+import '@fortawesome/fontawesome-free/css/all.css';//font-awesome
 const Vision = () => {
   return (
     <div className='vision-container flex'>
