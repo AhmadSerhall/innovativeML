@@ -6,7 +6,7 @@ const Vision = () => {
   return (
     <div className='vision-container flex'>
         <div className='values-text flex column center'>
-            <h2>My Values</h2>
+            <h2>Our Values</h2>
             <p>My story is one of continous growth and evolution i started alone with big dreams determmined to create a  platform that transcended the ordinary</p>
         </div>
         <div className="grid">
@@ -23,7 +23,7 @@ const Vision = () => {
                 <p>We set the bar high for ourselves. From the properties we list to the services we provide.</p>
             </div>
             <div class="card">
-                <h3>Our Commitment</h3>
+                <h3><i class="fa-solid fa-circle-check"></i>Our Commitment</h3>
                 <p>We are dedicated to providing you with the highest level of service, professionalism, and support.</p>
             </div>
         </div>
