@@ -7,7 +7,7 @@ import aboutpic from '../../assets/aboutus hero.jpg'
 import aboutpic2 from '../../assets/aboutus hero2.webp'
 import Vision from '../../components/Vision'
 import Experience from '../../components/Experience'
-
+import Footer from '../../components/Footer'
 const About = () => {
   return (
     <div>
@@ -29,7 +29,7 @@ const About = () => {
       </div>
       <Vision/>
       <Experience/>
-      
+      <Footer/>
     </div>
   )
 }
