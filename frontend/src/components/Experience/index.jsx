@@ -12,9 +12,9 @@ const Experience = () => {
         <CardExperience step={"Step 01"} title={"Admiring AI"} text={"Dive into the vast world of machine learning. Discover the potential it holds for transforming your understanding of technology."} />
         <CardExperience step={"Step 02"} title={"Engage with Interactive Puzzles"} text={"Immerse yourself in hands-on learning. Solve interactive puzzles that bring machine learning concepts to life, making coding a joyful experience."} />
         <CardExperience step={"Step 03"} title={" Guided Learning Paths"} text={"Follow carefully curated learning paths that guide you through the intricacies of machine learning, ensuring a structured and effective educational journey."} />
-        <CardExperience step={"Step 04"} title={" Master Complex Concepts"} text={"Tackle challenging concepts with ease. Our platform breaks down complex topics, making machine learning accessible and enjoyable."} />
+        <CardExperience step={"Step 04"} title={" Master Complex Concepts"} text={"Embark on the Journey of Mastery. Our Platform Empowers You to Conquer Complex Concepts, Making the World of Machine Learning Accessible and Ultimately Enjoyable."} />
         <CardExperience step={"Step 05"} title={"Fun and Enlightening Challenges"} text={"Take on entertaining challenges that not only test your skills but also deepen your understanding of machine learning, making the learning process engaging."} />
-        <CardExperience step={"Step 06"} title={"Technological Prowess Unleashed"} text={"As you progress through our platform, you'll unlock the potential for technological innovation. Be prepared to unleash your newfound machine learning prowess into the future."} />
+        <CardExperience step={"Step 06"} title={"Technological Prowess Unleashed"} text={"Progressing through our platform, you'll unlock the potential for technological innovation. Prepare to unleash your newfound machine learning prowess into the future."} />
 
       </div>
     </div>
