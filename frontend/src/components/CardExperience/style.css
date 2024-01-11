@@ -43,12 +43,13 @@
   
   .CardExperience__title {
     font-size: 1rem;
+    padding-bottom:4%;
     font-weight: bold;
     color: #000;
   }
   
   .CardExperience__text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #333;
   }
   
