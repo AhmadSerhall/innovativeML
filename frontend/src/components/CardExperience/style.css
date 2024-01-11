@@ -14,7 +14,15 @@
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     background-color: #FFD700;
    }
-
+   .TopLeftLine {
+    position:initial;
+    top: 0;
+    left: 0;
+    width: 20px; /* Adjust the width of the line */
+    height: 100%;
+    background-color: #333; /* Adjust the color of the line */
+    border-top-left-radius: 12px; /* Maintain the border radius for the container */
+}
    .CardExperience__step {
     font-size: 1.5rem;
     font-weight: bold;
