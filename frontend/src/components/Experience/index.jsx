@@ -14,7 +14,7 @@ const Experience = () => {
         <CardExperience step={"Step 03"} title={" Guided Learning Paths"} text={"Follow carefully curated learning paths that guide you through the intricacies of machine learning, ensuring a structured and effective educational journey."} />
         <CardExperience step={"Step 04"} title={" Master Complex Concepts"} text={"this is the first text"} />
         <CardExperience step={"Step 05"} title={"Fun and Enlightening Challenges"} text={"Take on entertaining challenges that not only test your skills but also deepen your understanding of machine learning, making the learning process engaging."} />
-        <CardExperience step={"Step 06"} title={"Technological Prowess Unleashed"} text={"this is the first text"} />
+        <CardExperience step={"Step 06"} title={"Technological Prowess Unleashed"} text={"As you progress through our platform, you'll unlock the potential for technological innovation. Be prepared to unleash your newfound machine learning prowess into the future."} />
 
       </div>
     </div>
