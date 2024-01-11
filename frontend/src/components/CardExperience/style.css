@@ -4,9 +4,10 @@
     align-items: flex-start;
     width: 300px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 12px;
+    border-top-left-radius: 0;
     padding: 1rem;
-    box-shadow: 20px 20px 50px 10px #FFD700 inset;
+    box-shadow: 20px 20px 50px 10px #ffd900 inset;
     cursor: default;
    }
    .CardExperience:hover{
