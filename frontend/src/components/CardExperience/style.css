@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    /* gap:200px; */
     width: 300px;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 1rem;
     background-color: #fff;
    }
+
    .CardExperience__step {
     font-size: 1.5rem;
     font-weight: bold;
