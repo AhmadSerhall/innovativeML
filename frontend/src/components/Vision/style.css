@@ -1,5 +1,9 @@
 .vision-container{
     margin:4%;
+    gap:50px;
+}
+.values-text{
+    /* margin-right:150px; */
 }
 .values-text h2{
     padding-bottom: 2%;
