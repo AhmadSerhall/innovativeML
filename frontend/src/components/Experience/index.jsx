@@ -11,7 +11,7 @@ const Experience = () => {
       <div className='experience-card-container flex'>
         <CardExperience step={"Step 01"} title={"Admiring AI"} text={"Dive into the vast world of machine learning. Discover the potential it holds for transforming your understanding of technology."} />
         <CardExperience step={"Step 02"} title={"Engage with Interactive Puzzles"} text={"Immerse yourself in hands-on learning. Solve interactive puzzles that bring machine learning concepts to life, making coding a joyful experience."} />
-        <CardExperience step={"step "} title={"title1"} text={"this is the first text"} />
+        <CardExperience step={"Step 03"} title={"title1"} text={"this is the first text"} />
         <CardExperience step={"step_1"} title={"title1"} text={"this is the first text"} />
         <CardExperience step={"step_1"} title={"title1"} text={"this is the first text"} />
         <CardExperience step={"step_1"} title={"title1"} text={"this is the first text"} />
