@@ -6,10 +6,10 @@
     height: 100vh;
     /* background-image: url(../../assets/image6.webp); */
     /* background-color: #284c6d; */
-    background-repeat:no-repeat;
+    /* background-repeat:no-repeat;
     background-position:top;
     background-size: contain;
-    object-fit: cover;
+    object-fit: cover; */
   }
   .login-title{
     margin-bottom: 2%;
@@ -23,10 +23,20 @@
     background-color: transparent;
     
   }
-  
   .login-form .custom-input {
+    width: 100%;
     margin-bottom: 15px;
   }
+  
+  
+  /* .input{
+    color:blue;
+    width:100%;
+  } */
+  
+  /* .login-form .custom-input {
+    margin-bottom: 15px;
+  } */
   .signup{
     margin-top:20px;
     color:#1261A9;
