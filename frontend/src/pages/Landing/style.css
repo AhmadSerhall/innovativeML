@@ -121,9 +121,10 @@
 
 .banner {
   background-color: #1261a9;
-  height: 20vw;
+  height: 25vw;
   justify-content: space-between;
   align-items: center;
+  /* opacity: 0.8; */
 }
 .banner-img-container {
 }

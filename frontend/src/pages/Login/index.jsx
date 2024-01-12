@@ -5,6 +5,7 @@ import TitleLogo from '../../components/TitleLogo';
 import { GoogleLogin } from 'react-google-login';
 import './style.css';
 import { Link } from 'react-router-dom';
+import '../../styles/global.css'
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -29,6 +30,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <TitleLogo />
+      <h1>Login</h1>
       <form className="login-form flex column">
         <Input
           name="username"
