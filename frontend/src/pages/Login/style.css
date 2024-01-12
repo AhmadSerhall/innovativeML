@@ -6,10 +6,10 @@
     height: 100vh;
      /* background-image: url(../../assets/bg2.avif);  */
      /* background-color: #284c6d;  */
-     background-repeat:no-repeat;
+    /* background-repeat:no-repeat;
     background-position:top;
     background-size: contain;
-    object-fit: cover; 
+    object-fit: cover;  */
   }
   .login-title{
     margin-bottom: 2%;
@@ -29,7 +29,6 @@
   }
 
   .signup{
-    /* margin-top:20px; */
     color:#1261A9;
   }
   .signup:hover{
@@ -37,7 +36,6 @@
   }
   .button-container{
     gap:20px;
-    /* padding-bottom: 20px; */
   }
  /* .button-container .custom-button{
   width:40%;
