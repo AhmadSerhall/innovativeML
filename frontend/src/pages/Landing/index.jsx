@@ -5,7 +5,7 @@ import '../../styles/animate.css';
 import NavBar from '../../components/NavBar';
 import '../../styles/global.css';
 import Button from '../../components/Button';
-import heroImage from '../../assets/image6.webp';
+import heroImage from '../../assets/img9.png';
 import bannerImage from '../../assets/image2.webp';
 import mlMastery from '../../assets/image5.png';
 import me from '../../assets/me.jpeg';
