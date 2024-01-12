@@ -65,8 +65,8 @@ const SignUp = () => {
           onChange={handlePasswordChange}
           placeholder="Password"
         />
-        <Button className="center" text="Sign Up" onClick={handleSignUp} />
-        <h3>Already have an account? <Link to="/login" className='login'>Login</Link></h3>
+        <Button className="center" text="Sign Up" bgColor="#1261A9" onClick={handleSignUp} />
+        <h3 className='no-acc'>Already have an account? <Link to="/login" className='login'>Login</Link></h3>
       </form>
     </div>
   );

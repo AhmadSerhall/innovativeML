@@ -67,9 +67,12 @@
   
   .signup-form .signup-button:hover {
     background-color: #297fb8;
+  } 
+  h3 {
+    margin-top:3%;
   }
   .login{
-    margin-top:40px;
+    /* margin-top:2%; */
     color:#1261A9;
   }
   .login:hover{
