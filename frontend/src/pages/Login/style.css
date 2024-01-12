@@ -33,7 +33,7 @@
     color:#1261A9;
   }
   .signup:hover{
-    color:#4285f4;
+    color:#1c3aa9;
   }
   .button-container{
     gap:20px;
@@ -41,7 +41,7 @@
   }
 
 .google-signin-button {
-  background-color: #4285f4;
+  background-color: #1261A9;
   color: #fff;
   border: none;
   padding: 10px 20px;

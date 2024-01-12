@@ -47,7 +47,7 @@ const Login = () => {
           placeholder="Password"
         />
         <div className='button-container flex row'>
-        <Button text="Login" onClick={handleLogin} />
+        <Button text="Login" bgColor="#1261A9" onClick={handleLogin} />
         <GoogleLogin
           clientId="your-google-client-id"
           buttonText="Sign in with Google"
