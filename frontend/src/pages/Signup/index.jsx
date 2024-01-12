@@ -34,6 +34,7 @@ const SignUp = () => {
   return (
     <div className="signup-container">
       <TitleLogo />
+      <h1 className='center signup'>Sign Up</h1>
       <form className="signup-form">
       <Input
           name="firstname"

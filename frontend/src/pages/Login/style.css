@@ -4,12 +4,12 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    /* background-image: url(../../assets/image6.webp); */
-    /* background-color: #284c6d; */
-    /* background-repeat:no-repeat;
+     /* background-image: url(../../assets/bg2.avif);  */
+     /* background-color: #284c6d;  */
+     background-repeat:no-repeat;
     background-position:top;
     background-size: contain;
-    object-fit: cover; */
+    object-fit: cover; 
   }
   .login-title{
     margin-bottom: 2%;
