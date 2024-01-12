@@ -24,19 +24,10 @@
     
   }
   .login-form .custom-input {
-    width: 100%;
+    width:25vw;
     margin-bottom: 15px;
   }
-  
-  
-  /* .input{
-    color:blue;
-    width:100%;
-  } */
-  
-  /* .login-form .custom-input {
-    margin-bottom: 15px;
-  } */
+
   .signup{
     margin-top:20px;
     color:#1261A9;
