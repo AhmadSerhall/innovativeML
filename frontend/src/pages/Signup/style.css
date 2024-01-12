@@ -24,6 +24,9 @@
     z-index: 1;
     color: #fff;
   }
+  .signup-title{
+    margin-bottom: 2%;
+  }
   
   .signup-form {
     width: 45vw;
