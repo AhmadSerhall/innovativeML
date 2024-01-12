@@ -30,7 +30,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <TitleLogo />
-      <h1>Login</h1>
+      <h1 className='center login-title'>Login</h1>
       <form className="login-form flex column">
         <Input
           name="username"

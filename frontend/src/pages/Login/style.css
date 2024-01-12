@@ -11,9 +11,10 @@
     background-size: contain;
     object-fit: cover;
   }
-  
+  .login-title{
+    margin-bottom: 2%;
+  }
   .login-form {
-
     width: 30vw;
     padding: 20px;
     border: 1px solid black;
