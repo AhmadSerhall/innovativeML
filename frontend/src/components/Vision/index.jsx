@@ -5,10 +5,6 @@ import '@fortawesome/fontawesome-free/css/all.css';//font-awesome
 const Vision = () => {
   return (
     <div className='vision-container flex'>
-        <div className='values-text flex column center'>
-            <h2>Our Values</h2>
-            <p>My story is one of continous growth and evolution i started alone with big dreams determmined to create a  platform that transcended the ordinary</p>
-        </div>
         <div className="grid">
             <div className="card">
                 <h3><i class="fa-solid fa-star"></i>Trust</h3>
@@ -26,6 +22,10 @@ const Vision = () => {
                 <h3><i class="fa-solid fa-circle-check"></i>Our Commitment</h3>
                 <p>We are dedicated to providing you with the highest level of service, professionalism, and support.</p>
             </div>
+        </div>
+        <div className='values-text flex column center'>
+            <h2>Our Values</h2>
+            <p>My story is one of continous growth and evolution i started alone with big dreams determmined to create a  platform that transcended the ordinary</p>
         </div>
     </div>
   )
