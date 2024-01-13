@@ -28,10 +28,10 @@ const Contact = () => {
         <div className='contact-info flex column'>
           <Input name={"username"} value={"username"} placeholder={"Enter Your Username"} onChange={handleUsernameChange} />
           <Input name={"message"} value={"message"} placeholder={"Enter Your Message"} onChange={handleMessageChange} />
-          <Button text={"Send Message"} bgColor={"#1261A9"} onClick={SendMessage} />
+          {/* <Button text={"Send Message"} bgColor={"#1261A9"} onClick={SendMessage} /> */}
           </div>
           <div className='contact-img-container'>
-            
+
           </div>
       </div>
     </div>
