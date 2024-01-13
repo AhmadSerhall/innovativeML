@@ -11,6 +11,9 @@
     font-size: 4rem;
     padding-bottom: 1em;
 }
+.contact-info .custom-input{
+    /* width:60%; */
+}
 .contact-img-container{
     width:700px;
     margin-right:9%;
