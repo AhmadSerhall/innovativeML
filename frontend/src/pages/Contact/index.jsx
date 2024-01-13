@@ -27,13 +27,13 @@ const Contact = () => {
     <div>
       <NavBar/>
       <div className='contact-container  flex'>
-        <div className='contact-info flex column'>
+        <div className='contact-info flex column animated'>
           <h1 className='contact-title'>Contact Us</h1>
           <Input name={"username"}  placeholder={"Enter Your Username"} onChange={handleUsernameChange} />
           <Input className ="area"name={"message"}  placeholder={"Enter Your Message"} onChange={handleMessageChange} type="textarea"/>
           <Button text={"Send Message"} bgColor={"#1261A9"} onClick={SendMessage} />
           </div>
-          <div className='contact-img-container'>
+          <div className='contact-img-container animated'>
             <img src={contactimg} alt="contact img"/>
           </div>
       </div>
