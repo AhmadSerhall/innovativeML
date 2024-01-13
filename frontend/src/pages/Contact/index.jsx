@@ -12,6 +12,9 @@ const Contact = () => {
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value);
+  };
 
   return (
     <div>
