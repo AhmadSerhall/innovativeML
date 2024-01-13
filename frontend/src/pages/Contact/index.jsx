@@ -16,6 +16,10 @@ const Contact = () => {
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
+  
+  const SendMessage=()=>{
+    console.log("sending message")
+  }
 
   return (
     <div>
