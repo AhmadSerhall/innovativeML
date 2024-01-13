@@ -20,3 +20,35 @@
   height: 100%;
   border-radius: 15px;
 }
+/* Add animation classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.aboutus-text,
+.aboutus-containers,
+.aboutus-img-container {
+  animation: fadeInUp 1s ease-out;
+}
+
+.contact-img-container {
+  animation: slideInLeft 1s ease-out;
+}
