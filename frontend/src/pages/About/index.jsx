@@ -28,7 +28,7 @@ const About = () => {
         </div>
         
       </div>
-      <Vision/>
+      <Vision className="aboutus-vision"/>
       <Experience/>
       <Footer/>
     </div>

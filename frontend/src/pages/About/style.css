@@ -45,7 +45,8 @@
 
 .aboutus-text,
 .aboutus-containers,
-.aboutus-img-container {
+.aboutus-img-container 
+.aboutus-vision{
   animation: fadeInUp 1s ease-out;
 }
 

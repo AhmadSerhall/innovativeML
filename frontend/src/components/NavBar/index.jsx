@@ -51,9 +51,9 @@ const NavBar = () => {
         </div>
       )}
       <ul ref={navLinksRef} className={`nav-links ${showLinks ? 'show' : ''}`}>
-        <li><Link to="/">Home</Link></li>
+        <li><Link to="/landing">Home</Link></li>
         <li><Link to="/about">About us</Link></li>
-        <li><Link to="/faqs">FAQ's</Link></li>
+        <li><Link to="/contact">Contact us</Link></li>
       </ul>
     </div>
   );
