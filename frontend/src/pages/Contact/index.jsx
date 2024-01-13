@@ -32,7 +32,7 @@ const Contact = () => {
           <Button text={"Send Message"} bgColor={"#1261A9"} onClick={SendMessage} />
           </div>
           <div className='contact-img-container'>
-            
+            <img src={contactimg} alt="contact img"/>
           </div>
       </div>
     </div>
