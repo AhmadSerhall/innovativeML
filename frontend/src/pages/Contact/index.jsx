@@ -3,12 +3,14 @@ import './style.css'
 import '../../styles/global.css'
 import '../../components/NavBar'
 import NavBar from '../../components/NavBar'
+import Input from '../../components/Input'
 const Contact = () => {
   return (
     <div>
       <NavBar/>
       <div className='contact-container page flex'>
         <div className='contact-info flex column'></div>
+          
       </div>
     </div>
   )
