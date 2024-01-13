@@ -1,8 +1,10 @@
 .contact-container{
-margin:4% 4% 2% 4%;
 justify-content: space-between;
 align-items: center;
+gap:0;
 }
 .contact-info{
-
+justify-content: center;
+align-items: center;
+margin-left:6%;
 }
