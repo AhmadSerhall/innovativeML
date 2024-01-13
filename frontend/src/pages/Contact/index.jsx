@@ -4,6 +4,7 @@ import '../../styles/global.css'
 import '../../components/NavBar'
 import NavBar from '../../components/NavBar'
 import Input from '../../components/Input'
+import Button from '../../components/Button'
 const Contact = () => {
 
   const [username,setUsername]=useState('');
@@ -23,6 +24,7 @@ const Contact = () => {
         <div className='contact-info flex column'></div>
           <Input name={"username"} value={"username"} placeholder={"enter your username"} onChange={handleUsernameChange} />
           <Input name={"message"} value={"message"} placeholder={"enter your message"} onChange={handleMessageChange} />
+
       </div>
     </div>
   )
