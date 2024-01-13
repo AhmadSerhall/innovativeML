@@ -5,7 +5,7 @@ import '../../components/NavBar'
 import NavBar from '../../components/NavBar'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
-import {contactimg} from '../../assets/contact.avif'
+import contactimg from '../../assets/contact.avif'
 const Contact = () => {
 
   const [username,setUsername]=useState('');
