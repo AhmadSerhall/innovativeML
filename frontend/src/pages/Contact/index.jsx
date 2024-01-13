@@ -5,6 +5,9 @@ import '../../components/NavBar'
 import NavBar from '../../components/NavBar'
 import Input from '../../components/Input'
 const Contact = () => {
+
+  const [username,setUsername]=useState('');
+  
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
