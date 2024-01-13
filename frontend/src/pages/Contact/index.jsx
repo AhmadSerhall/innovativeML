@@ -7,6 +7,7 @@ import Input from '../../components/Input'
 import Button from '../../components/Button'
 import contactimg from '../../assets/contact2a.jpg'
 import Footer from '../../components/Footer'
+import '../../styles/animate.css'
 const Contact = () => {
 
   const [username,setUsername]=useState('');
@@ -27,13 +28,13 @@ const Contact = () => {
     <div>
       <NavBar/>
       <div className='contact-container  flex'>
-        <div className='contact-info flex column animated'>
+        <div className='contact-info flex column animate'>
           <h1 className='contact-title'>Contact Us</h1>
           <Input name={"username"}  placeholder={"Enter Your Username"} onChange={handleUsernameChange} />
           <Input className ="area"name={"message"}  placeholder={"Enter Your Message"} onChange={handleMessageChange} type="textarea"/>
           <Button text={"Send Message"} bgColor={"#1261A9"} onClick={SendMessage} />
           </div>
-          <div className='contact-img-container animated'>
+          <div className='contact-img-container animate'>
             <img src={contactimg} alt="contact img"/>
           </div>
       </div>

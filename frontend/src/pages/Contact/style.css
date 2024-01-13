@@ -33,3 +33,34 @@
 .contact-info .custom-button{
     margin-left:190px;
 }
+/* Add animation classes */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .contact-title,
+  .contact-info {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .contact-img-container {
+    animation: slideInLeft 1s ease-out;
+  }
