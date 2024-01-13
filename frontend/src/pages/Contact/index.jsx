@@ -26,7 +26,7 @@ const Contact = () => {
   return (
     <div>
       <NavBar/>
-      <div className='contact-container page flex'>
+      <div className='contact-container  flex'>
         <div className='contact-info flex column'>
           <h1 className='contact-title'>Contact Us</h1>
           <Input name={"username"}  placeholder={"Enter Your Username"} onChange={handleUsernameChange} />
@@ -37,6 +37,7 @@ const Contact = () => {
             <img src={contactimg} alt="contact img"/>
           </div>
       </div>
+      <Footer/>
     </div>
   )
 }

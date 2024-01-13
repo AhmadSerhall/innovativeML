@@ -1,6 +1,7 @@
 .contact-container{
     justify-content: space-between;
     align-items: center;
+    height:100vh;
 }
 .contact-info{
     justify-content: center;
