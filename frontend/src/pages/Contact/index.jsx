@@ -8,7 +8,7 @@ const Contact = () => {
     <div>
       <NavBar/>
       <div className='contact-container page flex'>
-        <div className='contact-info'></div>
+        <div className='contact-info flex column'></div>
       </div>
     </div>
   )
