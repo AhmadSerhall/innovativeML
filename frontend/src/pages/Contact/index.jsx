@@ -7,8 +7,8 @@ const Contact = () => {
   return (
     <div>
       <NavBar/>
-      <div className='contact-container page '>
-
+      <div className='contact-container page flex'>
+        <div className='contact-info'></div>
       </div>
     </div>
   )
