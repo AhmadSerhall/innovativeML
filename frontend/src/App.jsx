@@ -28,6 +28,7 @@ function App() {
           <Route className="about" path="/about" element={<About/>}/>
           <Route className="contact" path="/contact" element={<Contact/>}/>
           <Route className="vision" path="/vision" element={<Vision/>}/>
+          <Route className="contact" path="/contact" element={<Contact/>}/>
         </Routes>
       </BrowserRouter>
     </div>
