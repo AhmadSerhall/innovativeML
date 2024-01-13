@@ -22,6 +22,7 @@ const Contact = () => {
       <div className='contact-container page flex'>
         <div className='contact-info flex column'></div>
           <Input name={"username"} value={"username"} placeholder={"enter your username"} onChange={handleUsernameChange} />
+          <Input name={"message"} value={"message"} placeholder={"enter your message"} onChange={handleMessageChange} />
       </div>
     </div>
   )
