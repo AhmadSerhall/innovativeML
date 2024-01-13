@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
 import '../../styles/global.css'
-
+import '../../components/NavBar'
 const Contact = () => {
   return (
     <div>
