@@ -27,6 +27,7 @@ const Contact = () => {
       <NavBar/>
       <div className='contact-container page flex'>
         <div className='contact-info flex column'>
+          <h1>Contact Us</h1>
           <Input name={"username"} value={"username"} placeholder={"Enter Your Username"} onChange={handleUsernameChange} />
           <Input name={"message"} value={"message"} placeholder={"Enter Your Message"} onChange={handleMessageChange} />
           <Button text={"Send Message"} bgColor={"#1261A9"} onClick={SendMessage} />
