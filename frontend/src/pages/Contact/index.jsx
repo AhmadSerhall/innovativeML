@@ -24,7 +24,7 @@ const Contact = () => {
         <div className='contact-info flex column'></div>
           <Input name={"username"} value={"username"} placeholder={"Enter Your Username"} onChange={handleUsernameChange} />
           <Input name={"message"} value={"message"} placeholder={"Enter Your Message"} onChange={handleMessageChange} />
-          <Button text={"Send Message"} bgColor={"#1261A9"} />
+          <Button text={"Send Message"} bgColor={"#1261A9"} onClick={SendMessage} />
       </div>
     </div>
   )
