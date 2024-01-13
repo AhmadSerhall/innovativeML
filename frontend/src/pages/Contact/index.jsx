@@ -22,8 +22,8 @@ const Contact = () => {
       <NavBar/>
       <div className='contact-container page flex'>
         <div className='contact-info flex column'></div>
-          <Input name={"username"} value={"username"} placeholder={"enter your username"} onChange={handleUsernameChange} />
-          <Input name={"message"} value={"message"} placeholder={"enter your message"} onChange={handleMessageChange} />
+          <Input name={"username"} value={"username"} placeholder={"Enter Your Username"} onChange={handleUsernameChange} />
+          <Input name={"message"} value={"message"} placeholder={"Enter Your Message"} onChange={handleMessageChange} />
           <Button text={"Send Message"}/>
       </div>
     </div>
