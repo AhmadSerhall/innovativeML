@@ -7,7 +7,8 @@ import Input from '../../components/Input'
 const Contact = () => {
 
   const [username,setUsername]=useState('');
-  
+  const [message,setMessage]=useState('');
+
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
@@ -17,7 +18,7 @@ const Contact = () => {
       <NavBar/>
       <div className='contact-container page flex'>
         <div className='contact-info flex column'></div>
-          <Input name={"username"} value={"username"} placeholder={"enter your username"} />
+          <Input name={"username"} value={"username"} placeholder={"enter your username"} onChange={handleUsernameChange} />
       </div>
     </div>
   )
