@@ -10,7 +10,7 @@ const Puzzle = () => {
         const block=workspace.newBlock('text_print');
         block.initSvg()
         block.render()
-    })
+    },[])
 
     
   return (
