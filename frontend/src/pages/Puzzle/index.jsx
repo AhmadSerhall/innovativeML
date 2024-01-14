@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Blockly from 'blockly'
 const Puzzle = () => {
   return (
     <div>
