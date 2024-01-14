@@ -13,7 +13,7 @@ const Puzzle = () => {
 
     
   return (
-    <div>
+    <div id="blocklyid" >
         
     </div>
   )
