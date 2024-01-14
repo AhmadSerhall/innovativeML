@@ -16,7 +16,7 @@ const Puzzle = () => {
   return (
     <div id="blocklyDiv"style={{ height: '480px', width: '600px' }}>
         <xml> {/* used extensible markup language --sets of codes,tags,  */}
-        <block type="text"></block>
+        <block type="text" classname="text"></block>
         </xml>
         
     </div>
