@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Blockly from 'blockly'
 import 'blockly/blocks'
+import './style.css'
 const Puzzle = () => {
     useEffect(()=>{
         const workspace=Blockly.inject('blocklyDiv',{
