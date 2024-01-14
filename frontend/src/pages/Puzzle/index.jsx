@@ -13,7 +13,7 @@ const Puzzle = () => {
 
     
   return (
-    <div id="blocklyid" >
+    <div id="blocklyid "style={{ height: '480px', width: '600px' }}>
         
     </div>
   )
