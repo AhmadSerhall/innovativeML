@@ -6,7 +6,6 @@ const Puzzle = () => {
         const workspace=Blockly.inject('blocklyDiv',{
             toolbox:document.getElementById('toolbox')
         })
-
         const block=workspace.newBlock('text_print');
         block.initSvg()
         block.render()
@@ -15,7 +14,7 @@ const Puzzle = () => {
     
   return (
     <div>
-        <h1>Puzzle page</h1>
+        
     </div>
   )
 }
