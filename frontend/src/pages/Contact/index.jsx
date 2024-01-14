@@ -7,7 +7,7 @@ import Input from '../../components/Input'
 import Button from '../../components/Button'
 import contactimg from '../../assets/contact2a.jpg'
 import Footer from '../../components/Footer'
-import '../../styles/animate.css'
+// import '../../styles/animate.css'
 const Contact = () => {
 
   const [username,setUsername]=useState('');
