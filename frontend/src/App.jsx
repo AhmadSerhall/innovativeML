@@ -11,6 +11,7 @@ import './styles/global.css'
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Vision from './components/Vision';
+import Puzzle from './pages/Puzzle';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route className="contact" path="/contact" element={<Contact/>}/>
           <Route className="vision" path="/vision" element={<Vision/>}/>
           <Route className="contact" path="/contact" element={<Contact/>}/>
+          <Route className="puzzle" path="/puzzle" element={<Puzzle/>}/>
         </Routes>
       </BrowserRouter>
     </div>
