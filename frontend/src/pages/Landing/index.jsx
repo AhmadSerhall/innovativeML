@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-scroll';
+import {Link } from 'react-router-dom';
+// import { Link } from 'react-scroll';
 import ScrollAnimation from 'react-animate-on-scroll';
 import '../../styles/animate.css';
 import NavBar from '../../components/NavBar';
@@ -26,12 +27,14 @@ const Landing = () => {
             <h1>Machine Learning</h1>
           </ScrollAnimation>
           <div className='button-container flex row'>
-            <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
-              <Button text='Train Machine' textColor='white' onClick={() => console.log('sup')} />
+            <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>   
+              <Button text='Train Machine' textColor='white' onClick={() => console.log('sup')} />      
             </ScrollAnimation>
-            <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
-              <Button text='Learn by Playing' textColor='black' bgColor='#FFD700' />
+            <Link to="/puzzle">
+            <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>         
+              <Button text='Learn by Playing' textColor='black' bgColor='#FFD700' onClick={()=>console.log("button clicked")} /> 
             </ScrollAnimation>
+            </Link>
           </div>
         </div>
         <div className='img-container'>
