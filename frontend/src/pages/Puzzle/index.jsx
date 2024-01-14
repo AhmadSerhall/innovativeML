@@ -15,7 +15,7 @@ const Puzzle = () => {
   return (
     <div id="blocklyid "style={{ height: '480px', width: '600px' }}>
         <xml> {/* used extensible markup language --sets of codes,tags,  */}
-            
+        <block type="text"></block>
         </xml>
         
     </div>
