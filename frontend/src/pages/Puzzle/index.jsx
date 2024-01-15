@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Blockly from 'blockly';
 import 'blockly/blocks';
-// import './style.css';
+import './style.css';
 
 const Puzzle = () => {
   useEffect(() => {
