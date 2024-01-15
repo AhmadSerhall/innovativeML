@@ -5,7 +5,7 @@ import './style.css';
 
 const Puzzle = () => {
   useEffect(() => {
-    // Load the toolbox once when the component mounts
+
     const toolbox = document.getElementById('toolbox');
     const workspace = Blockly.inject('blocklyDiv', {
       toolbox,
