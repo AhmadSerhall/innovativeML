@@ -5,16 +5,29 @@ import './style.css';
 
 const Puzzle = () => {
   useEffect(() => {
-
+    console.log('Initializing Blockly...');
     const toolbox = document.getElementById('toolbox');
+    if (!toolbox) {
+      console.error('Toolbox not found!');
+      return;
+    }
+  
     const workspace = Blockly.inject('blocklyDiv', {
       toolbox,
     });
-
+  
+    if (!workspace) {
+      console.error('Blockly workspace not initialized!');
+      return;
+    }
+  
+    console.log('Blockly initialized:', workspace);
+  
     const block = workspace.newBlock('text_print');
     block.initSvg();
     block.render();
   }, []);
+  
 
   return (
     <div>
