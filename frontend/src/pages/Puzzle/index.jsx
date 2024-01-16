@@ -28,38 +28,22 @@ Blockly.Blocks['create_text_with'] = {
     this.setHelpUrl('');
   },
 };
-// Blockly.Blocks['to_item_append_text']={
-//   init:function(){
-//     this.appendDummyInput()
-//       .appendField('to item append text');
-//     this.appendValueInput('TEXT')
-//       .setCheck('String')
-//       .appendField('text')
-//     this.appendValueInput('ITEM')
-//       .setCheck(null)
-//       .appendField('to item');
-//     this.setInputsInline(true)
-//     this.setPreviousStatement(true,null)
-//     this.setNextStatement(true,null)
-//     this.setColour(230)
-//     this.setTooltip('Append text to item')
-//     this.setHelpUrl('');
-//   },
-// };
-Blockly.Blocks['to_item_append_text']={
-  init:function(){
+
+Blockly.Blocks['to_item_append_text'] = {
+  init: function () {
     this.appendDummyInput()
       .appendField('to');
     this.appendValueInput('ITEM')
-      .setCheck(null)
-      .appendField('append');
+      .setCheck(['String', 'Variable']) // Allowed here either String or Variable
     this.appendValueInput('TEXT')
       .setCheck('String')
-    this.setColour(160)
-    this.setTooltip('Append text to item')
+      .appendField('append');
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(160);
+    this.setTooltip('Append text to item');
     this.setHelpUrl('');
-    
-
   },
 };
 
