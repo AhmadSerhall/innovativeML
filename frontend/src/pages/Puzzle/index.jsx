@@ -28,6 +28,24 @@ Blockly.Blocks['create_text_with'] = {
     this.setHelpUrl('');
   },
 };
+Blockly.Blocks['to_item_append_text']={
+  init:function(){
+    this.appendDummyInput()
+      .appendField('to item append text');
+    this.appendValueInput('TEXT')
+      .setCheck('String')
+      .appendField('text')
+    this.appendValueInput('ITEM')
+      .setCheck(null)
+      .appendField('to item');
+    this.setInputsInline(true)
+    this.setPreviousStatement(true,null)
+    this.setNextStatement(true,null)
+    this.setColour(230)
+    this.setTooltip('Append text to item')
+    this.setHelpUrl('');
+  },
+};
 
 const Puzzle = () => {
   useEffect(() => {
@@ -65,6 +83,7 @@ const Puzzle = () => {
           <block type='text'></block>
           {/* <block type='type_integer'></block>  */}
           <block type='create_text_with'></block>
+          <block type='to_item_append_text'></block>
         </category>
       </xml>
 
