@@ -46,6 +46,17 @@ Blockly.Blocks['to_item_append_text'] = {
     this.setHelpUrl('');
   },
 };
+Blockly.Blocks['text_is_empty']={
+init:function(){
+  this.appendValueInput('text')
+    .setCheck('String')
+    .appendField('is empty');
+  this.setOutput(true,'Boolean');
+  this.setColour(160);
+  this.setTooltip('Check if the there is a text or empty Strign')
+  this.setHelpUrl('')
+}
+}
 
 const Puzzle = () => {
   useEffect(() => {
@@ -84,6 +95,7 @@ const Puzzle = () => {
           {/* <block type='type_integer'></block>  */}
           <block type='create_text_with'></block>
           <block type='to_item_append_text'></block>
+          <block type='text_is_empty'></block>
         </category>
       </xml>
 
