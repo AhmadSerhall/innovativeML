@@ -36,7 +36,7 @@ const Puzzle = () => {
         <block type='text'></block>
       </xml>
 
-      <div id='blocklyDiv' className="playground"style={{ height: '480px', width: '600px' }}></div>
+      <div id='blocklyDiv' className="playground"style={{ height: '600px', width: '900px' }}></div>
     </div>
   );
 };
