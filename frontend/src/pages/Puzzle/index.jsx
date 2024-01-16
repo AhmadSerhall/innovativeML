@@ -36,7 +36,7 @@ const Puzzle = () => {
         <category name="Text" colour="#2196F3">
           <block type="text_print"></block>
           <block type='text'></block>
-
+          <block type="type_integer"></block>
         </category>
       </xml>
 
