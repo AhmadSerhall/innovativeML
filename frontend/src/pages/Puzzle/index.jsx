@@ -59,26 +59,23 @@ Blockly.Blocks['text_is_empty']={
   }
 
   //Variable section where the blocks that are related to the variable will be initialized
-  Blockly.Blocks['create_variable']={
-    init:function(){
+  Blockly.Blocks['create_variable'] = {
+    init: function () {
       this.appendDummyInput()
-        .appendField('create variable');
-      this.setOutput(true,'Variable')
-      this.setColour(330)
+        .appendField('create variable')
+        .appendField(new Blockly.FieldTextInput(''), 'VAR_NAME');
+      this.setOutput(true, 'Variable');
+      this.setColour(330);
       this.setTooltip('Create a new Variable');
       this.setHelpUrl('');
       this.setDeletable(false);
     },
   };
+  
   Blockly.JavaScript['create_variable'] = function (block) {
-    const variableName = prompt('Enter variable name:');
-    
-    // Add the variable to the toolbox
-    const workspace = Blockly.getMainWorkspace();
-    const variable = workspace.createVariable(variableName);
-    return `${variable}`;
+    const varName = block.getFieldValue('VAR_NAME');
+    return [varName, Blockly.JavaScript.ORDER_ATOMIC];
   };
-
 const Puzzle = () => {
   useEffect(() => {
     const toolbox = document.getElementById('toolbox');
