@@ -69,6 +69,31 @@ Blockly.Blocks['text_is_empty']={
       this.setTooltip('Create a new Variable');
       this.setHelpUrl('');
       this.setDeletable(false);
+  
+      // Set the onchange event to a separate function
+      this.setOnChange(this.handleVariableChange.bind(this));
+    },
+  
+    handleVariableChange: function (changeEvent) {
+      if (changeEvent.type === Blockly.Events.BLOCK_CHANGE && changeEvent.element === 'field' &&
+          changeEvent.name === 'VAR_NAME') {
+        // Trigger a prompt to ask for the variable name
+        const newVarName = prompt('Enter variable name:');
+        if (newVarName !== null) { // Check if the user pressed Cancel
+          // Create a new block of type text with the entered variable name
+          const textBlock = this.workspace.newBlock('text');
+          textBlock.setFieldValue(newVarName, 'TEXT');
+          // Add the new block below the create variable block
+          const nextBlock = this.getNextBlock();
+          if (nextBlock) {
+            this.workspace.connection.disconnect(nextBlock.previousConnection);
+            textBlock.previousConnection.connect(this.nextConnection);
+            nextBlock.previousConnection.connect(textBlock.nextConnection);
+          } else {
+            this.workspace.addTopBlock(textBlock);
+          }
+        }
+      }
     },
   };
   
@@ -76,6 +101,7 @@ Blockly.Blocks['text_is_empty']={
     const varName = block.getFieldValue('VAR_NAME');
     return [varName, Blockly.JavaScript.ORDER_ATOMIC];
   };
+  
 const Puzzle = () => {
   useEffect(() => {
     const toolbox = document.getElementById('toolbox');
