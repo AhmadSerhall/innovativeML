@@ -4,6 +4,7 @@ import 'blockly/blocks';
 import './style.css';
 
 // Register custom block types
+const initializeBlockly=()=>{
 Blockly.Blocks['type_integer'] = {
   init: function () {
     this.appendDummyInput().appendField(new Blockly.FieldNumber(0), 'NAME');
@@ -101,6 +102,7 @@ Blockly.Blocks['text_is_empty']={
     const varName = block.getFieldValue('VAR_NAME');
     return [varName, Blockly.JavaScript.ORDER_ATOMIC];
   };
+}
   
 const Puzzle = () => {
   useEffect(() => {
@@ -109,6 +111,7 @@ const Puzzle = () => {
       console.error('Toolbox not found!');
       return;
     }
+    Blockly.ready(initializeBlockly);
 
     const workspace = Blockly.inject('blocklyDiv', {
       toolbox,
