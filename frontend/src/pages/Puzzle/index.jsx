@@ -5,7 +5,6 @@ import './style.css';
 
 const Puzzle = () => {
   useEffect(() => {
-    // Load the toolbox once when the component mounts
     const toolbox = document.getElementById('toolbox');
     if (!toolbox) {
       console.error('Toolbox not found!');
@@ -32,12 +31,12 @@ const Puzzle = () => {
   }, []);
 
   return (
-    <div>
+    <div className='puzzle-container'>
       <xml id='toolbox' style={{ display: 'none' }}>
         <block type='text'></block>
       </xml>
 
-      <div id='blocklyDiv' style={{ height: '480px', width: '600px' }}></div>
+      <div id='blocklyDiv' className="playground"style={{ height: '480px', width: '600px' }}></div>
     </div>
   );
 };
