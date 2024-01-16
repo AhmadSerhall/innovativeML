@@ -13,6 +13,21 @@ Blockly.Blocks['type_integer'] = {
     this.setHelpUrl('');
   },
 };
+Blockly.Blocks['create_text_with'] = {
+  init: function () {
+    this.appendValueInput('ITEM1')
+      .setCheck(null)
+      .appendField('create text with');
+    this.appendValueInput('ITEM2')
+      .setCheck(null)
+      .appendField('and');
+    this.setInputsInline(true);
+    this.setOutput(true, 'String');
+    this.setColour(160);
+    this.setTooltip('Concatenate text with items');
+    this.setHelpUrl('');
+  },
+};
 
 const Puzzle = () => {
   useEffect(() => {
@@ -49,6 +64,7 @@ const Puzzle = () => {
           <block type="text_print"></block>
           <block type='text'></block>
           {/* <block type='type_integer'></block>  */}
+          <block type='create_text_with'></block>
         </category>
       </xml>
 
