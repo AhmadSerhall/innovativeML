@@ -33,10 +33,13 @@ const Puzzle = () => {
   return (
     <div className='puzzle-container'>
       <xml id='toolbox' style={{ display: 'none' }}>
-        <block type='text'></block>
+        <category name="Text" colour="#2196F3">
+          <block type="text_print"></block>
+          
+        </category>
       </xml>
 
-      <div id='blocklyDiv' className="playground"style={{ height: '600px', width: '900px' }}></div>
+      <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>
     </div>
   );
 };
