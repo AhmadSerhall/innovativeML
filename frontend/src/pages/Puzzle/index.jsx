@@ -35,7 +35,8 @@ const Puzzle = () => {
       <xml id='toolbox' style={{ display: 'none' }}>
         <category name="Text" colour="#2196F3">
           <block type="text_print"></block>
-          
+          <block type='text'></block>
+
         </category>
       </xml>
 
