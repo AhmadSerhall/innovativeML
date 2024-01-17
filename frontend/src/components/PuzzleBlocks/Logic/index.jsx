@@ -21,18 +21,18 @@ Blockly.Blocks['do_if'] = {
 Blockly.Blocks['math_operations'] = {
     init: function () {
         this.appendValueInput("LEFT")
-            .setCheck("Number")
-            .appendField("");
+            .setCheck("Number");
         this.appendDummyInput()
             .appendField(new Blockly.FieldDropdown([
-                ["+", "ADD"],
-                ["-", "MINUS"],
-                ["*", "MULTIPLY"],
-                ["/", "DIVIDE"]
+                ["=", "EQUAL"],
+                ["≠", "DIFFERENT"],
+                ["<", "SMALLER"],
+                ["≤", "SMALLER_OR_EQUAL"],
+                [">", "GREATER"],
+                ["≥", "GREATER_OR_EQUAL"],
             ]), "OPERATOR");
         this.appendValueInput("RIGHT")
-            .setCheck("Number")
-            .appendField("");
+            .setCheck("Number");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour("#FF9933"); // Orange color for math operations
@@ -40,6 +40,7 @@ Blockly.Blocks['math_operations'] = {
         this.setHelpUrl("");
     }
 };
+
 Blockly.Blocks['logic_not'] = {
     init: function () {
         this.appendDummyInput()
