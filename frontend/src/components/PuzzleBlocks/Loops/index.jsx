@@ -67,6 +67,22 @@ Blockly.Blocks['repeat_times_do'] = {
       this.setHelpUrl("");
     }
   };
+  Blockly.Blocks['for_each_item_in_list'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("for each item in")
+        .appendField(new Blockly.FieldVariable("list"), "LIST");
+      this.appendStatementInput("DO")
+        .setCheck(null)
+        .appendField("do");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(120);
+      this.setTooltip("For each item in a list, do the specified action");
+      this.setHelpUrl("");
+    }
+  };
+  
   
   
 const Loops = () => {
