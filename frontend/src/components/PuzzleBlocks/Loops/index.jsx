@@ -42,6 +42,32 @@ Blockly.Blocks['repeat_times_do'] = {
       this.setHelpUrl('');
     },
   };
+  Blockly.Blocks['count_with'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField('count with');
+      this.appendValueInput('VAR')
+        .setCheck('Variable')
+        .appendField('from');
+      this.appendValueInput('FROM')
+        .setCheck('Number')
+        .appendField('to');
+      this.appendValueInput('TO')
+        .setCheck('Number')
+        .appendField('by');
+      this.appendValueInput('BY')
+        .setCheck('Number');
+      this.appendStatementInput('DO')
+        .setCheck(null)
+        .appendField('do');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(120);
+      this.setTooltip('Count with a variable from one number to another by a specified increment');
+      this.setHelpUrl('');
+    },
+  };
+  
 const Loops = () => {
     useEffect(() => {
         const block = new Blockly.Block('repeat_times_do');
