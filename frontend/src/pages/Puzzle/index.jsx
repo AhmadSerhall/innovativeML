@@ -3,6 +3,7 @@ import Blockly from 'blockly';
 import 'blockly/blocks';
 import './style.css';
 import Logic from '../../components/PuzzleBlocks/Logic';
+import Loops from '../../components/PuzzleBlocks/Loops';
 
 // Register custom block types
 Blockly.Blocks['type_integer'] = {
