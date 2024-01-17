@@ -18,7 +18,11 @@ Blockly.Blocks['repeat_times_do'] = {
     },
   };
 const Loops = () => {
-    
+    useEffect(() => {
+        const block = new Blockly.Block('repeat_times_do');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
  
