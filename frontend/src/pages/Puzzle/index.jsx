@@ -181,9 +181,8 @@ const Puzzle = () => {
           <block type="true_false"></block>
           <block type="null_block"></block>
           <block type="conditional_test_if_else"></block>
-          
-
         </category>
+        <category name="loops" colour="#00FF00"></category>
       </xml>
 
       <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>
