@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react';
 import Blockly from 'blockly';
 import 'blockly/blocks';
 import './style.css';
+import Logic from '../../components/PuzzleBlocks/Logic';
 
 // Register custom block types
 Blockly.Blocks['type_integer'] = {
@@ -173,7 +174,7 @@ const Puzzle = () => {
           </block>
         </category>
         <category name="logic" colour="222342">
-          
+          <block type="do_if"></block>
         </category>
       </xml>
 
