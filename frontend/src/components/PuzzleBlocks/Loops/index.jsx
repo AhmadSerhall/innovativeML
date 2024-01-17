@@ -1,7 +1,7 @@
 import React from 'react'
 import Blockly from 'blockly';
 import { useEffect } from 'react';
-
+const {FieldVariableButton} = Blockly;
 
 Blockly.Blocks['repeat_times_do'] = {
     init: function () {
@@ -45,28 +45,29 @@ Blockly.Blocks['repeat_times_do'] = {
   Blockly.Blocks['count_with'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField('count with');
-      this.appendValueInput('VAR')
-        .setCheck('Variable')
-        .appendField('from');
-      this.appendValueInput('FROM')
-        .setCheck('Number')
-        .appendField('to');
-      this.appendValueInput('TO')
-        .setCheck('Number')
-        .appendField('by');
-      this.appendValueInput('BY')
-        .setCheck('Number');
-      this.appendStatementInput('DO')
+        .appendField("count with")
+        .appendField(new Blockly.FieldVariable("count"), "VAR");
+      this.appendValueInput("FROM")
+        .setCheck("Number")
+        .appendField("from");
+      this.appendValueInput("TO")
+        .setCheck("Number")
+        .appendField("to");
+      this.appendValueInput("BY")
+        .setCheck("Number")
+        .appendField("by");
+      this.appendStatementInput("DO")
         .setCheck(null)
-        .appendField('do');
+        .appendField("do");
+      this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-      this.setTooltip('Count with a variable from one number to another by a specified increment');
-      this.setHelpUrl('');
-    },
+      this.setTooltip("Count with a variable from one number to another by a specified increment");
+      this.setHelpUrl("");
+    }
   };
+  
   
 const Loops = () => {
     useEffect(() => {
@@ -80,10 +81,17 @@ const Loops = () => {
         block.initSvg();
         block.render();
     }, []);
+    useEffect(() => {
+        const block = new Blockly.Block('count_with');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
         <div id="repeat_times_do" style={{ display: 'none' }}></div>
         <div id="repeat_while_until_do" style={{ display: 'none' }}></div>
+        <div id="count_with" style={{ display: 'none' }}></div>
+
     </div>
   )
 }

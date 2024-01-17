@@ -186,6 +186,8 @@ const Puzzle = () => {
         <category name="loops" colour="#00FF00">
         <block type="repeat_times_do"></block>
         <block type="repeat_while_until_do"></block>
+        <block type="count_with"></block>
+
         </category>
       </xml>
 
