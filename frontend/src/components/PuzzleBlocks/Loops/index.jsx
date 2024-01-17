@@ -82,6 +82,21 @@ Blockly.Blocks['repeat_times_do'] = {
       this.setHelpUrl("");
     }
   };
+  Blockly.Blocks['loop_control'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+          ["break out", "BREAK"],
+          ["continue with next iteration", "CONTINUE"]
+        ]), "CONTROL");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(120);
+      this.setTooltip("Control the flow of the loop: break out or continue with the next iteration");
+      this.setHelpUrl("");
+    }
+  };
+  
   
   
   
