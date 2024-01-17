@@ -18,37 +18,29 @@ Blockly.Blocks['do_if'] = {
        this.setHelpUrl("");
     }
 };
-Blockly.Blocks['math_operations']={
-    "kind": "block",
-    "type": "logic_compare",
-    "message0": "%1 %2 %3",
-    "args0": [
-    {
-        "type": "input_value",
-        "name": "A",
-        "check": "Number"
-    },
-    {
-        "type": "field_dropdown",
-        "name": "OP",
-        "options": [
-            [">", "GT"],
-            ["=", "EQ"],
-            ["<", "LT"],
-            ["<=", "LTE"],
-            [">=", "GTE"]
-    ]
-    },
-    {
-        "type": "input_value",
-        "name": "B",
-        "check": "Number"
+Blockly.Blocks['math_operations'] = {
+    init: function () {
+        this.appendValueInput("LEFT")
+            .setCheck("Number")
+            .appendField("");
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([
+                ["+", "ADD"],
+                ["-", "MINUS"],
+                ["*", "MULTIPLY"],
+                ["/", "DIVIDE"]
+            ]), "OPERATOR");
+        this.appendValueInput("RIGHT")
+            .setCheck("Number")
+            .appendField("");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#FF9933"); // Orange color for math operations
+        this.setTooltip("Perform a math operation");
+        this.setHelpUrl("");
     }
-],
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": 210
-}
+};
+
 Blockly.Blocks['logic_connector'] = {
     init: function () {
         this.appendValueInput("LEFT")
