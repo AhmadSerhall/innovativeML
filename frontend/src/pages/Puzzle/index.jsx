@@ -159,6 +159,7 @@ const Puzzle = () => {
           <block type='to_item_append_text'></block>
           <block type='text_is_empty'></block>
         </category>
+        {/* review the variable category after */}
         <category name="Variable" colour="#218762">
         {/*<block type="create_variable"></block>*/}
         <block type="variables_get">
