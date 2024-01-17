@@ -183,7 +183,10 @@ const Puzzle = () => {
           <block type="null_block"></block>
           <block type="conditional_test_if_else"></block>
         </category>
-        <category name="loops" colour="#00FF00"></category>
+        <category name="loops" colour="#00FF00">
+        <block type="repeat_times_do"></block>
+        
+        </category>
       </xml>
 
       <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>

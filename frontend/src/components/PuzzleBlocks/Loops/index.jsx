@@ -25,7 +25,7 @@ const Loops = () => {
       }, []);
   return (
     <div>
- 
+        <div id="repeat_times_do" style={{ display: 'none' }}></div>
     </div>
   )
 }
