@@ -68,7 +68,7 @@ Blockly.Blocks['text_is_empty']={
       this.setColour(330);
       this.setTooltip('Create a new Variable');
       this.setHelpUrl('');
-      this.setDeletable(false);
+      // this.setDeletable(false);
     },
   };
   // Blockly.JavaScript['create_variable'] = function (block) {
