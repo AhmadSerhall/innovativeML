@@ -53,7 +53,6 @@ Blockly.Blocks['logic_connector'] = {
     init: function () {
         this.appendValueInput("LEFT")
             .setCheck(null)
-            .appendField("if");
         this.appendDummyInput()
             .appendField(new Blockly.FieldDropdown([["and", "AND"], ["or", "OR"]]), "OPERATOR");
         this.appendValueInput("RIGHT")
