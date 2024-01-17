@@ -102,11 +102,17 @@ const Loops = () => {
         block.initSvg();
         block.render();
       }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('for_each_item_in_list');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
         <div id="repeat_times_do" style={{ display: 'none' }}></div>
         <div id="repeat_while_until_do" style={{ display: 'none' }}></div>
         <div id="count_with" style={{ display: 'none' }}></div>
+        <div id="for_each_item_in_list" style={{ display: 'none' }}></div>
 
     </div>
   )
