@@ -172,6 +172,9 @@ const Puzzle = () => {
             <field name="TEXT" variabletype="">{variableName}</field>
           </block>
         </category>
+        <category name="logic" colour="222342">
+          
+        </category>
       </xml>
 
       <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>
