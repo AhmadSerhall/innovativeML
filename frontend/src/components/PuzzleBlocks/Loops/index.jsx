@@ -122,6 +122,11 @@ const Loops = () => {
         block.initSvg();
         block.render();
       }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('loop_control');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
         <div id="repeat_times_do" style={{ display: 'none' }}></div>
