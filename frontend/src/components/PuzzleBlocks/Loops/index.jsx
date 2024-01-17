@@ -133,6 +133,7 @@ const Loops = () => {
         <div id="repeat_while_until_do" style={{ display: 'none' }}></div>
         <div id="count_with" style={{ display: 'none' }}></div>
         <div id="for_each_item_in_list" style={{ display: 'none' }}></div>
+        <div id="loop_control" style={{ display: 'none' }}></div>
 
     </div>
   )
