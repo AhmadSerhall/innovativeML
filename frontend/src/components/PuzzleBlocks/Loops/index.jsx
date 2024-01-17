@@ -4,9 +4,12 @@ import { useEffect } from 'react';
 
 Blockly.Blocks['repeat_times_do'] = {
     init: function () {
-      this.appendValueInput('TIMES')
-        .setCheck('Number')
+      this.appendDummyInput()
         .appendField('repeat');
+      this.appendValueInput('TIMES')
+        .setCheck('Number');
+      this.appendDummyInput()
+        .appendField('times');
       this.appendStatementInput('DO')
         .setCheck(null)
         .appendField('do');
