@@ -49,6 +49,12 @@ const Loops = () => {
         block.initSvg();
         block.render();
       }, []);
+
+    useEffect(() => {
+    const block = new Blockly.Block('repeat_while_until_do');
+        block.initSvg();
+        block.render();
+    }, []);
   return (
     <div>
         <div id="repeat_times_do" style={{ display: 'none' }}></div>
