@@ -87,6 +87,11 @@ const Logic = () => {
     block.initSvg();
     block.render();
   }, []);
+  useEffect(() => {
+    const block = new Blockly.Block('logic_not');
+    block.initSvg();
+    block.render();
+  }, []);
 
 
   return (
