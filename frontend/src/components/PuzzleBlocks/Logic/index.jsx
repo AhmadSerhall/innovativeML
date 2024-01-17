@@ -141,6 +141,8 @@ const Logic = () => {
     <div id="logic_connector" style={{ display: 'none' }}></div>
     <div id="logic_not" style={{ display: 'none' }}></div>
     <div id="true_false" style={{ display: 'none' }}></div>
+    <div id="null_block" style={{ display: 'none' }}></div>
+
 
     </div>
     
