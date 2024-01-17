@@ -18,6 +18,37 @@ Blockly.Blocks['do_if'] = {
        this.setHelpUrl("");
     }
 };
+Blockly.Blocks['math_operations']={
+    "kind": "block",
+ "type": "logic_compare",
+ "message0": "%1 %2 %3",
+ "args0": [
+    {
+      "type": "input_value",
+      "name": "A",
+      "check": "Number"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "OP",
+      "options": [
+        [">", "GT"],
+        ["=", "EQ"],
+        ["<", "LT"],
+        ["<=", "LTE"],
+        [">=", "GTE"]
+      ]
+    },
+    {
+      "type": "input_value",
+      "name": "B",
+      "check": "Number"
+    }
+ ],
+ "previousStatement": null,
+ "nextStatement": null,
+ "colour": 210
+}
 
 const Logic = () => {
   useEffect(() => {
@@ -25,11 +56,25 @@ const Logic = () => {
     block.initSvg();
     block.render();
   }, []);
+  useEffect(() => {
+    const block = new Blockly.Block('math_operations');
+    block.initSvg();
+    block.render();
+  }, []);
+
 
   return (
+    <div>
     <div id="doIfBlock" style={{ display: 'none' }}>
       {/* Inject the block into the page */}
     </div>
+    <div id="math_operations" style={{ display: 'none' }}>
+      {/* Inject the block into the page */}
+    </div>
+    
+    </div>
+    
+    
   );
 };
 

@@ -173,8 +173,9 @@ const Puzzle = () => {
             <field name="TEXT" variabletype="">{variableName}</field>
           </block>
         </category>
-        <category name="logic" colour="222342">
+        <category name="logic" colour="#222342">
           <block type="do_if"></block>
+          <block type="math_operations"></block>
         </category>
       </xml>
 
