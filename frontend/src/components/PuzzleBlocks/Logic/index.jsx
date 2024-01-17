@@ -94,6 +94,23 @@ Blockly.Blocks['null_block'] = {
         this.setHelpUrl("");
     }
 };
+Blockly.Blocks['conditional_test_if_else'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("test");
+        this.appendStatementInput("IF_TRUE")
+            .setCheck(null)
+            .appendField("if true");
+        this.appendStatementInput("IF_FALSE")
+            .setCheck(null)
+            .appendField("if false");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#9966FF"); 
+        this.setTooltip("Conditional block with test, if true, and if false branches");
+        this.setHelpUrl("");
+    }
+};
 
 
 
