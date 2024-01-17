@@ -20,34 +20,34 @@ Blockly.Blocks['do_if'] = {
 };
 Blockly.Blocks['math_operations']={
     "kind": "block",
- "type": "logic_compare",
- "message0": "%1 %2 %3",
- "args0": [
+    "type": "logic_compare",
+    "message0": "%1 %2 %3",
+    "args0": [
     {
-      "type": "input_value",
-      "name": "A",
-      "check": "Number"
+        "type": "input_value",
+        "name": "A",
+        "check": "Number"
     },
     {
-      "type": "field_dropdown",
-      "name": "OP",
-      "options": [
-        [">", "GT"],
-        ["=", "EQ"],
-        ["<", "LT"],
-        ["<=", "LTE"],
-        [">=", "GTE"]
-      ]
+        "type": "field_dropdown",
+        "name": "OP",
+        "options": [
+            [">", "GT"],
+            ["=", "EQ"],
+            ["<", "LT"],
+            ["<=", "LTE"],
+            [">=", "GTE"]
+    ]
     },
     {
-      "type": "input_value",
-      "name": "B",
-      "check": "Number"
+        "type": "input_value",
+        "name": "B",
+        "check": "Number"
     }
- ],
- "previousStatement": null,
- "nextStatement": null,
- "colour": 210
+],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 210
 }
 
 const Logic = () => {
