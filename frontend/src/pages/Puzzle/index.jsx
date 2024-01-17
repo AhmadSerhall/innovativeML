@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import Blockly from 'blockly';
 import 'blockly/blocks';
 import './style.css';
@@ -57,26 +57,70 @@ Blockly.Blocks['text_is_empty']={
     this.setHelpUrl('')
   }
   }
+  Blockly.Blocks['create_variable_button'] = {
+    init: function() {
+      this.jsonInit({
+        "message0": "Create variable",
+        "category": "Variables",
+        "colour": "#F4F4F4",
+        "tooltip": "Create a new variable",
+        "events": {
+          "click": function(event) {
+            if (event.blockId === 'create_variable_button') {
+               // Show an alert to prompt the user to name a variable
+               alert('Please name a variable');
+            }
+           }
+        }
+      });
+    }
+  };
+  //trying to Update the variable block
+  const CreateVariableBlock = (props) => {
+    const { variableName, setVariableName } = props;
+   
+    const handleChange = (e) => {
+       setVariableName(e.target.value);
+    };
+   
+    const handleClick = () => {
+       alert('Please enter a variable name.');
+    };
+   
+    return (
+       <div>
+         <input
+           type="text"
+           value={variableName}
+           onChange={handleChange}
+           placeholder="Enter variable name"
+         />
+         <button onClick={handleClick}>Create Variable</button>
+       </div>
+    );
+   };
+   
 
   //Variable section where the blocks that are related to the variable will be initialized
-  Blockly.Blocks['create_variable'] = {
-    init: function () {
-      this.appendDummyInput()
-        .appendField('create variable')
-        .appendField(new Blockly.FieldTextInput(''), 'VAR_NAME');
-      this.setOutput(true, 'Variable');
-      this.setColour(330);
-      this.setTooltip('Create a new Variable');
-      this.setHelpUrl('');
-      // this.setDeletable(false);
-    },
-  };
+  // Blockly.Blocks['create_variable'] = {
+  //   init: function () {
+  //     this.appendDummyInput()
+  //       .appendField('create variable')
+  //       .appendField(new Blockly.FieldTextInput(''), 'VAR_NAME');
+  //     this.setOutput(true, 'Variable');
+  //     this.setColour(330);
+  //     this.setTooltip('Create a new Variable');
+  //     this.setHelpUrl('');
+  //     // this.setDeletable(false);
+  //   },
+  // };
   // Blockly.JavaScript['create_variable'] = function (block) {
   //   const varName = block.getFieldValue('VAR_NAME');
   //   return [varName, Blockly.JavaScript.ORDER_ATOMIC];
   // };
   
 const Puzzle = () => {
+  const [variableName, setVariableName] = useState('');
   useEffect(() => {
     const toolbox = document.getElementById('toolbox');
     if (!toolbox) {
@@ -116,7 +160,16 @@ const Puzzle = () => {
           <block type='text_is_empty'></block>
         </category>
         <category name="Variable" colour="#218762">
-        <block type="create_variable"></block>
+        {/*<block type="create_variable"></block>*/}
+        <block type="variables_get">
+            <field name="VAR" variabletype="">{variableName}</field>
+          </block>
+          <block type="variables_set">
+            <field name="VAR" variabletype="">{variableName}</field>
+          </block>
+          <block type="create_variable_button">
+            <field name="TEXT" variabletype="">{variableName}</field>
+          </block>
         </category>
       </xml>
 
