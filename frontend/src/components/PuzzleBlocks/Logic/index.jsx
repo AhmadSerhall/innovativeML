@@ -49,6 +49,23 @@ Blockly.Blocks['math_operations']={
     "nextStatement": null,
     "colour": 210
 }
+Blockly.Blocks['logic_connector'] = {
+    init: function () {
+        this.appendValueInput("LEFT")
+            .setCheck(null)
+            .appendField("if");
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([["and", "AND"], ["or", "OR"]]), "OPERATOR");
+        this.appendValueInput("RIGHT")
+            .setCheck(null);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#5BA58C");
+        this.setTooltip("Combine two conditions using 'And' or 'Or'");
+        this.setHelpUrl("");
+    }
+};
+
 
 const Logic = () => {
   useEffect(() => {
@@ -58,6 +75,11 @@ const Logic = () => {
   }, []);
   useEffect(() => {
     const block = new Blockly.Block('math_operations');
+    block.initSvg();
+    block.render();
+  }, []);
+  useEffect(() => {
+    const block = new Blockly.Block('logic_connector');
     block.initSvg();
     block.render();
   }, []);
@@ -71,6 +93,7 @@ const Logic = () => {
     <div id="math_operations" style={{ display: 'none' }}>
       {/* Inject the block into the page */}
     </div>
+    <div id="logic_connector" style={{ display: 'none' }}></div>
     
     </div>
     
