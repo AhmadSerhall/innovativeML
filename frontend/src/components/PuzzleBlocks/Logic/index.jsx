@@ -84,6 +84,17 @@ Blockly.Blocks['true_false'] = {
         this.setStyle('logic_blocks'); // Adjust the style to control appearance
     }
 };
+Blockly.Blocks['null_block'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("null");
+        this.setOutput(true, null);
+        this.setColour("#808080"); // Gray color for null block
+        this.setTooltip("Represents a null value");
+        this.setHelpUrl("");
+    }
+};
+
 
 
 
