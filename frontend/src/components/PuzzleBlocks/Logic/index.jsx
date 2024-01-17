@@ -40,7 +40,6 @@ Blockly.Blocks['math_operations'] = {
         this.setHelpUrl("");
     }
 };
-
 Blockly.Blocks['logic_not'] = {
     init: function () {
         this.appendDummyInput()
@@ -53,9 +52,6 @@ Blockly.Blocks['logic_not'] = {
         this.setHelpUrl("");
     }
 };
-
-
-
 Blockly.Blocks['logic_connector'] = {
     init: function () {
         this.appendValueInput("LEFT")
@@ -111,10 +107,6 @@ Blockly.Blocks['conditional_test_if_else'] = {
         this.setHelpUrl("");
     }
 };
-
-
-
-
 const Logic = () => {
   useEffect(() => {
     const block = new Blockly.Block('do_if');
@@ -155,22 +147,15 @@ const Logic = () => {
   return (
     <div>
     <div id="doIfBlock" style={{ display: 'none' }}>
-      {/* Inject the block into the page */}
     </div>
     <div id="math_operations" style={{ display: 'none' }}>
-      {/* Inject the block into the page */}
     </div>
     <div id="logic_connector" style={{ display: 'none' }}></div>
     <div id="logic_not" style={{ display: 'none' }}></div>
     <div id="true_false" style={{ display: 'none' }}></div>
     <div id="null_block" style={{ display: 'none' }}></div>
     <div id="conditional_test_if_else" style={{ display: 'none' }}></div>
-
-
     </div>
-    
-    
   );
 };
-
 export default Logic;
