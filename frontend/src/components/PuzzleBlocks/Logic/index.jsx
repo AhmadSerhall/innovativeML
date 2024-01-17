@@ -3,23 +3,20 @@ import Blockly from 'blockly';
 import { useEffect } from 'react';
 
 Blockly.Blocks['do_if'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "do if %1",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "CONDITION",
-          "check": "Boolean"
-        }
-      ],
-      "colour": "#5BA58C",
-      "previousStatement": null,
-      "nextStatement": null,
-      "tooltip": "Perform an action if a condition is true.",
-      "helpUrl": ""
-    });
-  }
+    init: function() {
+       this.appendDummyInput()
+           .appendField("if");
+       this.appendValueInput("CONDITION")
+           .setCheck("Boolean")           
+       this.appendStatementInput("DO")
+           .setCheck(null)
+           .appendField("do");
+       this.setPreviousStatement(true, null);
+       this.setNextStatement(true, null);
+       this.setColour("#5BA58C");
+       this.setTooltip("Perform an action if a condition is true.");
+       this.setHelpUrl("");
+    }
 };
 
 const Logic = () => {
