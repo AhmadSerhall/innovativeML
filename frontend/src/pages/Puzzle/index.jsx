@@ -179,6 +179,7 @@ const Puzzle = () => {
           <block type="logic_connector"></block>
           <block type="logic_not"></block>
           <block type="true_false"></block>
+          <block type="null_block"></block>
 
 
 
