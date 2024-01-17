@@ -107,6 +107,11 @@ const Logic = () => {
     block.initSvg();
     block.render();
   }, []);
+  useEffect(() => {
+    const block = new Blockly.Block('true_false');
+    block.initSvg();
+    block.render();
+  }, []);
 
 
   return (
