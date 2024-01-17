@@ -2,6 +2,7 @@ import React from 'react'
 import Blockly from 'blockly';
 import { useEffect } from 'react';
 
+
 Blockly.Blocks['repeat_times_do'] = {
     init: function () {
       this.appendDummyInput()
@@ -17,6 +18,28 @@ Blockly.Blocks['repeat_times_do'] = {
       this.setNextStatement(true, null);
       this.setColour(120);
       this.setTooltip('Repeat a block of code a certain number of times');
+      this.setHelpUrl('');
+      
+    },
+  };
+  Blockly.Blocks['repeat_while_until_do'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField('repeat')
+        .appendField(new Blockly.FieldDropdown([
+          ['while', 'WHILE'],
+          ['until', 'UNTIL']
+        ]), 'MODE');
+      this.appendValueInput('CONDITION')
+        .setCheck('Boolean')
+        .appendField('do');
+      this.appendStatementInput('DO')
+        .setCheck(null)
+        .appendField('do');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(120);
+      this.setTooltip('Repeat a block of code while/until a condition is true/false');
       this.setHelpUrl('');
     },
   };
