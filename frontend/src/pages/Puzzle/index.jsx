@@ -177,6 +177,9 @@ const Puzzle = () => {
           <block type="do_if"></block>
           <block type="math_operations"></block>
           <block type="logic_connector"></block>
+          <block type="logic_not"></block>
+
+
         </category>
       </xml>
 
