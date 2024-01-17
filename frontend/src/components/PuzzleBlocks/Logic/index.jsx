@@ -103,7 +103,7 @@ const Logic = () => {
       {/* Inject the block into the page */}
     </div>
     <div id="logic_connector" style={{ display: 'none' }}></div>
-    
+    <div id="logic_not" style={{ display: 'none' }}></div>
     </div>
     
     
