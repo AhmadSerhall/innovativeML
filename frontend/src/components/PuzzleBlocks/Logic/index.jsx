@@ -42,16 +42,17 @@ Blockly.Blocks['math_operations'] = {
 };
 Blockly.Blocks['logic_not'] = {
     init: function () {
+        this.appendDummyInput()
+            .appendField("not");
         this.appendValueInput("VALUE")
             .setCheck("Boolean")
-            .appendField("not");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
+        this.setOutput(true, "Boolean");
         this.setColour("#FF6666");
         this.setTooltip("Negate a Boolean value");
         this.setHelpUrl("");
     }
 };
+
 
 
 Blockly.Blocks['logic_connector'] = {
