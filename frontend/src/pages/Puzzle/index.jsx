@@ -180,8 +180,8 @@ const Puzzle = () => {
           <block type="logic_not"></block>
           <block type="true_false"></block>
           <block type="null_block"></block>
-
-
+          <block type="conditional_test_if_else"></block>
+          
 
         </category>
       </xml>
