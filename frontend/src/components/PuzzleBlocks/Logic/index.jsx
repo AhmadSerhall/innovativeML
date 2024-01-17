@@ -70,6 +70,20 @@ Blockly.Blocks['logic_connector'] = {
         this.setHelpUrl("");
     }
 };
+Blockly.Blocks['true_false'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([["true", "TRUE"], ["false", "FALSE"]]), "BOOL");
+        this.setOutput(true, "Boolean");
+        this.setColour("#6699FF"); 
+        this.setTooltip("Select true or false");
+        this.setHelpUrl("");
+        this.setPreviousStatement(null);
+        this.setNextStatement(null);
+        this.setStyle('logic_blocks'); // Adjust the style to control appearance
+    }
+};
+
 
 
 const Logic = () => {
