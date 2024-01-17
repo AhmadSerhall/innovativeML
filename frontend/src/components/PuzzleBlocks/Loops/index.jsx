@@ -32,7 +32,6 @@ Blockly.Blocks['repeat_times_do'] = {
         ]), 'MODE');
       this.appendValueInput('CONDITION')
         .setCheck('Boolean')
-        .appendField('do');
       this.appendStatementInput('DO')
         .setCheck(null)
         .appendField('do');
