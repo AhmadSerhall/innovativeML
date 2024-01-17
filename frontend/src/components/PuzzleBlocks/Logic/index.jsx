@@ -146,6 +146,11 @@ const Logic = () => {
     block.initSvg();
     block.render();
   }, []);
+  useEffect(() => {
+    const block = new Blockly.Block('conditional_test_if_else');
+    block.initSvg();
+    block.render();
+  }, []);
 
   return (
     <div>
