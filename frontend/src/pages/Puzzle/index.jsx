@@ -106,10 +106,11 @@ const Puzzle = () => {
         <category name="Text" colour="#2196F3">
           <block type="text_print"></block>
           <block type='text'></block>
-          
           <block type='create_text_with'></block>
           <block type='to_item_append_text'></block>
           <block type='text_is_empty'></block>
+          <block type='text_transform'></block>
+
         </category>
         {/* review the variable category after */}
         <category name="Variable" colour="#218762">

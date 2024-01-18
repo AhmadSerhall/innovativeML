@@ -68,7 +68,7 @@ Blockly.Blocks['text_transform'] = {
         .setCheck('String');
     
         this.setOutput(true, 'String');
-        this.setColour('#2196F3');
+        this.setColour('160');
         this.setTooltip('Transform text to uppercase, lowercase, or CamelCase.');
         this.setHelpUrl('');
         this.setInputsInline(true);
