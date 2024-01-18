@@ -1,6 +1,7 @@
 import React from 'react'
 import Blockly from 'blockly';
 import { useEffect } from 'react';
+
 Blockly.Blocks['type_integer'] = {
     init: function () {
       this.appendDummyInput().appendField(new Blockly.FieldNumber(0), 'NAME');
@@ -142,10 +143,7 @@ Blockly.Blocks['find_occurence'] = {
           this.setInputsInline(true);
         }
       };
-      
-      
-      
-      
+
 const Text = () => {
     useEffect(() => {
         const block = new Blockly.Block('text_integer');
@@ -197,12 +195,7 @@ const Text = () => {
       <div id="find_occurence " style={{ display: 'none' }}></div>
       <div id="get_letter " style={{ display: 'none' }}></div>
       <div id="trim_spaces " style={{ display: 'none' }}></div>
-
-
-
-
     </div>
   )
 }
-
 export default Text
