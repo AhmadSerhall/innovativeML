@@ -192,7 +192,9 @@ const Puzzle = () => {
         <block type="loop_control"></block>
         </category>
         <category name="math" colour="#A020F0">
-          <block type='type_integer'></block> 
+          <block type='type_integer'></block>
+          <block type='math_operations'></block> 
+
         </category>
       </xml>
 

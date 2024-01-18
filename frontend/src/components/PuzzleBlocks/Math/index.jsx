@@ -12,7 +12,8 @@ Blockly.Blocks['math_operations'] = {
           ["+", "ADD"],
           ["-", "SUBTRACT"],
           ["*", "MULTIPLY"],
-          ["/", "DIVIDE"]
+          ["/", "DIVIDE"],
+          ["%","MODULO"]
         ]), "OPERATOR");
       this.appendValueInput("RIGHT")
         .setCheck("Number")
