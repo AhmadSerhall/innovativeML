@@ -73,7 +73,7 @@ Blockly.Blocks['text_transform'] = {
         this.setInputsInline(true);
     }
     };
-Blockly.Blocks['text_find_occurrence'] = {
+Blockly.Blocks['find_occurrence'] = {
     init: function () {
         this.appendValueInput('VARIABLE')
         .setCheck('String')
@@ -122,6 +122,11 @@ const Text = () => {
       }, []);
       useEffect(() => {
         const block = new Blockly.Block('text_transform');
+        block.initSvg();
+        block.render();
+      }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('find_occurence');
         block.initSvg();
         block.render();
       }, []);
