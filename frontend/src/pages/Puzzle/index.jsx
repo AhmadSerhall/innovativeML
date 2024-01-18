@@ -112,6 +112,8 @@ const Puzzle = () => {
           <block type='text_transform'></block>
           <block type='find_occurence'></block>
           <block type='get_letter'></block>
+          <block type='trim_spaces'></block>
+
 
 
 

@@ -133,8 +133,8 @@ Blockly.Blocks['find_occurence'] = {
             ]), 'TRIM_TYPE');
       
           this.appendValueInput('TEXT')
+            .appendField('of')
             .setCheck('String');
-      
           this.setOutput(true, 'String');
           this.setColour('160');
           this.setTooltip('Trim spaces from both sides, left side, or right side of the given text.');
