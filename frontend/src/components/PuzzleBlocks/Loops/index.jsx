@@ -1,7 +1,7 @@
 import React from 'react'
 import Blockly from 'blockly';
 import { useEffect } from 'react';
-const {FieldVariableButton} = Blockly;
+// const {FieldVariableButton} = Blockly;
 
 Blockly.Blocks['repeat_times_do'] = {
     init: function () {
