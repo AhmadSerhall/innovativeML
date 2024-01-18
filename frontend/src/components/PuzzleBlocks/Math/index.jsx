@@ -82,7 +82,10 @@ Blockly.Blocks['math_operations'] = {
         .appendField(new Blockly.FieldDropdown([
           ['even', 'EVEN'],
           ['odd', 'ODD'],
-          ['prime', 'PRIME']
+          ['prime', 'PRIME'],
+          ['whole', 'PRIME'],
+          ['positive', 'PRIME'],
+          ['negative', 'PRIME'],
         ]), 'PROPERTY');
   
       this.setOutput(true, 'Boolean');
