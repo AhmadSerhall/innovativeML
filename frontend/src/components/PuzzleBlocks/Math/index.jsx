@@ -138,11 +138,7 @@ Blockly.Blocks['math_operations'] = {
       this.setInputsInline(true);
     }
   };
-  
-  
-  
-  
-  
+
 const Math = () => {
     useEffect(() => {
         const block = new Blockly.Block('repeat_times_do');
@@ -178,6 +174,10 @@ const Math = () => {
     <div>
       <div id="math_operations " style={{ display: 'none' }}></div>
       <div id="math_functions " style={{ display: 'none' }}></div>
+      <div id="math_trigo " style={{ display: 'none' }}></div>
+      <div id="check_number_property " style={{ display: 'none' }}></div>
+      <div id="list_operations " style={{ display: 'none' }}></div>
+      <div id="random_integer " style={{ display: 'none' }}></div>
 
     </div>
   )
