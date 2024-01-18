@@ -10,7 +10,7 @@ Blockly.Blocks['type_integer'] = {
       this.setHelpUrl('');
     },
   };
-  Blockly.Blocks['create_text_with'] = {
+Blockly.Blocks['create_text_with'] = {
     init: function () {
       this.appendValueInput('ITEM1')
         .setCheck(null)
@@ -26,7 +26,7 @@ Blockly.Blocks['type_integer'] = {
     },
   };
   
-  Blockly.Blocks['to_item_append_text'] = {
+Blockly.Blocks['to_item_append_text'] = {
     init: function () {
       this.appendDummyInput()
         .appendField('to');
@@ -43,7 +43,7 @@ Blockly.Blocks['type_integer'] = {
       this.setHelpUrl('');
     },
   };
-  Blockly.Blocks['text_is_empty']={
+Blockly.Blocks['text_is_empty']={
     init:function(){
       this.appendValueInput('text')
         .setCheck('String')
@@ -54,6 +54,27 @@ Blockly.Blocks['type_integer'] = {
       this.setHelpUrl('')
     }
     }
+Blockly.Blocks['text_transform'] = {
+    init: function () {
+        this.appendDummyInput()
+        .appendField('to')
+        .appendField(new Blockly.FieldDropdown([
+            ['UPPERCASE', 'UPPERCASE'],
+            ['lowercase', 'LOWERCASE'],
+            ['CamelCase', 'CAMELCASE']
+        ]), 'TRANSFORMATION');
+    
+        this.appendValueInput('TEXT')
+        .setCheck('String');
+    
+        this.setOutput(true, 'String');
+        this.setColour('#2196F3');
+        this.setTooltip('Transform text to uppercase, lowercase, or CamelCase.');
+        this.setHelpUrl('');
+        this.setInputsInline(true);
+    }
+    };
+      
 const Text = () => {
     useEffect(() => {
         const block = new Blockly.Block('text_integer');
