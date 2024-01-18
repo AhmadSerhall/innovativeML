@@ -194,7 +194,9 @@ const Puzzle = () => {
         <category name="math" colour="#A020F0">
           <block type='type_integer'></block>
           <block type='math_operations'></block>
-          <block type='math_functions'></block> 
+          <block type='math_functions'></block>
+          <block type='math_trigo'></block> 
+ 
  
 
         </category>

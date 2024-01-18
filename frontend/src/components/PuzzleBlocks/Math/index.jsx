@@ -54,19 +54,21 @@ Blockly.Blocks['math_operations'] = {
           ["sin", "sine"],
           ["tan", "tangente"],
           ["acos", "acos"],
-          ["asin","asin"],
-          ["atan" ,"atan"]
+          ["asin", "asin"],
+          ["atan", "atan"]
         ]), "FUNCTION");
   
       this.appendValueInput("NUMBER")
-        .setCheck("Number")
+        .setCheck("Number");
   
       this.setOutput(true, "Number");
       this.setColour("#FF9933");
       this.setTooltip("Apply a mathematical function to a number");
       this.setHelpUrl("");
+      this.setInputsInline(true);
     }
   };
+  
   
   
 const Math = () => {
