@@ -55,7 +55,26 @@ Blockly.Blocks['type_integer'] = {
     }
     }
 const Text = () => {
-    
+    useEffect(() => {
+        const block = new Blockly.Block('text_integer');
+        block.initSvg();
+        block.render();
+      }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('create_text_with');
+        block.initSvg();
+        block.render();
+      }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('to_item_append_text');
+        block.initSvg();
+        block.render();
+      }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('text_is_empty');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
       
