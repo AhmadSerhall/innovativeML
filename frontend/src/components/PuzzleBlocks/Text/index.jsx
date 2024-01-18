@@ -73,7 +73,7 @@ Blockly.Blocks['text_transform'] = {
         this.setInputsInline(true);
     }
     };
-Blockly.Blocks['find_occurrence'] = {
+Blockly.Blocks['find_occurence'] = {
     init: function () {
         this.appendValueInput('VARIABLE')
         .setCheck('String')
@@ -97,6 +97,32 @@ Blockly.Blocks['find_occurrence'] = {
         this.setInputsInline(true);
     }
     };
+    Blockly.Blocks['get_letter'] = {
+        init: function () {
+          this.appendValueInput('VARIABLE')
+            .setCheck('String')
+            .appendField('in text');
+      
+          this.appendDummyInput()
+            .appendField('get')
+            .appendField(new Blockly.FieldDropdown([
+              ['first letter', 'FIRST_LETTER'],
+              ['last letter', 'LAST_LETTER'],
+              ['random letter', 'RANDOM_LETTER']
+            ]), 'LETTER_TYPE');
+      
+          this.appendValueInput('TEXT')
+            .setCheck('String')
+            .appendField('of');
+      
+          this.setOutput(true, 'String');
+          this.setColour('160');
+          this.setTooltip('Get the first letter, last letter, or a random letter of a given text in the specified variable.');
+          this.setHelpUrl('');
+          this.setInputsInline(true);
+        }
+      };
+      
       
       
 const Text = () => {

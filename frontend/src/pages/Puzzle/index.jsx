@@ -110,6 +110,8 @@ const Puzzle = () => {
           <block type='to_item_append_text'></block>
           <block type='text_is_empty'></block>
           <block type='text_transform'></block>
+          <block type='find_occurence'></block>
+
 
         </category>
         {/* review the variable category after */}
