@@ -95,6 +95,33 @@ Blockly.Blocks['math_operations'] = {
       this.setInputsInline(true);
     }
   };
+  Blockly.Blocks['list_operation'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+          ['sum', 'SUM'],
+          ['min', 'MIN'],
+          ['max', 'MAX'],
+          ['average', 'AVERAGE'],
+          ['random item', 'RANDOM_ITEM']
+        ]), 'OPERATION');
+      
+      this.appendValueInput('LIST')
+        .setCheck('Array')
+        .appendField('of list');
+      
+      this.appendValueInput('VARIABLE')
+        .setCheck('Variable')
+        .appendField('by variable');
+  
+      this.setOutput(true, 'Number');
+      this.setColour('#4C97FF');
+      this.setTooltip('Perform an operation on a list by a variable.');
+      this.setHelpUrl('');
+      this.setInputsInline(true);
+    }
+  };
+  
   
   
   
