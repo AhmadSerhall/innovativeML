@@ -39,8 +39,6 @@ Blockly.Blocks['math_operations'] = {
   
       this.appendValueInput("NUMBER")
         .setCheck("Number")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("");
   
       this.setOutput(true, "Number");
       this.setColour("#FF9933");
