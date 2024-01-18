@@ -44,6 +44,7 @@ Blockly.Blocks['math_operations'] = {
       this.setColour("#FF9933");
       this.setTooltip("Apply a mathematical function to a number");
       this.setHelpUrl("");
+      this.setInputsInline(true);
     }
   };
   Blockly.Blocks['math_trigo'] = {
