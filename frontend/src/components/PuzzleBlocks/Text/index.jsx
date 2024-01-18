@@ -96,6 +96,11 @@ const Text = () => {
         block.initSvg();
         block.render();
       }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('text_transform');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
       <div id="text_integer " style={{ display: 'none' }}></div>
