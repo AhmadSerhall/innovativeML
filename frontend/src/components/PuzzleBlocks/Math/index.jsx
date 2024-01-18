@@ -25,7 +25,7 @@ Blockly.Blocks['math_operations'] = {
       this.setHelpUrl("");
     }
   };
-  Blockly.Blocks['math_function'] = {
+  Blockly.Blocks['math_functions'] = {
     init: function () {
       this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([
@@ -56,9 +56,16 @@ const Math = () => {
         block.initSvg();
         block.render();
       }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('math_functions');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
       <div id="math_operations " style={{ display: 'none' }}></div>
+      <div id="math_functions " style={{ display: 'none' }}></div>
+
     </div>
   )
 }
