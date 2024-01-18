@@ -112,6 +112,11 @@ const Math = () => {
         block.initSvg();
         block.render();
       }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('check_number_property');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
       <div id="math_operations " style={{ display: 'none' }}></div>
