@@ -156,7 +156,12 @@ const Puzzle = () => {
           <block type='list_operations'></block> 
           <block type='random_integer'></block> 
         </category>
-        <category name="list" colour="#964B00"></category>
+        <category name="list" colour="#964B00">
+        <block type='lists_create_with_container'></block>
+        <block type='lists_create_with_item'></block> 
+        {/* <block type='lists_create_with'></block>  */}
+        
+        </category>
       </xml>
 
       <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>
