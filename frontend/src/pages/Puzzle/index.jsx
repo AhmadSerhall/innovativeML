@@ -157,7 +157,7 @@ const Puzzle = () => {
         <category name="Text" colour="#2196F3">
           <block type="text_print"></block>
           <block type='text'></block>
-          {/* <block type='type_integer'></block>  */}
+          
           <block type='create_text_with'></block>
           <block type='to_item_append_text'></block>
           <block type='text_is_empty'></block>
@@ -191,7 +191,9 @@ const Puzzle = () => {
         <block type="for_each_item_in_list"></block>
         <block type="loop_control"></block>
         </category>
-        <category name="math" colour="#A020F0"></category>
+        <category name="math" colour="#A020F0">
+          <block type='type_integer'></block> 
+        </category>
       </xml>
 
       <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>
