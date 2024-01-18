@@ -197,7 +197,8 @@ const Puzzle = () => {
           <block type='math_functions'></block>
           <block type='math_trigo'></block>
           <block type='check_number_property'></block> 
- 
+          <block type='list_operations'></block> 
+
  
  
 

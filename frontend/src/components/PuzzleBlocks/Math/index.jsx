@@ -109,10 +109,6 @@ Blockly.Blocks['math_operations'] = {
       this.appendValueInput('LIST')
         .setCheck('Array')
         .appendField('of list');
-      
-      this.appendValueInput('VARIABLE')
-        .setCheck('Variable')
-        .appendField('by variable');
   
       this.setOutput(true, 'Number');
       this.setColour('#4C97FF');
