@@ -111,6 +111,8 @@ const Puzzle = () => {
           <block type='text_is_empty'></block>
           <block type='text_transform'></block>
           <block type='find_occurence'></block>
+          <block type='find_letter'></block>
+
 
 
         </category>

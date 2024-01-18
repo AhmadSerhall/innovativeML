@@ -157,7 +157,7 @@ const Text = () => {
         block.render();
       }, []);
       useEffect(() => {
-        const block = new Blockly.Block('find_letter');
+        const block = new Blockly.Block('get_letter');
         block.initSvg();
         block.render();
       }, []);
@@ -169,7 +169,7 @@ const Text = () => {
       <div id="text_is_empty " style={{ display: 'none' }}></div>
       <div id="text_transform " style={{ display: 'none' }}></div>
       <div id="find_occurence " style={{ display: 'none' }}></div>
-      <div id="find_letter " style={{ display: 'none' }}></div>
+      <div id="get_letter " style={{ display: 'none' }}></div>
 
 
 
