@@ -198,6 +198,8 @@ const Puzzle = () => {
           <block type='math_trigo'></block>
           <block type='check_number_property'></block> 
           <block type='list_operations'></block> 
+          <block type='random_integer'></block> 
+
 
  
  
