@@ -33,7 +33,7 @@ const Math = () => {
       }, []);
   return (
     <div>
-      
+      <div id="math_operations " style={{ display: 'none' }}></div>
     </div>
   )
 }
