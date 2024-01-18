@@ -122,6 +122,27 @@ Blockly.Blocks['find_occurence'] = {
           this.setInputsInline(true);
         }
       };
+      Blockly.Blocks['trim_spaces'] = {
+        init: function () {
+          this.appendDummyInput()
+            .appendField('trim spaces from')
+            .appendField(new Blockly.FieldDropdown([
+              ['bothsides', 'BOTH_SIDES'],
+              ['left side', 'LEFT_SIDE'],
+              ['right side', 'RIGHT_SIDE']
+            ]), 'TRIM_TYPE');
+      
+          this.appendValueInput('TEXT')
+            .setCheck('String');
+      
+          this.setOutput(true, 'String');
+          this.setColour('160');
+          this.setTooltip('Trim spaces from both sides, left side, or right side of the given text.');
+          this.setHelpUrl('');
+          this.setInputsInline(true);
+        }
+      };
+      
       
       
       
