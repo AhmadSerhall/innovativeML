@@ -156,6 +156,11 @@ const Text = () => {
         block.initSvg();
         block.render();
       }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('find_letter');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
       <div id="text_integer " style={{ display: 'none' }}></div>
