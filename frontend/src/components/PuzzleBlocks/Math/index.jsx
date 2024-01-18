@@ -117,6 +117,27 @@ Blockly.Blocks['math_operations'] = {
       this.setInputsInline(true);
     }
   };
+  Blockly.Blocks['random_integer'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField('random integer from');
+      
+      this.appendValueInput('FROM')
+        .setCheck('Number');
+      
+      this.appendDummyInput()
+        .appendField('to');
+      
+      this.appendValueInput('TO')
+        .setCheck('Number');
+  
+      this.setOutput(true, 'Number');
+      this.setColour('#FF9933');
+      this.setTooltip('Generate a random integer within the specified range.');
+      this.setHelpUrl('');
+      this.setInputsInline(true);
+    }
+  };
   
   
   
