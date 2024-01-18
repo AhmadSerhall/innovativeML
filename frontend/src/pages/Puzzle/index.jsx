@@ -6,7 +6,7 @@ import Text from '../../components/PuzzleBlocks/Text';
 import Logic from '../../components/PuzzleBlocks/Logic';
 import Loops from '../../components/PuzzleBlocks/Loops';
 import Math from '../../components/PuzzleBlocks/Math';
-
+import list from '../../components/PuzzleBlocks/List';
 // Register custom block types
 
   Blockly.Blocks['create_variable_button'] = {
