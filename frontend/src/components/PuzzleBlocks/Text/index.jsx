@@ -66,7 +66,6 @@ Blockly.Blocks['text_transform'] = {
     
         this.appendValueInput('TEXT')
         .setCheck('String');
-    
         this.setOutput(true, 'String');
         this.setColour('160');
         this.setTooltip('Transform text to uppercase, lowercase, or CamelCase.');
@@ -74,6 +73,31 @@ Blockly.Blocks['text_transform'] = {
         this.setInputsInline(true);
     }
     };
+Blockly.Blocks['text_find_occurrence'] = {
+    init: function () {
+        this.appendValueInput('VARIABLE')
+        .setCheck('String')
+        .appendField('in text');
+    
+        this.appendDummyInput()
+        .appendField('find')
+        .appendField(new Blockly.FieldDropdown([
+            ['first', 'FIRST'],
+            ['last', 'LAST']
+        ]), 'OCCURRENCE');
+    
+        this.appendValueInput('SEARCH_TEXT')
+        .setCheck('String')
+        .appendField('occurrence of text');
+    
+        this.setOutput(true, 'Number');
+        this.setColour('160');
+        this.setTooltip('Find the first or last occurrence of a specific text in the given variable.');
+        this.setHelpUrl('');
+        this.setInputsInline(true);
+    }
+    };
+      
       
 const Text = () => {
     useEffect(() => {
