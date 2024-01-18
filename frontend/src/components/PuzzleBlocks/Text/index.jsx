@@ -182,6 +182,11 @@ const Text = () => {
         block.initSvg();
         block.render();
       }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('trim_spaces');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
       <div id="text_integer " style={{ display: 'none' }}></div>
