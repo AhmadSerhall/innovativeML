@@ -196,6 +196,8 @@ const Text = () => {
       <div id="text_transform " style={{ display: 'none' }}></div>
       <div id="find_occurence " style={{ display: 'none' }}></div>
       <div id="get_letter " style={{ display: 'none' }}></div>
+      <div id="trim_spaces " style={{ display: 'none' }}></div>
+
 
 
 
