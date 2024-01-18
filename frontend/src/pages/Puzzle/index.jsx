@@ -188,7 +188,7 @@ const Puzzle = () => {
         <block type="repeat_while_until_do"></block>
         <block type="count_with"></block>
         <block type="for_each_item_in_list"></block>
-
+        <block type="loop_control"></block>
         </category>
       </xml>
 

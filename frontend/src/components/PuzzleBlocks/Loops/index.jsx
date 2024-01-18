@@ -88,14 +88,17 @@ Blockly.Blocks['repeat_times_do'] = {
         .appendField(new Blockly.FieldDropdown([
           ["break out", "BREAK"],
           ["continue with next iteration", "CONTINUE"]
-        ]), "CONTROL");
+        ]), "CONTROL")
+        .appendField(" of the loop");
+        
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
-      this.setTooltip("Control the flow of the loop: break out or continue with the next iteration");
+      this.setTooltip("Control the flow of the loop: break out or continue with the next iteration of the loop");
       this.setHelpUrl("");
     }
   };
+  
   
   
   
