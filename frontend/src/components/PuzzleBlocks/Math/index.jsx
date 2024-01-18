@@ -69,6 +69,30 @@ Blockly.Blocks['math_operations'] = {
       this.setInputsInline(true);
     }
   };
+  Blockly.Blocks['check_number_property'] = {
+    init: function () {
+      this.appendValueInput('NUMBER')
+        .setCheck('Number')
+        .appendField('number');
+      
+      this.appendDummyInput()
+        .appendField('is');
+  
+      this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+          ['even', 'EVEN'],
+          ['odd', 'ODD'],
+          ['prime', 'PRIME']
+        ]), 'PROPERTY');
+  
+      this.setOutput(true, 'Boolean');
+      this.setColour('#4C97FF');
+      this.setTooltip('Check if a number has a specific property (even, odd, prime).');
+      this.setHelpUrl('');
+      this.setInputsInline(true);
+    }
+  };
+  
   
   
   
