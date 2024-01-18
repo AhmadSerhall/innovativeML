@@ -6,7 +6,7 @@ Blockly.Blocks['math_operations'] = {
     init: function () {
       this.appendValueInput("LEFT")
         .setCheck("Number")
-        .appendField("");
+        .appendField("1");
       this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([
           ["+", "ADD"],
@@ -20,11 +20,35 @@ Blockly.Blocks['math_operations'] = {
         .appendField("");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#FF9933"); // Orange color for math operations
+      this.setColour("#FF9933"); 
       this.setTooltip("Perform a math operation");
       this.setHelpUrl("");
     }
   };
+  Blockly.Blocks['math_function'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+          ["square root", "SQRT"],
+          ["modulo", "MODULO"],
+          ["absolute", "ABS"],
+          ["log10", "LOG10"],
+          ["e^","exponential"],
+          ["10^" ,"ten to the power"]
+        ]), "FUNCTION");
+  
+      this.appendValueInput("NUMBER")
+        .setCheck("Number")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("");
+  
+      this.setOutput(true, "Number");
+      this.setColour("#FF9933");
+      this.setTooltip("Apply a mathematical function to a number");
+      this.setHelpUrl("");
+    }
+  };
+  
   
 const Math = () => {
     useEffect(() => {
