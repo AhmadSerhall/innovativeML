@@ -191,6 +191,7 @@ const Puzzle = () => {
         <block type="for_each_item_in_list"></block>
         <block type="loop_control"></block>
         </category>
+        <category name="math" colour="#A020F0"></category>
       </xml>
 
       <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>
