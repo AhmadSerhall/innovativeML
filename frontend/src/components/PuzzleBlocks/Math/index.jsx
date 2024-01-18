@@ -80,6 +80,11 @@ const Math = () => {
         block.initSvg();
         block.render();
       }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('math_trigo');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
       <div id="math_operations " style={{ display: 'none' }}></div>
