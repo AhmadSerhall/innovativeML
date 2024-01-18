@@ -95,7 +95,7 @@ Blockly.Blocks['math_operations'] = {
       this.setInputsInline(true);
     }
   };
-  Blockly.Blocks['list_operation'] = {
+  Blockly.Blocks['list_operations'] = {
     init: function () {
       this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([
@@ -144,6 +144,11 @@ const Math = () => {
       }, []);
       useEffect(() => {
         const block = new Blockly.Block('check_number_property');
+        block.initSvg();
+        block.render();
+      }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('list_operations');
         block.initSvg();
         block.render();
       }, []);
