@@ -77,7 +77,10 @@ const Text = () => {
       }, []);
   return (
     <div>
-      
+      <div id="text_integer " style={{ display: 'none' }}></div>
+      <div id="create_text_with " style={{ display: 'none' }}></div>
+      <div id="to_item_append_text " style={{ display: 'none' }}></div>
+      <div id="text_is_empty " style={{ display: 'none' }}></div>
     </div>
   )
 }
