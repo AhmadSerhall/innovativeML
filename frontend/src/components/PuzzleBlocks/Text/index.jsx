@@ -137,6 +137,8 @@ const Text = () => {
       <div id="to_item_append_text " style={{ display: 'none' }}></div>
       <div id="text_is_empty " style={{ display: 'none' }}></div>
       <div id="text_transform " style={{ display: 'none' }}></div>
+      <div id="find_occurence " style={{ display: 'none' }}></div>
+
 
     </div>
   )
