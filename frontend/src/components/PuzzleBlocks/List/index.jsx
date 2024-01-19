@@ -135,6 +135,11 @@ const List = () => {
     block.initSvg();
     block.render();
   }, []);
+  useEffect(() => {
+    const block = new Blockly.Block('lists_length');
+    block.initSvg();
+    block.render();
+  }, []);
 
   return (
     <div>
