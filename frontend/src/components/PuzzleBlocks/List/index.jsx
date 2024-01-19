@@ -143,6 +143,7 @@ const List = () => {
 
   return (
     <div>
+      <div id="lists_length" style={{ display: 'none' }}></div>
     </div>
   );
 };
