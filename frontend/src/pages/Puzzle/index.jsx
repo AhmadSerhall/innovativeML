@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react';
 import Blockly from 'blockly';
 import 'blockly/blocks';
 import './style.css';
+import '../../styles/global.css'
 import Text from '../../components/PuzzleBlocks/Text';
 import Logic from '../../components/PuzzleBlocks/Logic';
 import Loops from '../../components/PuzzleBlocks/Loops';
