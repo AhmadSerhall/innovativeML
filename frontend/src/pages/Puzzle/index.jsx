@@ -156,6 +156,8 @@ const Puzzle = () => {
         <block type='lists_create_with_container'></block>
         <block type='lists_create_with_item'></block>
         <block type='lists_length'></block>  
+        <block type='lists_isEmpty'></block>  
+
         {/* <block type='lists_create_with'></block>  */}
         </category>
       </xml>
