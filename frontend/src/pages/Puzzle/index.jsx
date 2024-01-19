@@ -27,7 +27,7 @@ const Puzzle = () => {
     });
     const workspaceSvg = workspace.getParentSvg();
     if (workspaceSvg) {
-      workspaceSvg.style.backgroundColor = '#FFD700';
+      workspaceSvg.style.backgroundColor = '#f5f5f5';
     }
 
     if (!workspace) {
