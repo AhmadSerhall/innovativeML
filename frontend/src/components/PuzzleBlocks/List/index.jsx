@@ -185,6 +185,7 @@ const List = () => {
       <div id="lists_create_with_container" style={{ display: 'none' }}></div>
       <div id="lists_length" style={{ display: 'none' }}></div>
       <div id="lists_isEmpty" style={{ display: 'none' }}></div>
+      <div id="lists_getIndexOfItem" style={{ display: 'none' }}></div>
     </div>
   );
 };
