@@ -17,8 +17,18 @@ Blockly.Blocks['print'] = {
         ]), 'END');
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(160);
+      this.setColour('#333');
       this.setTooltip('Prints the specified text with the chosen end character.');
+      this.setHelpUrl('');
+    },
+  };
+  Blockly.Blocks['input_block'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField('Input');
+      this.setOutput(true, null);
+      this.setColour(160);
+      this.setTooltip('Reads input from the user.');
       this.setHelpUrl('');
     },
   };
