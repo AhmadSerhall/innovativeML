@@ -7,12 +7,12 @@ const Button = ({ text, textColor, bgColor, onClick, className }) => {
     backgroundColor: bgColor || '#3498db',
   };
 
-  const handleClick = () => {
-    onClick(text);
-  };
+//  const handleClick = () => {
+//     onClick(text);
+//   }; 
 
   return (
-    <button className={`custom-button ${className}`} style={buttonStyles} onClick={handleClick}>
+    <button className={`custom-button ${className}`} style={buttonStyles} onClick={onClick}>
       {text}
     </button>
   );

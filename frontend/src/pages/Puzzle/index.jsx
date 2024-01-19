@@ -17,6 +17,7 @@ import Footer from '../../components/Footer'
 const Puzzle = () => {
   const [variableName, setVariableName] = useState('');
   const[selectedTab,setSelectedTab]=useState('puzzle')
+  const[workspace,setWorkspace]=useState(null)
   useEffect(() => {
     const toolbox = document.getElementById('toolbox');
     if (!toolbox) {
@@ -37,23 +38,32 @@ const Puzzle = () => {
       console.error('Blockly workspace not initialized!');
       return;
     }
+    setWorkspace(workspace)
 
     // Cleanup function to dispose of the workspace when the component unmounts
     return () => {
       console.log('Cleaning up Blockly workspace...');
       workspace.dispose();
     };
-  }, []);
+  }, [selectedTab]);
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
+  };
+
+  const generatePythonCode = () => {
+    // Logic to transform Blockly workspace content to Python code
+    // ...
+
+    // For demonstration purposes, let's assume the code is "print('Hello, Python!');"
+    return "print('Hello, Python!');";
   };
 
   return (
     <div>
       <NavBar/>
       <div className='tab-container flex row '>
-        <Button text="puzzle" textColor={"white"} bgColor={"#FFD700"} onClick={handleTabChange} className={selectedTab === 'puzzle' ? 'active-tab' : 'inactive-tab'}/>
-        <Button text="Python code" textColor={"white"} bgColor={"#1261A9"} onClick={handleTabChange} className={selectedTab === 'python' ? 'active-tab' : 'inactive-tab'}/>
+        <Button text="puzzle" textColor={"white"} bgColor={"#FFD700"} onClick={() => handleTabChange('puzzle')} className={selectedTab === 'puzzle' ? 'active-tab' : 'inactive-tab'}/>
+        <Button text="Python code" textColor={"white"} bgColor={"#1261A9"}  onClick={() => handleTabChange('python')} className={selectedTab === 'python' ? 'active-tab' : 'inactive-tab'}/>
         
       </div>
     <div className='puzzle-container'>
@@ -130,6 +140,7 @@ const Puzzle = () => {
     {selectedTab==='python' && (
       <div className='python-container flex center'>
         <h1>code will be here</h1>
+        <pre>{generatePythonCode()}</pre>
         </div>
     )}
     </div>
