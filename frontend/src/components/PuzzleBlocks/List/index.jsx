@@ -134,7 +134,24 @@ Blockly.Blocks['lists_isEmpty'] = {
     this.setHelpUrl('');
   },
 };
-
+Blockly.Blocks['lists_getIndexOfItem'] = {
+  init: function () {
+    this.appendValueInput('VALUE')
+      .setCheck('Array')
+      .appendField('in list');
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([
+        ['first', 'FIRST'],
+        ['last', 'LAST']
+      ]), 'TYPE');
+    this.appendValueInput('FIND')
+      .appendField('occurrence of');
+    this.setOutput(true, 'Number');
+    this.setColour(260);
+    this.setTooltip('Returns the index of the first/last occurrence of the item in the list.');
+    this.setHelpUrl('');
+  },
+};
 
 const List = () => {
   useEffect(() => {
