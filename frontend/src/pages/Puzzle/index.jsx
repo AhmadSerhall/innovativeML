@@ -14,6 +14,7 @@ import Footer from '../../components/Footer'
 
 const Puzzle = () => {
   const [variableName, setVariableName] = useState('');
+  const[selectedTab,SetSelectedTab]=useState('puzzle')
   useEffect(() => {
     const toolbox = document.getElementById('toolbox');
     if (!toolbox) {
