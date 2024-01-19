@@ -123,6 +123,18 @@ Blockly.Blocks['lists_length'] = {
 //   var value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC) || '[]';
 //   return [f'len({value})', Blockly.Python.ORDER_FUNCTION_CALL];
 // };
+Blockly.Blocks['lists_isEmpty'] = {
+  init: function () {
+    this.appendValueInput('VALUE')
+      .setCheck('Array')
+      .appendField('is empty');
+    this.setOutput(true, 'Boolean');
+    this.setColour(260);
+    this.setTooltip('Returns true if the list is empty, false otherwise.');
+    this.setHelpUrl('');
+  },
+};
+
 
 const List = () => {
   useEffect(() => {
