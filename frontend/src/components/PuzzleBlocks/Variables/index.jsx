@@ -1,26 +1,21 @@
 import React from 'react'
 import Blockly from 'blockly'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 // Register custom block types
 
-Blockly.Blocks['create_variable_button'] = {
-    init: function() {
-      this.jsonInit({
-        "message0": "Create variable",
-        "category": "Variables",
-        "colour": "#F4F4F4",
-        "tooltip": "Create a new variable",
-        "events": {
-          "click": function(event) {
-            if (event.blockId === 'create_variable_button') {
-               // Show an alert to prompt the user to name a variable
-               alert('Please name a variable');
-            }
-           }
-        }
-      });
+Blockly.Blocks['create_variable'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("Create variable")
+        .appendField(new Blockly.FieldVariableButton("variable"), "VAR");
+  
+      this.setCategory(Blockly.Categories.variables);
+      this.setColour(330);
+      this.setTooltip("Create a new variable");
+      this.setHelpUrl("");
     }
   };
+  
   //trying to Update the variable block
   const CreateVariableBlock = (props) => {
     const { variableName, setVariableName } = props;

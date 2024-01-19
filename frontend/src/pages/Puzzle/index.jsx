@@ -10,6 +10,7 @@ import list from '../../components/PuzzleBlocks/List';
 import InputOutput from '../../components/PuzzleBlocks/InputOutput';
 import Variables from '../../components/PuzzleBlocks/Variables';
 import NavBar from '../../components/NavBar'
+import Footer from '../../components/Footer'
 
 const Puzzle = () => {
   const [variableName, setVariableName] = useState('');
@@ -61,9 +62,9 @@ const Puzzle = () => {
           <block type="variables_set">
             <field name="VAR" variabletype="">{variableName}</field>
           </block>
-          <block type="create_variable_button">
+          {/* <block type="create_variable_button">
             <field name="TEXT" variabletype="">{variableName}</field>
-          </block>
+          </block> */}
         </category>
         <category name="logic" colour="#222342">
           <block type="do_if"></block>
@@ -107,6 +108,7 @@ const Puzzle = () => {
       </xml>
       <div id='blocklyDiv' className="playground" ></div>
     </div>
+    <Footer/>
     </div>
   );
 };
