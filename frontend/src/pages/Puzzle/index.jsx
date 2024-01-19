@@ -25,6 +25,10 @@ const Puzzle = () => {
       toolbox,
       
     });
+    const workspaceSvg = workspace.getParentSvg();
+    if (workspaceSvg) {
+      workspaceSvg.style.backgroundColor = '#FFD700';
+    }
 
     if (!workspace) {
       console.error('Blockly workspace not initialized!');
