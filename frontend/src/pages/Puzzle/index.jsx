@@ -154,7 +154,8 @@ const Puzzle = () => {
         </category>
         <category name="list" colour="#964B00">
         <block type='lists_create_with_container'></block>
-        <block type='lists_create_with_item'></block> 
+        <block type='lists_create_with_item'></block>
+        <block type='lists_length'></block>  
         {/* <block type='lists_create_with'></block>  */}
         </category>
       </xml>
