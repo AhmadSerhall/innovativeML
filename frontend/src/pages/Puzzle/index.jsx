@@ -53,6 +53,8 @@ const Puzzle = () => {
       <NavBar/>
       <div className='tab-container flex row '>
         <Button text="puzzle" textColor={"white"} bgColor={"#1261A9"} onClick={handleTabChange}/>
+        <Button text="Python code" textColor={"white"} bgColor={"#FFD700"} onClick={handleTabChange}/>
+
       </div>
     <div className='puzzle-container'>
       <xml id='toolbox' style={{ display: 'none'}}>
