@@ -1,10 +1,9 @@
 .puzzle-container{
-    /* border-radius: 20px;
-    border:2px solid black; */
-    /*the styling here worked  */
+
 }
 .playground{
     margin-top: 7%;
-    border-radius: 20px;
     border:1px solid black;
+    height:70vh;
+    width:100%;
 }
