@@ -49,6 +49,9 @@ const Puzzle = () => {
   return (
     <div>
       <NavBar/>
+      <div className='tab-container'>
+        
+      </div>
     <div className='puzzle-container'>
       <xml id='toolbox' style={{ display: 'none'}}>
         <category name="Text" colour="#2196F3" className="category">
