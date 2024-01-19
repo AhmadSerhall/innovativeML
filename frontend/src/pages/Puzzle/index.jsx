@@ -10,6 +10,7 @@ import list from '../../components/PuzzleBlocks/List';
 import InputOutput from '../../components/PuzzleBlocks/InputOutput';
 import Variables from '../../components/PuzzleBlocks/Variables';
 import NavBar from '../../components/NavBar'
+import Button from '../../components/Button'
 import Footer from '../../components/Footer'
 
 const Puzzle = () => {
@@ -50,7 +51,7 @@ const Puzzle = () => {
     <div>
       <NavBar/>
       <div className='tab-container'>
-        
+
       </div>
     <div className='puzzle-container'>
       <xml id='toolbox' style={{ display: 'none'}}>
