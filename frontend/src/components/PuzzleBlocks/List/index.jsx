@@ -107,13 +107,24 @@ Blockly.Blocks['lists_create_with_item'] = {
     this.contextMenu = false;
   },
 };
+Blockly.Blocks['lists_length'] = {
+  init: function () {
+    this.setColour(260);
+    this.appendValueInput('VALUE')
+      .setCheck('Array')
+      .appendField('length of');
+    this.setOutput(true, 'Number');
+    this.setTooltip('Returns the length of a list.');
+    this.setHelpUrl('');
+  },
+};
+
+// Blockly.Python['lists_length'] = function(block) {
+//   var value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC) || '[]';
+//   return [f'len({value})', Blockly.Python.ORDER_FUNCTION_CALL];
+// };
 
 const List = () => {
-//   useEffect(() => {
-//     const block = new Blockly.Block('lists_create_with');
-//     block.initSvg();
-//     block.render();
-//   }, []);
   useEffect(() => {
     const block = new Blockly.Block('lists_create_with_item');
     block.initSvg();
