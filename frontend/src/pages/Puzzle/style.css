@@ -15,23 +15,17 @@
     max-width: 200px; /* Adjust the width as needed */
   }
 
-   /* .category{
-    margin:20px 0;
-  }
-  .puzzle-container .block {
-    margin: 5px 0;
-  } */
   .blocklyTreeLabel {
-  color: black;
+  color: white;
 }
 /* Adds padding around the group of categories and separators. */
 .blocklyToolboxContents {
   padding: 0.5em;
-  color:blue;
+  background-color: #1261A9;
 }
 /* Adds space between the categories, rounds the corners and adds space around the label. */
 .blocklyTreeRow {
   /* padding: 3px; */
-  margin-bottom: 2em;
+  margin-bottom: 2.95em;
   border-radius: 4px;
 }
