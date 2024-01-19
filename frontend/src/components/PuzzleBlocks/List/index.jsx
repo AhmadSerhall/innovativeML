@@ -140,12 +140,13 @@ Blockly.Blocks['lists_getIndexOfItem'] = {
       .setCheck('Array')
       .appendField('in list');
     this.appendDummyInput()
+      .appendField('find')
       .appendField(new Blockly.FieldDropdown([
         ['first', 'FIRST'],
         ['last', 'LAST']
       ]), 'TYPE');
     this.appendValueInput('FIND')
-      .appendField('occurrence of');
+      .appendField('occurrence of item');
     this.setOutput(true, 'Number');
     this.setColour(260);
     this.setTooltip('Returns the index of the first/last occurrence of the item in the list.');
