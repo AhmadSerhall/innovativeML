@@ -53,10 +53,12 @@ const Puzzle = () => {
       <NavBar/>
       <div className='tab-container flex row '>
         <Button text="puzzle" textColor={"white"} bgColor={"#1261A9"} onClick={handleTabChange} className={selectedTab === 'puzzle' ? 'active-tab' : 'inactive-tab'}/>
-        <Button text="Python code" textColor={"white"} bgColor={"#FFD700"} onClick={handleTabChange} className={selectedTab === 'puzzle' ? 'active-tab' : 'inactive-tab'}/>
+        <Button text="Python code" textColor={"white"} bgColor={"#FFD700"} onClick={handleTabChange} className={selectedTab === 'python' ? 'active-tab' : 'inactive-tab'}/>
 
       </div>
     <div className='puzzle-container'>
+    {selectedTab === 'puzzle' && (
+          <>
       <xml id='toolbox' style={{ display: 'none'}}>
         <category name="Text" colour="#2196F3" className="category">
           <block type="text_print"></block>
@@ -123,6 +125,13 @@ const Puzzle = () => {
         </category>
       </xml>
       <div id='blocklyDiv' className="playground" ></div>
+      </>
+    )}
+    {selectedTab==='python' && (
+      <div className='python-container'>
+        <h1>code will be here</h1>
+        </div>
+    )}
     </div>
     <Footer/>
     </div>

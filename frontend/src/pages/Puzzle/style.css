@@ -1,11 +1,14 @@
 .playground{
-    margin-top: 7%;
+    margin-top: 1%;
     border:1.5px solid #333;
     height:70vh;
     width:100%;
 }
-.puzzle-container {
-    padding: 10px;
+/* .puzzle-container {
+    margin-top:10%;
+  } */
+  .tab-container{
+    margin-top:8%;
   }
   /* #toolbox {
     background-color: blue !important;
