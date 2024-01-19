@@ -12,6 +12,12 @@
     margin-left:1%;
     gap:1%;
   }
+  .python-container{
+    margin:10%;
+  }
+  .python-container p{
+    color:black;
+  }
   /* #toolbox {
     background-color: blue !important;
     border: 1px solid #ccc;

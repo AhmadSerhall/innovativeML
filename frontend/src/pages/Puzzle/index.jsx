@@ -43,7 +43,7 @@ const Puzzle = () => {
       console.log('Cleaning up Blockly workspace...');
       workspace.dispose();
     };
-  }, [selectedTab]);
+  }, []);
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
   };
@@ -128,7 +128,7 @@ const Puzzle = () => {
       </>
     )}
     {selectedTab==='python' && (
-      <div className='python-container'>
+      <div className='python-container flex center'>
         <h1>code will be here</h1>
         </div>
     )}
