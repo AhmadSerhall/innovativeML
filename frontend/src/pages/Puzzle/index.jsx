@@ -8,6 +8,7 @@ import Loops from '../../components/PuzzleBlocks/Loops';
 import Math from '../../components/PuzzleBlocks/Math';
 import list from '../../components/PuzzleBlocks/List';
 import InputOutput from '../../components/PuzzleBlocks/InputOutput';
+import Variables from '../../components/PuzzleBlocks/Variables';
 import NavBar from '../../components/NavBar'
 // Register custom block types
 
