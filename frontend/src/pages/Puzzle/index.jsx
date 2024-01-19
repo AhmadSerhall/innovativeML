@@ -53,7 +53,7 @@ const Puzzle = () => {
       <NavBar/>
       <div className='tab-container flex row '>
         <Button text="puzzle" textColor={"white"} bgColor={"#1261A9"} onClick={handleTabChange} className={selectedTab === 'puzzle' ? 'active-tab' : 'inactive-tab'}/>
-        <Button text="Python code" textColor={"white"} bgColor={"#FFD700"} onClick={handleTabChange}/>
+        <Button text="Python code" textColor={"white"} bgColor={"#FFD700"} onClick={handleTabChange} className={selectedTab === 'puzzle' ? 'active-tab' : 'inactive-tab'}/>
 
       </div>
     <div className='puzzle-container'>
