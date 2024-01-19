@@ -153,26 +153,61 @@ Blockly.Blocks['lists_getIndexOfItem'] = {
     this.setHelpUrl('');
   },
 };
-Blockly.Blocks['lists_getItem']={
-  init:function(){
-    this.appendValueInput('VALUE')
+Blockly.Blocks['lists_getItem'] = {
+  init: function () {
+    this.appendValueInput('LIST')
       .setCheck('Array')
-      .appendField('in list');
-    this.appendDummyInput()
-      .appendField('get')
+      .appendField('in list')
+      .appendField(new Blockly.FieldVariable('list'), 'VAR')
       .appendField(new Blockly.FieldDropdown([
-        ['get','GET'],
-        ['get and remove','GET AND REMOVE'],
-        ['remove','REMOVE']
-      ]))
-      .appendField(new Blockly.FieldDropdown([
-        ['first','FIRST'],
-        ['last','LAST'],
-        ['random','RANDOM']
-      ]))
+        ['get', 'GET'],
+        ['get and remove', 'GET_REMOVE'],
+        ['remove', 'REMOVE']
+      ]), 'OP');
     this.appendDummyInput()
-  }
-}
+      .appendField(new Blockly.FieldDropdown([
+        ['first', 'FIRST'],
+        ['last', 'LAST']
+      ]), 'TYPE');
+    this.setOutput(true, null);
+    this.setPreviousStatement(false, null);
+    this.setNextStatement(false, null);
+    this.setColour(260);
+    this.setTooltip('Get or remove the first/last item from the list.');
+    this.setHelpUrl('');
+  },
+};
+Blockly.Blocks['lists_set_insert_at'] = {
+  init: function () {
+    this.appendValueInput('LIST')
+      .setCheck('Array')
+      .appendField(new Blockly.FieldVariable('list'), 'VAR');
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([
+        ['set at', 'SET_AT'],
+        ['insert at', 'INSERT_AT']
+      ]), 'OP');
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([
+        ['first', 'FIRST'],
+        ['last', 'LAST']
+      ]), 'TYPE');
+    this.appendValueInput('INDEX')
+      .setCheck('Number')
+      .appendField('at index');
+    this.appendDummyInput()
+      .appendField('as');
+    this.appendValueInput('ITEM')
+      .setCheck(null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(260);
+    this.setTooltip('Set or insert an item at the specified index in the list.');
+    this.setHelpUrl('');
+  },
+};
+
+
 
 const List = () => {
   useEffect(() => {
