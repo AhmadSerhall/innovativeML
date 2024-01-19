@@ -50,5 +50,4 @@ const InputOutput = () => {
     </div>
   )
 }
-
 export default InputOutput

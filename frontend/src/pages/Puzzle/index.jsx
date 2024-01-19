@@ -8,6 +8,7 @@ import Loops from '../../components/PuzzleBlocks/Loops';
 import Math from '../../components/PuzzleBlocks/Math';
 import list from '../../components/PuzzleBlocks/List';
 import InputOutput from '../../components/PuzzleBlocks/InputOutput';
+import NavBar from '../../components/NavBar'
 // Register custom block types
 
   Blockly.Blocks['create_variable_button'] = {
@@ -98,6 +99,8 @@ const Puzzle = () => {
   }, []);
 
   return (
+    <div>
+      <NavBar/>
     <div className='puzzle-container'>
       <xml id='toolbox' style={{ display: 'none' }}>
         <category name="Text" colour="#2196F3">
@@ -165,6 +168,7 @@ const Puzzle = () => {
         </category>
       </xml>
       <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>
+    </div>
     </div>
   );
 };
