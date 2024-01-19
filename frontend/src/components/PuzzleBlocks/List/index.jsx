@@ -181,20 +181,18 @@ Blockly.Blocks['lists_set_insert_at'] = {
   init: function () {
     this.appendValueInput('LIST')
       .setCheck('Array')
-      .appendField(new Blockly.FieldVariable('list'), 'VAR');
-    this.appendDummyInput()
+      .appendField('in list')
+      .appendField(new Blockly.FieldVariable('list'), 'VAR')
       .appendField(new Blockly.FieldDropdown([
-        ['set at', 'SET_AT'],
+        ['set', 'SET_AT'],
         ['insert at', 'INSERT_AT']
-      ]), 'OP');
-    this.appendDummyInput()
+      ]), 'OP')
       .appendField(new Blockly.FieldDropdown([
         ['first', 'FIRST'],
         ['last', 'LAST']
       ]), 'TYPE');
-    this.appendValueInput('INDEX')
-      .setCheck('Number')
-      .appendField('at index');
+    // this.appendValueInput('INDEX')
+    //   .setCheck('Number')
     this.appendDummyInput()
       .appendField('as');
     this.appendValueInput('ITEM')
