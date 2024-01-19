@@ -205,8 +205,6 @@ Blockly.Blocks['lists_set_insert_at'] = {
   },
 };
 
-
-
 const List = () => {
   useEffect(() => {
     const block = new Blockly.Block('lists_create_with_item');
