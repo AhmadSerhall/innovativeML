@@ -31,7 +31,7 @@ const InputOutput = () => {
       }, []);
   return (
     <div>
-      
+        <div id="print_block" style={{ display: 'none' }}></div>
     </div>
   )
 }
