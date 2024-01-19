@@ -159,6 +159,8 @@ const Puzzle = () => {
         <block type='lists_isEmpty'></block>
         <block type='lists_getIndexOfItem'></block>  
         <block type='lists_getItem'></block>    
+        <block type='lists_set_insert_at'></block>    
+
   
 
         {/* <block type='lists_create_with'></block>  */}
