@@ -143,6 +143,8 @@ const List = () => {
 
   return (
     <div>
+      <div id="lists_create_with_item" style={{ display: 'none' }}></div>
+      <div id="lists_create_with_container" style={{ display: 'none' }}></div>
       <div id="lists_length" style={{ display: 'none' }}></div>
     </div>
   );
