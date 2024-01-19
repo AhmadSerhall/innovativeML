@@ -22,7 +22,7 @@ Blockly.Blocks['print'] = {
       this.setHelpUrl('');
     },
   };
-  Blockly.Blocks['input_block'] = {
+  Blockly.Blocks['input'] = {
     init: function () {
       this.appendDummyInput()
         .appendField('Input');
@@ -36,6 +36,11 @@ Blockly.Blocks['print'] = {
 const InputOutput = () => {
     useEffect(() => {
         const block = new Blockly.Block('print');
+        block.initSvg();
+        block.render();
+      }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('input');
         block.initSvg();
         block.render();
       }, []);
