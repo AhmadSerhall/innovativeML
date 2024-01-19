@@ -47,6 +47,8 @@ const InputOutput = () => {
   return (
     <div>
         <div id="print" style={{ display: 'none' }}></div>
+        <div id="input" style={{ display: 'none' }}></div>
+
     </div>
   )
 }
