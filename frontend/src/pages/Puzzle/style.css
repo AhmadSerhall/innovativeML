@@ -9,6 +9,8 @@
   } */
   .tab-container{
     margin-top:8%;
+    margin-left:1%;
+    gap:2%;
   }
   /* #toolbox {
     background-color: blue !important;
