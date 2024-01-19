@@ -24,6 +24,11 @@ Blockly.Blocks['print_block'] = {
   };
   
 const InputOutput = () => {
+    useEffect(() => {
+        const block = new Blockly.Block('print_block');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
       
