@@ -212,6 +212,8 @@ const List = () => {
       <div id="lists_length" style={{ display: 'none' }}></div>
       <div id="lists_isEmpty" style={{ display: 'none' }}></div>
       <div id="lists_getIndexOfItem" style={{ display: 'none' }}></div>
+      <div id="lists_getItem" style={{ display: 'none' }}></div>
+
     </div>
   );
 };
