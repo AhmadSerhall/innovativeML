@@ -27,12 +27,11 @@ Blockly.Blocks['print'] = {
       this.appendDummyInput()
         .appendField('Input');
       this.setOutput(true, null);
-      this.setColour(160);
+      this.setColour('#333');
       this.setTooltip('Reads input from the user.');
       this.setHelpUrl('');
     },
   };
-  
 const InputOutput = () => {
     useEffect(() => {
         const block = new Blockly.Block('print');
@@ -48,7 +47,6 @@ const InputOutput = () => {
     <div>
         <div id="print" style={{ display: 'none' }}></div>
         <div id="input" style={{ display: 'none' }}></div>
-
     </div>
   )
 }

@@ -90,10 +90,6 @@ const Puzzle = () => {
       return;
     }
 
-    const block = workspace.newBlock('text_print');
-    block.initSvg();
-    block.render();
-
     // Cleanup function to dispose of the workspace when the component unmounts
     return () => {
       console.log('Cleaning up Blockly workspace...');
@@ -164,8 +160,8 @@ const Puzzle = () => {
         {/* <block type='lists_create_with'></block>  */}
         </category>
         <category name="input_output" colour="#333">
-        <block type='print'></block>    
-
+        <block type='print'></block>  
+        <block type='input'></block> 
         </category>
       </xml>
       <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>
