@@ -240,6 +240,11 @@ const List = () => {
     block.initSvg();
     block.render();
   }, []);
+  useEffect(() => {
+    const block = new Blockly.Block('lists_set_insert_at');
+    block.initSvg();
+    block.render();
+  }, []);
   return (
     <div>
       <div id="lists_create_with_item" style={{ display: 'none' }}></div>
@@ -248,6 +253,8 @@ const List = () => {
       <div id="lists_isEmpty" style={{ display: 'none' }}></div>
       <div id="lists_getIndexOfItem" style={{ display: 'none' }}></div>
       <div id="lists_getItem" style={{ display: 'none' }}></div>
+      <div id="lists_set_insert_at" style={{ display: 'none' }}></div>
+
 
     </div>
   );
