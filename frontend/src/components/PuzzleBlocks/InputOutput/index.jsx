@@ -1,8 +1,8 @@
 import React from 'react'
-import Blockly from 'blockly'
+import Blockly, { Block } from 'blockly/core';
 import { useEffect } from 'react'
 
-Blockly.Blocks['print_block'] = {
+Blockly.Blocks['print'] = {
     init: function () {
       this.appendValueInput('TEXT')
         .setCheck(null)
@@ -25,13 +25,13 @@ Blockly.Blocks['print_block'] = {
   
 const InputOutput = () => {
     useEffect(() => {
-        const block = new Blockly.Block('print_block');
+        const block = new Blockly.Block('print');
         block.initSvg();
         block.render();
       }, []);
   return (
     <div>
-        <div id="print_block" style={{ display: 'none' }}></div>
+        <div id="print" style={{ display: 'none' }}></div>
     </div>
   )
 }

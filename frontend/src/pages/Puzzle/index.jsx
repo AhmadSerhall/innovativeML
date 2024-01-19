@@ -7,6 +7,7 @@ import Logic from '../../components/PuzzleBlocks/Logic';
 import Loops from '../../components/PuzzleBlocks/Loops';
 import Math from '../../components/PuzzleBlocks/Math';
 import list from '../../components/PuzzleBlocks/List';
+import InputOutput from '../../components/PuzzleBlocks/InputOutput';
 // Register custom block types
 
   Blockly.Blocks['create_variable_button'] = {
@@ -160,10 +161,11 @@ const Puzzle = () => {
         <block type='lists_getIndexOfItem'></block>  
         <block type='lists_getItem'></block>    
         <block type='lists_set_insert_at'></block>    
-
-  
-
         {/* <block type='lists_create_with'></block>  */}
+        </category>
+        <category name="input_output" colour="#333">
+        <block type='print'></block>    
+
         </category>
       </xml>
       <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>
