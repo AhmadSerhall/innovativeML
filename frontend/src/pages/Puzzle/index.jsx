@@ -23,6 +23,7 @@ const Puzzle = () => {
 
     const workspace = Blockly.inject('blocklyDiv', {
       toolbox,
+      
     });
 
     if (!workspace) {
@@ -41,8 +42,8 @@ const Puzzle = () => {
     <div>
       <NavBar/>
     <div className='puzzle-container'>
-      <xml id='toolbox' style={{ display: 'none' }}>
-        <category name="Text" colour="#2196F3">
+      <xml id='toolbox' style={{ display: 'none'}}>
+        <category name="Text" colour="#2196F3" className="category">
           <block type="text_print"></block>
           <block type='text'></block>
           <block type='create_text_with'></block>
