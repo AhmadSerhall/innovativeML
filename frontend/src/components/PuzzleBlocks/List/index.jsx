@@ -200,6 +200,11 @@ const List = () => {
     block.initSvg();
     block.render();
   }, []);
+  useEffect(() => {
+    const block = new Blockly.Block('lists_getItem');
+    block.initSvg();
+    block.render();
+  }, []);
   return (
     <div>
       <div id="lists_create_with_item" style={{ display: 'none' }}></div>
