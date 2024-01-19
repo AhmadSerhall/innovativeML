@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Blockly from 'blockly/core';
+import Blockly, { Block } from 'blockly/core';
 import 'blockly/blocks';
 import 'blockly/msg/en';
 
@@ -153,6 +153,26 @@ Blockly.Blocks['lists_getIndexOfItem'] = {
     this.setHelpUrl('');
   },
 };
+Blockly.Blocks['lists_getItem']={
+  init:function(){
+    this.appendValueInput('VALUE')
+      .setCheck('Array')
+      .appendField('in list');
+    this.appendDummyInput()
+      .appendField('get')
+      .appendField(new Blockly.FieldDropdown([
+        ['get','GET'],
+        ['get and remove','GET AND REMOVE'],
+        ['remove','REMOVE']
+      ]))
+      .appendField(new Blockly.FieldDropdown([
+        ['first','FIRST'],
+        ['last','LAST'],
+        ['random','RANDOM']
+      ]))
+    this.appendDummyInput()
+  }
+}
 
 const List = () => {
   useEffect(() => {
