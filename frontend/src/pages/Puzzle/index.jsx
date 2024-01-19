@@ -113,10 +113,6 @@ const Puzzle = () => {
           <block type='find_occurence'></block>
           <block type='get_letter'></block>
           <block type='trim_spaces'></block>
-
-
-
-
         </category>
         {/* review the variable category after */}
         <category name="Variable" colour="#218762">
@@ -160,10 +156,8 @@ const Puzzle = () => {
         <block type='lists_create_with_container'></block>
         <block type='lists_create_with_item'></block> 
         {/* <block type='lists_create_with'></block>  */}
-        
         </category>
       </xml>
-
       <div id='blocklyDiv' className="playground" style={{ height: '600px', width: '900px' }}></div>
     </div>
   );

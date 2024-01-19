@@ -127,7 +127,6 @@ const List = () => {
 
   return (
     <div>
-      {/* Additional components for your List category */}
     </div>
   );
 };
