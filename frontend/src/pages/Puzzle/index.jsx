@@ -62,7 +62,7 @@ const Puzzle = () => {
     <div>
       <NavBar/>
       <div className='tab-container flex row '>
-        <Button text="puzzle" textColor={"black"} bgColor={"#FFD700"} onClick={() => handleTabChange('puzzle')} className={selectedTab === 'puzzle' ? 'active-tab' : 'inactive-tab'}/>
+        <Button text="Puzzle" textColor={"black"} bgColor={"#FFD700"} onClick={() => handleTabChange('puzzle')} className={selectedTab === 'puzzle' ? 'active-tab' : 'inactive-tab'}/>
         <Button text="Python code" textColor={"white"} bgColor={"#1261A9"}  onClick={() => handleTabChange('python')} className={selectedTab === 'python' ? 'active-tab' : 'inactive-tab'}/>
         
       </div>
@@ -98,6 +98,8 @@ const Puzzle = () => {
         </category>
         <category name="logic" colour="#222342">
           <block type="do_if"></block>
+          <block type="do_if_else_if"></block>
+          <block type="do_if_else"></block>
           <block type="logic_comparison"></block>
           <block type="logic_connector"></block>
           <block type="logic_not"></block>

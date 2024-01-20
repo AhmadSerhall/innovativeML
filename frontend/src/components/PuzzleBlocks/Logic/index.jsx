@@ -4,20 +4,161 @@ import { useEffect } from 'react';
 
 Blockly.Blocks['do_if'] = {
     init: function() {
-       this.appendDummyInput()
-           .appendField("if");
-       this.appendValueInput("CONDITION")
-           .setCheck("Boolean")           
-       this.appendStatementInput("DO")
-           .setCheck(null)
-           .appendField("do");
-       this.setPreviousStatement(true, null);
-       this.setNextStatement(true, null);
-       this.setColour("#5BA58C");
-       this.setTooltip("Perform an action if a condition is true.");
-       this.setHelpUrl("");
+        this.appendValueInput("CONDITION")
+            .setCheck("Boolean")
+            .appendField(" if");
+
+        this.appendStatementInput("DO")
+            .setCheck(null)
+            .appendField("do");
+
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#5BA58C");
     }
 };
+
+Blockly.Blocks['do_if_else_if'] = {
+    init: function() {
+        this.appendValueInput("CONDITION")
+            .setCheck("Boolean")
+            .appendField("else if");
+
+        this.appendStatementInput("DO")
+            .setCheck(null)
+            .appendField("do");
+
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#5BA58C");
+    }
+};
+
+
+Blockly.Blocks['do_if_else'] = {
+    init: function() {
+        this.appendStatementInput("DO")
+            .setCheck(null)
+            .appendField("else");
+
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#5BA58C");
+    }
+};
+
+
+// Blockly.Extensions.registerMutator('do_if_mutator', {
+//     mutationToDom: function() {
+//         var container = document.createElement('mutation');
+//         container.setAttribute('else', this.elseCount_);
+//         return container;
+//     },
+//     domToMutation: function(xmlElement) {
+//         this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10);
+//         this.updateShape_();
+//     },
+//     decompose: function(workspace) {
+//         var containerBlock = workspace.newBlock('do_if_else');
+//         containerBlock.initSvg();
+//         var connection = containerBlock.getInput('STACK').connection;
+//         for (var i = 0; i < this.elseCount_; i++) {
+//             var elseIfBlock = workspace.newBlock('do_if_else_if');
+//             elseIfBlock.initSvg();
+//             connection.connect(elseIfBlock.previousConnection);
+//             connection = elseIfBlock.nextConnection;
+//         }
+//         return containerBlock;
+//     },
+//     compose: function(containerBlock) {
+//         var clauseBlock = containerBlock.getInputTargetBlock('STACK');
+//         this.elseCount_ = 0;
+//         var clause;
+//         while (clauseBlock) {
+//             switch (clauseBlock.type) {
+//                 case 'do_if_else_if':
+//                     this.elseCount_++;
+//                     clause = this.appendDummyInput('IF' + this.elseCount_)
+//                         .appendField("else if")
+//                         .appendField(new Blockly.FieldVariable(true), "VAR");
+//                     clause.appendStatementInput('DO' + this.elseCount_)
+//                         .setCheck(null)
+//                         .appendField('do');
+//                     break;
+//                 case 'do_if_else':
+//                     this.elseCount_++;
+//                     clause = this.appendDummyInput('ELSE')
+//                         .appendField("else");
+//                     clause.appendStatementInput('ELSE_DO')
+//                         .setCheck(null)
+//                         .appendField('do');
+//                     break;
+//                 default:
+//                     throw TypeError('Unknown block type: ' + clauseBlock.type);
+//             }
+//             clauseBlock = clauseBlock.nextConnection &&
+//                 clauseBlock.nextConnection.targetBlock();
+//         }
+//         this.updateShape_();
+//     },
+//     saveConnections: function(containerBlock) {
+//         var clauseBlock = containerBlock.getInputTargetBlock('STACK');
+//         var i = 1;
+//         while (clauseBlock) {
+//             switch (clauseBlock.type) {
+//                 case 'do_if_else_if':
+//                     var inputDo = this.getInput('DO' + i);
+//                     clauseBlock.valueConnection_ =
+//                         inputDo && inputDo.connection.targetConnection;
+//                     i++;
+//                     break;
+//                 case 'do_if_else':
+//                     var inputElseDo = this.getInput('ELSE_DO');
+//                     clauseBlock.valueConnection_ =
+//                         inputElseDo && inputElseDo.connection.targetConnection;
+//                     break;
+//                 default:
+//                     throw TypeError('Unknown block type: ' + clauseBlock.type);
+//             }
+//             clauseBlock = clauseBlock.nextConnection &&
+//                 clauseBlock.nextConnection.targetBlock();
+//         }
+//     },
+//     updateShape_: function() {
+//         // Delete everything.
+//         var i = 1;
+//         while (this.getInput('IF' + i)) {
+//             this.removeInput('IF' + i);
+//             this.removeInput('DO' + i);
+//             i++;
+//         }
+//         if (this.getInput('ELSE')) {
+//             this.removeInput('ELSE');
+//         }
+//         if (this.getInput('ELSE_DO')) {
+//             this.removeInput('ELSE_DO');
+//         }
+
+//         // Rebuild block.
+//         for (i = 1; i <= this.elseCount_; i++) {
+//             this.appendDummyInput('IF' + i)
+//                 .appendField("else if")
+//                 .appendField(new Blockly.FieldVariable(true), "VAR");
+//             this.appendStatementInput('DO' + i)
+//                 .setCheck(null)
+//                 .appendField('do');
+//         }
+//         if (this.elseCount_ > 0) {
+//             this.appendDummyInput('ELSE')
+//                 .appendField("else");
+//             this.appendStatementInput('ELSE_DO')
+//                 .setCheck(null)
+//                 .appendField('do');
+//         }
+//     }
+// });
+
+  
 Blockly.Blocks['logic_comparison'] = {
     init: function () {
         this.appendValueInput("LEFT")
@@ -77,7 +218,7 @@ Blockly.Blocks['true_false'] = {
         this.setHelpUrl("");
         this.setPreviousStatement(null);
         this.setNextStatement(null);
-        this.setStyle('logic_blocks'); // Adjust the style to control appearance
+        this.setStyle('logic_blocks'); 
     }
 };
 Blockly.Blocks['null_block'] = {
@@ -85,7 +226,7 @@ Blockly.Blocks['null_block'] = {
         this.appendDummyInput()
             .appendField("null");
         this.setOutput(true, null);
-        this.setColour("#808080"); // Gray color for null block
+        this.setColour("#808080"); 
         this.setTooltip("Represents a null value");
         this.setHelpUrl("");
     }
@@ -110,6 +251,16 @@ Blockly.Blocks['conditional_test_if_else'] = {
 const Logic = () => {
   useEffect(() => {
     const block = new Blockly.Block('do_if');
+    block.initSvg();
+    block.render();
+  }, []);
+  useEffect(() => {
+    const block = new Blockly.Block('do_if_else_if');
+    block.initSvg();
+    block.render();
+  }, []);
+  useEffect(() => {
+    const block = new Blockly.Block('do_if_else');
     block.initSvg();
     block.render();
   }, []);
