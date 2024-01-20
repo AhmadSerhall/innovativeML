@@ -147,7 +147,7 @@ Blockly.Blocks['find_occurence'] = {
         init: function () {
           this.setColour(160);
           this.appendValueInput('VALUE')
-            .setCheck('TEXT')
+            .setCheck('String')
             .appendField('length of');
           this.setOutput(true, 'Number');
           this.setTooltip('Returns the length of a list.');

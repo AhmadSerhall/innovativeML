@@ -80,6 +80,8 @@ const Puzzle = () => {
           <block type='find_occurence'></block>
           <block type='get_letter'></block>
           <block type='trim_spaces'></block>
+          <block type='text_length'></block>
+
         </category>
         {/* review the variable category after */}
         <category name="Variable" colour="#218762">
