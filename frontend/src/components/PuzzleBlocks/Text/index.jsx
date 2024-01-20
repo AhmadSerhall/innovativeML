@@ -196,6 +196,11 @@ const Text = () => {
         block.initSvg();
         block.render();
       }, []);
+      useEffect(() => {
+        const block = new Blockly.Block('text_length');
+        block.initSvg();
+        block.render();
+      }, []);
   return (
     <div>
       <div id="text_integer " style={{ display: 'none' }}></div>
@@ -206,6 +211,8 @@ const Text = () => {
       <div id="find_occurence " style={{ display: 'none' }}></div>
       <div id="get_letter " style={{ display: 'none' }}></div>
       <div id="trim_spaces " style={{ display: 'none' }}></div>
+      <div id="text_length " style={{ display: 'none' }}></div>
+
     </div>
   )
 }
