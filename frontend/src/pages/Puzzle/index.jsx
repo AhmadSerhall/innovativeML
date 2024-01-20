@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import Blockly from 'blockly';
+import '../../pythonCode/Text'
 import 'blockly/blocks';
 import './style.css';
 import '../../styles/global.css'
@@ -13,6 +14,7 @@ import Variables from '../../components/PuzzleBlocks/Variables';
 import NavBar from '../../components/NavBar'
 import Button from '../../components/Button'
 import Footer from '../../components/Footer'
+
 
 const Puzzle = () => {
   const [variableName, setVariableName] = useState('');
@@ -39,6 +41,7 @@ const Puzzle = () => {
       return;
     }
     setWorkspace(workspace)
+    
 
     // Cleanup function to dispose of the workspace when the component unmounts
     return () => {
