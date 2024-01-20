@@ -14,10 +14,10 @@
   }
   .python-container{
     margin:10%;
+    border:1px solid black;
+    border-radius:8px;
   }
-  .python-container p{
-    color:black;
-  }
+  
   /* #toolbox {
     background-color: blue !important;
     border: 1px solid #ccc;

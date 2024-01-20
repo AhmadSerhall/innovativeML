@@ -139,7 +139,7 @@ const Puzzle = () => {
     )}
     {selectedTab==='python' && (
       <div className='python-container flex center'>
-        <h1>code will be here</h1>
+        {/* <h1>code will be here</h1> */}
         <pre>{generatePythonCode()}</pre>
         </div>
     )}
