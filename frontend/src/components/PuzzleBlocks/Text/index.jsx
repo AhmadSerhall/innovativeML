@@ -143,6 +143,17 @@ Blockly.Blocks['find_occurence'] = {
           this.setInputsInline(true);
         }
       };
+      Blockly.Blocks['text_length'] = {
+        init: function () {
+          this.setColour(160);
+          this.appendValueInput('VALUE')
+            .setCheck('TEXT')
+            .appendField('length of');
+          this.setOutput(true, 'Number');
+          this.setTooltip('Returns the length of a list.');
+          this.setHelpUrl('');
+        },
+      };
 
 const Text = () => {
     useEffect(() => {
