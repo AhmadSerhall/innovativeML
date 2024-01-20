@@ -61,15 +61,22 @@ const Puzzle = () => {
     // Get all the top-level blocks in the workspace
     const blocks = workspace.getTopBlocks();
     console.log('Blocks:', blocks);
+  
     // Initialize an array to store the Python code for each block
     const pythonCodeArray = [];
   
     // Iterate over each block and convert it to Python code
     blocks.forEach((block) => {
-      const blockCode = block.toPython();
-  
-      // Add the Python code to the array
-      pythonCodeArray.push(blockCode);
+      try {
+        if (block.toPython) {
+          const blockCode = block.toPython();
+          // Add the Python code to the array
+          pythonCodeArray.push(blockCode);
+        }
+      } catch (error) {
+        console.error('Error converting block to Python code:', error);
+        // Handle the error as needed, you can log it or skip the block
+      }
     });
   
     // Join the Python code array into a single string
