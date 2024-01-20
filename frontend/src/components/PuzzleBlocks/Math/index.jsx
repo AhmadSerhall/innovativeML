@@ -6,7 +6,6 @@ Blockly.Blocks['math_operations'] = {
     init: function () {
       this.appendValueInput("LEFT")
         .setCheck("Number")
-        .appendField("1");
       this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([
           ["+", "ADD"],

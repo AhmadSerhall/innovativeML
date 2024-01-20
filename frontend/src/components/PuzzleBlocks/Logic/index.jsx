@@ -18,7 +18,7 @@ Blockly.Blocks['do_if'] = {
        this.setHelpUrl("");
     }
 };
-Blockly.Blocks['math_operations'] = {
+Blockly.Blocks['logic_comparison'] = {
     init: function () {
         this.appendValueInput("LEFT")
             .setCheck("Number");
@@ -35,7 +35,7 @@ Blockly.Blocks['math_operations'] = {
             .setCheck("Number");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#FF9933"); // Orange color for math operations
+        this.setColour("#FF9933");
         this.setTooltip("Perform a math operation");
         this.setHelpUrl("");
     }
@@ -114,7 +114,7 @@ const Logic = () => {
     block.render();
   }, []);
   useEffect(() => {
-    const block = new Blockly.Block('math_operations');
+    const block = new Blockly.Block('logic_comparison');
     block.initSvg();
     block.render();
   }, []);

@@ -98,7 +98,7 @@ const Puzzle = () => {
         </category>
         <category name="logic" colour="#222342">
           <block type="do_if"></block>
-          <block type="math_operations"></block>
+          <block type="logic_comparison"></block>
           <block type="logic_connector"></block>
           <block type="logic_not"></block>
           <block type="true_false"></block>

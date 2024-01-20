@@ -99,30 +99,37 @@ Blockly.Blocks['find_occurence'] = {
     }
     };
     Blockly.Blocks['get_letter'] = {
-        init: function () {
-          this.appendValueInput('VARIABLE')
-            .setCheck('String')
-            .appendField('in text');
-      
-          this.appendDummyInput()
-            .appendField('get')
-            .appendField(new Blockly.FieldDropdown([
-              ['first letter', 'FIRST_LETTER'],
-              ['last letter', 'LAST_LETTER'],
-              ['random letter', 'RANDOM_LETTER']
-            ]), 'LETTER_TYPE');
-      
-          this.appendValueInput('TEXT')
-            .setCheck('String')
-            .appendField('of');
-      
-          this.setOutput(true, 'String');
-          this.setColour('160');
-          this.setTooltip('Get the first letter, last letter, or a random letter of a given text in the specified variable.');
-          this.setHelpUrl('');
-          this.setInputsInline(true);
-        }
-      };
+      init: function () {
+        this.appendValueInput('VARIABLE')
+          .setCheck('String')
+          .appendField('in text');
+    
+        this.appendDummyInput()
+          .appendField('get')
+          .appendField(new Blockly.FieldDropdown([
+            ['first letter', 'FIRST_LETTER'],
+            ['last letter', 'LAST_LETTER'],
+            ['random letter', 'RANDOM_LETTER'],
+            ['letter # from start', 'LETTER_FROM_START'],
+            ['letter # from end', 'LETTER_FROM_END']
+          ], function(option) {
+            // Disable the connection for POSITION input when 'first letter', 'last letter', or 'random letter' is selected
+            return option !== 'FIRST_LETTER' && option !== 'LAST_LETTER' && option !== 'RANDOM_LETTER';
+          }), 'LETTER_TYPE');
+    
+        this.appendValueInput('POSITION')
+          .setCheck('Number')
+          .appendField('of');
+    
+        this.setOutput(true, 'String');
+        this.setColour(160);
+        this.setTooltip('Get the first letter, last letter, random letter, or a letter at a specific position in a given text.');
+        this.setHelpUrl('');
+        this.setInputsInline(true);
+      }
+    };
+    
+    
       Blockly.Blocks['trim_spaces'] = {
         init: function () {
           this.appendDummyInput()
