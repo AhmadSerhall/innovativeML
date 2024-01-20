@@ -2,6 +2,25 @@ import React from 'react'
 import Blockly from 'blockly';
 import { useEffect } from 'react';
 
+// Blockly.Blocks['text_print'] = {
+//   init: function() {
+//     this.appendValueInput('TEXT')
+//         .setCheck('String')
+//         .appendField('print');
+
+//     this.setInputsInline(true);
+//     this.setPreviousStatement(true, null);
+//     this.setNextStatement(true, null);
+//     this.setColour('#2196F3');
+//     this.setTooltip('Prints the specified text.');
+//   },
+
+//   toPython: function() {
+//     const textValue = Blockly.Python.valueToCode(this, 'TEXT', Blockly.Python.ORDER_ATOMIC) || "''";
+//     return `print(${textValue})\n`;
+//   },
+// };
+
 Blockly.Blocks['type_integer'] = {
     init: function () {
       this.appendDummyInput().appendField(new Blockly.FieldNumber(0), 'NAME');

@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import Blockly from 'blockly';
-import '../../pythonCode/Text'
+import '../../pythonCode/Text' //imported the PythonCode 
 import 'blockly/blocks';
 import './style.css';
 import '../../styles/global.css'
@@ -52,15 +52,33 @@ const Puzzle = () => {
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
   };
-
+ 
   const generatePythonCode = () => {
-    // Logic to transform Blockly workspace content to Python code
-    // ...
-
-    // For demonstration purposes, let's assume the code is "print('Hello, Python!');"
-    return "print('Hello, Python!');";
+    if (!workspace) {
+      return ''; // Handle the case where the workspace is not initialized
+    }
+  
+    // Get all the top-level blocks in the workspace
+    const blocks = workspace.getTopBlocks();
+    console.log('Blocks:', blocks);
+    // Initialize an array to store the Python code for each block
+    const pythonCodeArray = [];
+  
+    // Iterate over each block and convert it to Python code
+    blocks.forEach((block) => {
+      const blockCode = block.toPython();
+  
+      // Add the Python code to the array
+      pythonCodeArray.push(blockCode);
+    });
+  
+    // Join the Python code array into a single string
+    const pythonCode = pythonCodeArray.join('\n');
+  
+    return pythonCode;
   };
-
+  
+  
   return (
     <div>
       <NavBar/>
