@@ -23,7 +23,9 @@ function App() {
           {/* <Route className="test" path="/test" element={<Footer/>}/> */}
           {/* <Route className="test" path="/test" element={<Button/>}/> */}
           {/* <Route className="test" path="/test" element={<Input/>}/> */}
+
           <Route className="login" path="/login" element={<Login/>}/>
+          <Route className="signup" path="/" element={<SignUp/>}/>
           <Route className="signup" path="/signup" element={<SignUp/>}/>
           <Route className="landing" path="/landing" element={<Landing/>}/>
           <Route className="about" path="/about" element={<About/>}/>
