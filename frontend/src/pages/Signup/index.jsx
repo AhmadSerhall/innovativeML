@@ -19,6 +19,9 @@ const SignUp = () => {
   const handleLastnameChange=(e)=>{
     setLastname(e.target.value)
   }
+  const handleEmailChange = (e) => {
+    setUsername(e.target.value);
+  };
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
