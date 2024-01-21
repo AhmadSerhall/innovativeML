@@ -37,7 +37,8 @@ const userSchema=new mongoose.Schema({
     user_type:{
         type:String,
         enum:["user","admin"],
-        default:"user"
+        default:"user",
+        required:false
     },
     //added the fcm token for firebase message sending
     fcmToken:{

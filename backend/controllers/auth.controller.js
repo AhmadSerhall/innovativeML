@@ -99,9 +99,9 @@ const login = async (req, res) => {
 
 
 const register = async (req, res) => {
-    const { first_name, last_name,email, username, password, user_type } = req.body;
+    const { first_name, last_name,email, username, password } = req.body;
 
-    if (!first_name || !last_name || !email|| !username || !password || !user_type) {
+    if (!first_name || !last_name || !email || !username || !password ) {
         return res.status(400).send({ message: "Error, all fields are required" });
     }
     try {
@@ -117,7 +117,7 @@ const register = async (req, res) => {
             email,
             username,
             password,
-            user_type
+            
         });
 
         res.status(200).send({ message: "User created successfully" });
