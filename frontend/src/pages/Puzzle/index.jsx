@@ -21,29 +21,79 @@ const Puzzle = () => {
   const workspaceRef = useRef(null);
   const workspaceXmlRef = useRef(null);
 
+  // useEffect(() => {
+  //   const toolbox = document.getElementById('toolbox');
+  //   if (!toolbox) {
+  //     console.error('Toolbox not found!');
+  //     return;
+  //   }
+
+  //   if (!workspaceRef.current) {
+  //     workspaceRef.current = Blockly.inject('blocklyDiv', {
+  //       toolbox,
+  //     });
+
+  //     // Restore workspace from XML if it exists
+  //     if (workspaceXmlRef.current) {
+  //       Blockly.Xml.domToWorkspace(workspaceXmlRef.current, workspaceRef.current);
+  //     }
+  //   }
+
+  //   const workspaceSvg = workspaceRef.current.getParentSvg();
+  //   if (workspaceSvg) {
+  //     workspaceSvg.style.backgroundColor = '#f5f5f5';
+  //   }
+
+  //   return () => {
+  //     console.log('Cleaning up Blockly workspace...');
+  //     const workspace = workspaceRef.current;
+  //     if (workspace) {
+  //       const workspaceXml = Blockly.Xml.workspaceToDom(workspace);
+  //       workspaceXmlRef.current = workspaceXml;
+  //       workspace.dispose();
+  //       workspaceRef.current = null;
+  //     }
+  //   };
+  // }, [selectedTab]);
   useEffect(() => {
     const toolbox = document.getElementById('toolbox');
-    if (!toolbox) {
-      console.error('Toolbox not found!');
-      return;
-    }
-
     if (!workspaceRef.current) {
-      workspaceRef.current = Blockly.inject('blocklyDiv', {
+      const container = document.getElementById('blocklyDiv');
+  
+      // Check if the container is in the current document
+      if (!document.body.contains(container)) {
+        console.error('Container is not in the current document.');
+        return;
+      }
+  
+      workspaceRef.current = Blockly.inject(container, {
         toolbox,
       });
-
+  
       // Restore workspace from XML if it exists
       if (workspaceXmlRef.current) {
         Blockly.Xml.domToWorkspace(workspaceXmlRef.current, workspaceRef.current);
       }
+  
+      const workspaceSvg = workspaceRef.current.getParentSvg();
+      if (workspaceSvg) {
+        workspaceSvg.style.backgroundColor = '#f5f5f5';
+      }
+  
+      // Add a change listener to the workspace
+      workspaceRef.current.addChangeListener((event) => {
+        console.log('Blockly workspace event:', event);
+  
+        // Check if the event is a block creation event
+        if (event.type === Blockly.Events.CREATE) {
+          console.log('Block Created:', event);
+          // Here you can generate and log Python code
+          const pythonCode = generatePythonCode();
+          console.log('Generated Python Code:', pythonCode);
+        }
+      });
     }
-
-    const workspaceSvg = workspaceRef.current.getParentSvg();
-    if (workspaceSvg) {
-      workspaceSvg.style.backgroundColor = '#f5f5f5';
-    }
-
+  
     return () => {
       console.log('Cleaning up Blockly workspace...');
       const workspace = workspaceRef.current;
@@ -55,6 +105,7 @@ const Puzzle = () => {
       }
     };
   }, [selectedTab]);
+  
 
   useEffect(() => {
     if (workspaceRef.current) {
@@ -169,6 +220,7 @@ const Puzzle = () => {
         )}
         {selectedTab === 'python' && (
           <div className='python-container flex center'>
+            
             <pre>{generatePythonCode()}</pre>
           </div>
         )}
