@@ -98,14 +98,12 @@ const login = async (req, res) => {
 };
 
 
-
 const register = async (req, res) => {
     const { first_name, last_name,email, username, password, user_type } = req.body;
 
     if (!first_name || !last_name || !email|| !username || !password || !user_type) {
         return res.status(400).send({ message: "Error, all fields are required" });
     }
-
     try {
         // Check if the username already exists
         const existingUser = await User.findOne({ username });
