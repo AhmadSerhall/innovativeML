@@ -1,7 +1,9 @@
 import React, { useEffect,useState } from 'react';
-import Blockly from 'blockly';
+import Blockly from 'blockly/core';
 import '../../pythonCode/Text' //imported the PythonCode 
 import 'blockly/blocks';
+import 'blockly/python';
+// import { pythonGenerator } from 'blockly/python';
 import './style.css';
 import '../../styles/global.css'
 import Text from '../../components/PuzzleBlocks/Text';
@@ -49,41 +51,24 @@ const Puzzle = () => {
       workspace.dispose();
     };
   }, [selectedTab]);
+
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
   };
+  if (workspace) {
+    Blockly.svgResize(workspace);
+  }
+
  
   const generatePythonCode = () => {
-    if (!workspace) {
-      return ''; // Handle the case where the workspace is not initialized
+    if (!workspace || !Blockly.Python) {
+      return ''; // Handle the case where the workspace or Blockly.Python is not initialized
     }
   
-    // Get all the top-level blocks in the workspace
-    const blocks = workspace.getTopBlocks();
-    console.log('Blocks:', blocks);
-  
-    // Initialize an array to store the Python code for each block
-    const pythonCodeArray = [];
-  
-    // Iterate over each block and convert it to Python code
-    blocks.forEach((block) => {
-      try {
-        if (block.toPython) {
-          const blockCode = block.toPython();
-          // Add the Python code to the array
-          pythonCodeArray.push(blockCode);
-        }
-      } catch (error) {
-        console.error('Error converting block to Python code:', error);
-        // Handle the error as needed, you can log it or skip the block
-      }
-    });
-  
-    // Join the Python code array into a single string
-    const pythonCode = pythonCodeArray.join('\n');
-  
+    const pythonCode = Blockly.Python.workspaceToCode(workspace);
     return pythonCode;
   };
+  
   
   
   return (
