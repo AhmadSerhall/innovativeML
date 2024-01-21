@@ -1,11 +1,10 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Blockly from 'blockly/core';
-import '../../pythonCode/Text' //imported the PythonCode 
+import '../../pythonCode/Text';
 import 'blockly/blocks';
 import 'blockly/python';
-// import { pythonGenerator } from 'blockly/python';
 import './style.css';
-import '../../styles/global.css'
+import '../../styles/global.css';
 import Text from '../../components/PuzzleBlocks/Text';
 import Logic from '../../components/PuzzleBlocks/Logic';
 import Loops from '../../components/PuzzleBlocks/Loops';
@@ -13,15 +12,15 @@ import Math from '../../components/PuzzleBlocks/Math';
 import list from '../../components/PuzzleBlocks/List';
 import InputOutput from '../../components/PuzzleBlocks/InputOutput';
 import Variables from '../../components/PuzzleBlocks/Variables';
-import NavBar from '../../components/NavBar'
-import Button from '../../components/Button'
-import Footer from '../../components/Footer'
-
+import NavBar from '../../components/NavBar';
+import Button from '../../components/Button';
+import Footer from '../../components/Footer';
 
 const Puzzle = () => {
-  const [variableName, setVariableName] = useState('');
-  const[selectedTab,setSelectedTab]=useState('puzzle')
-  const[workspace,setWorkspace]=useState(null)
+  const [selectedTab, setSelectedTab] = useState('puzzle');
+  const workspaceRef = useRef(null);
+  const workspaceXmlRef = useRef(null);
+
   useEffect(() => {
     const toolbox = document.getElementById('toolbox');
     if (!toolbox) {
@@ -29,61 +28,77 @@ const Puzzle = () => {
       return;
     }
 
-    const workspace = Blockly.inject('blocklyDiv', {
-      toolbox,
-      
-    });
-    const workspaceSvg = workspace.getParentSvg();
+    if (!workspaceRef.current) {
+      workspaceRef.current = Blockly.inject('blocklyDiv', {
+        toolbox,
+      });
+
+      // Restore workspace from XML if it exists
+      if (workspaceXmlRef.current) {
+        Blockly.Xml.domToWorkspace(workspaceXmlRef.current, workspaceRef.current);
+      }
+    }
+
+    const workspaceSvg = workspaceRef.current.getParentSvg();
     if (workspaceSvg) {
       workspaceSvg.style.backgroundColor = '#f5f5f5';
     }
 
-    if (!workspace) {
-      console.error('Blockly workspace not initialized!');
-      return;
-    }
-    setWorkspace(workspace)
-    
-
-    // Cleanup function to dispose of the workspace when the component unmounts
     return () => {
       console.log('Cleaning up Blockly workspace...');
-      workspace.dispose();
+      const workspace = workspaceRef.current;
+      if (workspace) {
+        const workspaceXml = Blockly.Xml.workspaceToDom(workspace);
+        workspaceXmlRef.current = workspaceXml;
+        workspace.dispose();
+        workspaceRef.current = null;
+      }
     };
+  }, [selectedTab]);
+
+  useEffect(() => {
+    if (workspaceRef.current) {
+      Blockly.svgResize(workspaceRef.current);
+    }
   }, [selectedTab]);
 
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
   };
-  if (workspace) {
-    Blockly.svgResize(workspace);
-  }
 
- 
   const generatePythonCode = () => {
-    if (!workspace || !Blockly.Python) {
-      return ''; // Handle the case where the workspace or Blockly.Python is not initialized
+    if (!workspaceRef.current || !Blockly.Python) {
+      return '';
     }
-  
-    const pythonCode = Blockly.Python.workspaceToCode(workspace);
+
+    const pythonCode = Blockly.Python.workspaceToCode(workspaceRef.current);
     return pythonCode;
   };
-  
-  
-  
+
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <div className='tab-container flex row '>
-        <Button text="Puzzle" textColor={"black"} bgColor={"#FFD700"} onClick={() => handleTabChange('puzzle')} className={selectedTab === 'puzzle' ? 'active-tab' : 'inactive-tab'}/>
-        <Button text="Python code" textColor={"white"} bgColor={"#1261A9"}  onClick={() => handleTabChange('python')} className={selectedTab === 'python' ? 'active-tab' : 'inactive-tab'}/>
-        
+        <Button
+          text='Puzzle'
+          textColor={'black'}
+          bgColor={'#FFD700'}
+          onClick={() => handleTabChange('puzzle')}
+          className={selectedTab === 'puzzle' ? 'active-tab' : 'inactive-tab'}
+        />
+        <Button
+          text='Python code'
+          textColor={'white'}
+          bgColor={'#1261A9'}
+          onClick={() => handleTabChange('python')}
+          className={selectedTab === 'python' ? 'active-tab' : 'inactive-tab'}
+        />
       </div>
-    <div className='puzzle-container'>
-    {selectedTab === 'puzzle' && (
+      <div className='puzzle-container'>
+        {selectedTab === 'puzzle' && (
           <>
-      <xml id='toolbox' style={{ display: 'none'}}>
-        <category name="Text" colour="#2196F3" className="category">
+            <xml id='toolbox' style={{ display: 'none' }}>
+            <category name="Text" colour="#2196F3" className="category">
           <block type="text_print"></block>
           <block type='text'></block>
           <block type='create_text_with'></block>
@@ -94,16 +109,15 @@ const Puzzle = () => {
           <block type='get_letter'></block>
           <block type='trim_spaces'></block>
           <block type='text_length'></block>
-
         </category>
         {/* review the variable category after */}
         <category name="Variable" colour="#218762">
         {/*<block type="create_variable"></block>*/}
         <block type="variables_get">
-            <field name="VAR" variabletype="">{variableName}</field>
+            {/* <field name="VAR" variabletype="">{variableName}</field>
           </block>
           <block type="variables_set">
-            <field name="VAR" variabletype="">{variableName}</field>
+            <field name="VAR" variabletype="">{variableName}</field> */}
           </block>
           {/* <block type="create_variable_button">
             <field name="TEXT" variabletype="">{variableName}</field>
@@ -149,19 +163,17 @@ const Puzzle = () => {
         <category name="input_output" colour="#333">
         <block type='print'></block>  
         <block type='input'></block> 
-        </category>
-      </xml>
-      <div id='blocklyDiv' className="playground" ></div>
-      </>
-    )}
-    {selectedTab==='python' && (
-      <div className='python-container flex center'>
-        {/* <h1>code will be here</h1> */}
-        <pre>{generatePythonCode()}</pre>
-        </div>
-    )}
-    </div>
-    <Footer/>
+        </category>            </xml>
+            <div id='blocklyDiv' className='playground'></div>
+          </>
+        )}
+        {selectedTab === 'python' && (
+          <div className='python-container flex center'>
+            <pre>{generatePythonCode()}</pre>
+          </div>
+        )}
+      </div>
+      <Footer />
     </div>
   );
 };
