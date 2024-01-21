@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import TitleLogo from '../../components/TitleLogo';
+import axios from 'axios'
 import '../../styles/global.css';
 import './style.css';
 import { Link } from 'react-router-dom';
