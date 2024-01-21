@@ -13,6 +13,10 @@ const userSchema=new mongoose.Schema({
         minlength:3,
         trim:true
     },
+    email:{
+      type:String,
+      required:"enter a valid email format"
+    },
     username:{
         type:String,
         required:"username needed",
