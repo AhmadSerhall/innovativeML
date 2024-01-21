@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   const navigate = useNavigate(); 
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastname] = useState('');
+  const [first_name, setFirstname] = useState('');
+  const [last_name, setLastname] = useState('');
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -36,33 +36,37 @@ const SignUp = () => {
   };
 
   const handleSignUp = () => {
-    // Assuming you have a function to make the API call for user registration
-    // Replace 'your_backend_url' with the actual URL of your backend
-    
-    fetch('http://localhost:8000/user/register', {
+    fetch('http://localhost:8000/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        firstname,
-        lastname,
+        first_name,
+        last_name,
         email,
         username,
         password,
       }),
     })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then(data => {
         console.log('Successfully registered:', data);
         // Redirect to the login page
-        navigate.push('/login');
+        navigate('/login');
       })
       .catch(error => {
         console.error('Error during registration:', error);
-        // Handle the error as needed
+        // Log the error details
+        console.error(error.message);
       });
   };
+  
 
   return (
     <div className="signup-container">
@@ -72,14 +76,14 @@ const SignUp = () => {
         <Input
           name="first_name"
           type="text"
-          value={firstname}
+          value={first_name}
           onChange={handleFirstnameChange}
           placeholder="enter your first name"
         />
         <Input
           name="last_name"
           type="text"
-          value={lastname}
+          value={last_name}
           onChange={handleLastnameChange}
           placeholder="enter your last name"
         />
