@@ -18,12 +18,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* <Route className="test" path="/test" element={<TitleLogo/>}/> */}
-          {/* <Route className="test" path='/test' element={<NavBar/>}/> */}
-          {/* <Route className="test" path="/test" element={<Footer/>}/> */}
-          {/* <Route className="test" path="/test" element={<Button/>}/> */}
-          {/* <Route className="test" path="/test" element={<Input/>}/> */}
-
           <Route className="login" path="/login" element={<Login/>}/>
           <Route className="signup" path="/" element={<SignUp/>}/>
           <Route className="signup" path="/signup" element={<SignUp/>}/>
