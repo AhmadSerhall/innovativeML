@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import TitleLogo from '../../components/TitleLogo';
-import axios from 'axios'
+import axios from 'axios';
 import '../../styles/global.css';
 import './style.css';
 import { Link } from 'react-router-dom';
@@ -36,44 +36,33 @@ const SignUp = () => {
     setPassword(e.target.value);
   };
 
-  const handleSignUp = () => {
-    fetch('http://localhost:8000/auth/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        first_name,
-        last_name,
-        email,
-        username,
-        password,
-      }),
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log('Successfully registered:', data);
-        // Redirect to the login page
-        navigate('/login');
-      })
-      .catch(error => {
-        console.error('Error during registration:', error);
-        // Log the error details
-        console.error(error.message);
-      });
-  };
+  
+const handleSignUp = async () => {
+  try {
+    const response = await axios.post('http://localhost:8000/auth/register', {
+      first_name,
+      last_name,
+      email,
+      username,
+      password,
+    });
+
+    console.log('Successfully registered:', response.data);
+    // Redirect to the login page
+    navigate('/login');
+  } catch (error) {
+    console.error('Error during registration:', error);
+    // Log the error details
+    console.error(error.message);
+  }
+};
   
 
   return (
     <div className="signup-container">
       <TitleLogo />
       <h1 className="center signup-title">Sign Up</h1>
-      <form className="signup-form">
+      <form className="signup-form" action='POST'>
         <Input
           name="first_name"
           type="text"
@@ -114,6 +103,7 @@ const SignUp = () => {
           text="Sign Up"
           bgColor="#1261A9"
           onClick={(e) => handleSignUp(e)}
+          type="submit"
         />
         <h3 className="no-acc">
           Already have an account? <Link to="/login" className="login">Login</Link>
