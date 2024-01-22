@@ -77,7 +77,7 @@ const Puzzle = () => {
     if (workspaceRef.current) {
       Blockly.svgResize(workspaceRef.current);
     }
-  }, [selectedTab]);
+  }, []);
 
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
