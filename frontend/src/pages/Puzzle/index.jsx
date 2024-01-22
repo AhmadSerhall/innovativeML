@@ -22,34 +22,27 @@ const Puzzle = () => {
   const workspaceXmlRef = useRef(null);
 
   useEffect(() => {
-    const toolbox = document.getElementById('toolbox');
-    if (!workspaceRef.current) {
-      const container = document.getElementById('blocklyDiv');
-  
-      // Check if the container is in the current document
-      if (!document.body.contains(container)) {
-        console.error('Container is not in the current document.');
-        return;
-      }
-  
+    const container = document.getElementById('blocklyDiv');
+
+    if (!workspaceRef.current && container) {
       workspaceRef.current = Blockly.inject(container, {
-        toolbox,
+        toolbox: document.getElementById('toolbox'),
       });
-  
+
       // Restore workspace from XML if it exists
       if (workspaceXmlRef.current) {
         Blockly.Xml.domToWorkspace(workspaceXmlRef.current, workspaceRef.current);
       }
-  
+
       const workspaceSvg = workspaceRef.current.getParentSvg();
       if (workspaceSvg) {
         workspaceSvg.style.backgroundColor = '#f5f5f5';
       }
-  
+
       // Add a change listener to the workspace
       workspaceRef.current.addChangeListener((event) => {
         console.log('Blockly workspace event:', event);
-  
+
         // Check if the event is a block creation event
         if (event.type === Blockly.Events.CREATE) {
           console.log('Block Created:', event);
@@ -59,7 +52,7 @@ const Puzzle = () => {
         }
       });
     }
-  
+
     return () => {
       console.log('Cleaning up Blockly workspace...');
       const workspace = workspaceRef.current;
@@ -70,7 +63,7 @@ const Puzzle = () => {
         workspaceRef.current = null;
       }
     };
-  }, [selectedTab]);
+  }, [selectedTab]); 
   
 
   useEffect(() => {
