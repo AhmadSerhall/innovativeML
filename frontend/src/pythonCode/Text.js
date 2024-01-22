@@ -30,37 +30,6 @@
 
 // export default Blockly.Blocks['text_print'];
 
-// import * as Blockly from 'blockly/core';
-// import 'blockly/blocks';
-// import 'blockly/python';
-
-// Blockly.Blocks['text_print'] = {
-//   init: function () {
-//     this.appendValueInput('TEXT')
-//       .setCheck('String')
-//       .appendField('print');
-
-//     this.setInputsInline(true);
-//     this.setPreviousStatement(true, null);
-//     this.setNextStatement(true, null);
-//     this.setColour('#2196F3');
-//     this.setTooltip('Prints the specified text');
-//   },
-
-//   toPython: function () {
-//     console.log('Generating Python code for text_print block...');
-//     const textValue = Blockly.Python.valueToCode(this, 'TEXT', Blockly.Python.ORDER_ATOMIC) || "''";
-//     console.log('Text value:', textValue);
-//     const pythonCode = `print(${textValue})\n`;
-//     console.log('Generated Python Code:', pythonCode);
-//     return pythonCode;
-//   },
-  
-  
-// };
-
-// // Optionally, you can export the block directly
-// export { Blockly };
 import * as Blockly from 'blockly/core';
 import 'blockly/blocks';
 import 'blockly/python';
@@ -91,4 +60,4 @@ Blockly.Blocks['text_print'] = {
   // };
 
 // Optionally, you can export the block directly
-export { Blockly };
+// export { Blockly };

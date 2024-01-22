@@ -37,32 +37,36 @@ const SignUp = () => {
   };
 
   
-const handleSignUp = async () => {
-  try {
-    const response = await axios.post('http://localhost:8000/auth/register', {
-      first_name,
-      last_name,
-      email,
-      username,
-      password,
-    });
-
-    console.log('Successfully registered:', response.data);
-    // Redirect to the login page
-    navigate('/login');
-  } catch (error) {
-    console.error('Error during registration:', error);
-    // Log the error details
-    console.error(error.message);
-  }
-};
+  const handleSignUp = async () => {
+    try {
+      const response = await axios.post('http://localhost:8000/auth/register', {
+        first_name,
+        last_name,
+        email,
+        username,
+        password,
+      });
+  
+      console.log('Successfully registered:', response.data);
+      // Redirect to the login page
+      navigate('/login');
+    } catch (error) {
+      console.error('Error during registration:', error);
+      console.error(error.message);
+      console.error('Error response:', error.response);
+      if (error.response && error.response.data && error.response.data.message) {
+        console.error('Server error message:', error.response.data.message);
+      }
+    }
+  };
+  
   
 
   return (
     <div className="signup-container">
       <TitleLogo />
       <h1 className="center signup-title">Sign Up</h1>
-      <form className="signup-form" action='POST'>
+      <form className="signup-form">
         <Input
           name="first_name"
           type="text"

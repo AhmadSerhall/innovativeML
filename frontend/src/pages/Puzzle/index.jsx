@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Blockly from 'blockly/core';
-import '../../pythonCode/Text';
 import 'blockly/blocks';
 import 'blockly/python';
+import '../../pythonCode/Text';
 import './style.css';
 import '../../styles/global.css';
 import Text from '../../components/PuzzleBlocks/Text';
@@ -21,40 +21,6 @@ const Puzzle = () => {
   const workspaceRef = useRef(null);
   const workspaceXmlRef = useRef(null);
 
-  // useEffect(() => {
-  //   const toolbox = document.getElementById('toolbox');
-  //   if (!toolbox) {
-  //     console.error('Toolbox not found!');
-  //     return;
-  //   }
-
-  //   if (!workspaceRef.current) {
-  //     workspaceRef.current = Blockly.inject('blocklyDiv', {
-  //       toolbox,
-  //     });
-
-  //     // Restore workspace from XML if it exists
-  //     if (workspaceXmlRef.current) {
-  //       Blockly.Xml.domToWorkspace(workspaceXmlRef.current, workspaceRef.current);
-  //     }
-  //   }
-
-  //   const workspaceSvg = workspaceRef.current.getParentSvg();
-  //   if (workspaceSvg) {
-  //     workspaceSvg.style.backgroundColor = '#f5f5f5';
-  //   }
-
-  //   return () => {
-  //     console.log('Cleaning up Blockly workspace...');
-  //     const workspace = workspaceRef.current;
-  //     if (workspace) {
-  //       const workspaceXml = Blockly.Xml.workspaceToDom(workspace);
-  //       workspaceXmlRef.current = workspaceXml;
-  //       workspace.dispose();
-  //       workspaceRef.current = null;
-  //     }
-  //   };
-  // }, [selectedTab]);
   useEffect(() => {
     const toolbox = document.getElementById('toolbox');
     if (!workspaceRef.current) {
@@ -118,9 +84,14 @@ const Puzzle = () => {
   };
 
   const generatePythonCode = () => {
+    if (!workspaceRef.current || typeof Blockly === 'undefined' || typeof Blockly.Python === 'undefined') {
+      return 'Blockly or Blockly.Python is not defined.';
+    }
     if (!workspaceRef.current || !Blockly.Python) {
       return '';
     }
+    const allBlocks = workspaceRef.current.getAllBlocks();
+    console.log('All Blocks in Workspace:', allBlocks);
 
     const pythonCode = Blockly.Python.workspaceToCode(workspaceRef.current);
     return pythonCode;
