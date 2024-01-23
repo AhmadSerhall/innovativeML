@@ -54,7 +54,7 @@ const Footer = () => {
                 {/* <li><Link to="/watch">Watch</Link></li> */}
                 <li><Link to="/edit">Edit Profile</Link></li>
                 {/* <li><Link to="/support">Support Us</Link></li> */}
-                <li onClick={handleLogout}>Log Out</li>
+                <li onClick={handleLogout} className='logout'>Log Out</li>
             </ul>
         </div>
       </div>

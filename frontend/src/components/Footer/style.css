@@ -36,6 +36,9 @@
     color: gainsboro;
     transition: background-color 0.3s ease;
   } 
+  .logout{
+    cursor:pointer
+  }
   @media (max-width: 768px) {
     .column {
       flex-direction: row;
