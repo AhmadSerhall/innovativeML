@@ -55,15 +55,12 @@ const Login = () => {
           navigate('/landing');
         } else {
           console.error('Google authentication failed on the backend');
-          // setLoginError('Google authentication failed');
         }
       } else {
         console.error('Google Sign-In Response structure:', response);
-        // setLoginError('Google authentication failed - response structure issue');
       }
     } catch (error) {
       console.error('Error during Google authentication on the backend:', error);
-      // setLoginError('Google authentication failed');
     }
   };
   
