@@ -41,9 +41,34 @@ const Login = () => {
       });
   };
 
-  const responseGoogle = (response) => {
+  
+  const responseGoogle = async (response) => {
     console.log('Google Sign-In Response:', response);
+  
+    try {
+      if (response && response.profileObj) {
+        const { email, googleId } = response.profileObj;
+        const backendResponse = await axios.get(`http://localhost:8000/auth/auth/google/callback?email=${email}&googleId=${googleId}`);
+        console.log('Backend Response:', backendResponse.data);
+        if (backendResponse.data.success) {
+          const token = backendResponse.data.token;
+          localStorage.setItem('token', token);
+          navigate('/landing');
+        } else {
+          console.error('Google authentication failed on the backend');
+          setLoginError('Google authentication failed');
+        }
+      } else {
+        console.error('Google Sign-In Response structure:', response);
+        setLoginError('Google authentication failed - response structure issue');
+      }
+    } catch (error) {
+      console.error('Error during Google authentication on the backend:', error);
+      setLoginError('Google authentication failed');
+    }
   };
+  
+  
 
   return (
     <div className="login-container">
@@ -68,7 +93,7 @@ const Login = () => {
         <div className='button-container flex row'>
         <Button text="Login" bgColor="#1261A9" onClick={handleLogin} />
         <GoogleLogin
-          clientId="your-google-client-id"
+          clientId="58934895291-0in324g2bkdgnq7etl0rds0bspgq6rc6.apps.googleusercontent.com"
           buttonText="Sign in with Google"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
