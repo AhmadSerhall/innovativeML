@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import TitleLogo from '../../components/TitleLogo';
@@ -20,7 +22,28 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    console.log('Logging in with:', username, password);
+    axios.post('http://localhost:8000/auth/login', {
+      username,
+      password,
+    })
+      .then(response => {
+        console.log('Login successful:', response.data);
+  
+        // Assuming your backend sends a JWT token upon successful login
+        const token = response.data.token;
+  
+        // Store the token in localStorage or in a state variable (depends on your application structure)
+        localStorage.setItem('token', token);
+  
+        // Redirect to a protected route or perform any necessary actions after login
+        // Example: history.push('/dashboard');
+      })
+      .catch(error => {
+        console.error('Error during login:', error);
+  
+        // Handle the error as needed
+        // You might want to show an error message to the user
+      });
   };
 
   const responseGoogle = (response) => {
