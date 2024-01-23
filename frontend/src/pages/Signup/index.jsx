@@ -15,30 +15,74 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    username: '',
+    password: '',
+  });
 
   const handleFirstnameChange = (e) => {
-    setFirstname(e.target.value);
+    const value = e.target.value;
+    setFirstname(value);
+    validateInput('first_name', value);
   };
 
   const handleLastnameChange = (e) => {
-    setLastname(e.target.value);
+    const value = e.target.value;
+    setLastname(value);
+    validateInput('last_name', value);
   };
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+    const value = e.target.value;
+    setEmail(value);
+    validateInput('email', value);
   };
 
   const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+    const value = e.target.value;
+    setUsername(value);
+    validateInput('username', value);
   };
 
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+    const value = e.target.value;
+    setPassword(value);
+    validateInput('password', value);
   };
 
-  
+  const validateInput = (fieldName, value) => {
+    switch (fieldName) {
+      case 'first_name':
+      case 'last_name':
+      case 'username':
+        if (value.length < 3) {
+          setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: `${fieldName} is too short` }));
+        } else {
+          setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
+        }
+        break;
+      case 'email':
+        // You can add email validation logic here if needed
+        break;
+      case 'password':
+        // You can add password validation logic here if needed
+        break;
+      default:
+        break;
+    }
+  };
+
   const handleSignUp = async () => {
     try {
+      // Check for errors before making the API call
+      if (Object.values(errors).some((error) => error !== '')) {
+        console.log('Validation failed. Please fix errors.');
+        return;
+      }
+
       const response = await axios.post('http://localhost:8000/auth/register', {
         first_name,
         last_name,
@@ -46,21 +90,14 @@ const SignUp = () => {
         username,
         password,
       });
-  
+
       console.log('Successfully registered:', response.data);
       // Redirect to the login page
       navigate('/login');
     } catch (error) {
       console.error('Error during registration:', error);
-      // console.error(error.message);
-      // console.error('Error response:', error.response);
-      // if (error.response && error.response.data && error.response.data.message) {
-      //   console.error('Server error message:', error.response.data.message);
-      // }
     }
   };
-  
-  
 
   return (
     <div className="signup-container">
@@ -74,6 +111,7 @@ const SignUp = () => {
           onChange={handleFirstnameChange}
           placeholder="enter your first name"
         />
+        {errors.first_name && <p className="error-message">{errors.first_name}</p>}
         <Input
           name="last_name"
           type="text"
@@ -81,13 +119,15 @@ const SignUp = () => {
           onChange={handleLastnameChange}
           placeholder="enter your last name"
         />
+        {errors.last_name && <p className="error-message">{errors.last_name}</p>}
         <Input
           name="email"
-          type="text"
+          type="email"
           value={email}
           onChange={handleEmailChange}
           placeholder="enter your email"
         />
+        {errors.email && <p className="error-message">{errors.email}</p>}
         <Input
           name="username"
           type="text"
@@ -95,6 +135,7 @@ const SignUp = () => {
           onChange={handleUsernameChange}
           placeholder="Username"
         />
+        {errors.username && <p className="error-message">{errors.username}</p>}
         <Input
           name="password"
           type="password"
@@ -102,12 +143,12 @@ const SignUp = () => {
           onChange={handlePasswordChange}
           placeholder="Password"
         />
+        {errors.password && <p className="error-message">{errors.password}</p>}
         <Button
           className="center"
           text="Sign Up"
           bgColor="#1261A9"
-          onClick={(e) => handleSignUp(e)}
-          
+          onClick={handleSignUp}
         />
         <h3 className="no-acc">
           Already have an account? <Link to="/login" className="login">Login</Link>

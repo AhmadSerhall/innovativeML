@@ -9,7 +9,7 @@ const Footer = () => {
   const handleLogout = () => {
     localStorage.removeItem('token');
 
-    navigate('/signup');
+    navigate('/login');
   };
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const Footer = () => {
 
     // If not authenticated, redirect to signup
     if (!isAuthenticated) {
-      navigate('/signup');
+      navigate('/login');
     }
   }, [navigate]);
 
