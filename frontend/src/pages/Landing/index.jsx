@@ -9,7 +9,7 @@ import Button from '../../components/Button';
 import heroImage from '../../assets/img9.png';
 import bannerImage from '../../assets/image2.webp';
 import mlMastery from '../../assets/image5.png';
-import me from '../../assets/me.jpeg';
+import me from '../../assets/me2.jpg';
 import './style.css';
 import Footer from '../../components/Footer';
 
