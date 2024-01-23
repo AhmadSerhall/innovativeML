@@ -1,10 +1,26 @@
-import React from 'react'
+import {React,useEffect} from 'react'
 import TitleLogo from '../TitleLogo'
-import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
+import { Link, useNavigate } from 'react-router-dom';
 import './style.css'
 
 const Footer = () => {
+  const navigate=useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+
+    navigate('/signup');
+  };
+
+  useEffect(() => {
+    const isAuthenticated = !!localStorage.getItem('token');
+
+    // If not authenticated, redirect to signup
+    if (!isAuthenticated) {
+      navigate('/signup');
+    }
+  }, [navigate]);
+
   return (
     <div>
       <div className='footer-container full-width flex'>
@@ -35,8 +51,10 @@ const Footer = () => {
         </div>
         <div className='third-col flex column'>
             <ul>
-                <li><Link to="/watch">Watch</Link></li>
-                <li><Link to="/support">Support Us</Link></li>
+                {/* <li><Link to="/watch">Watch</Link></li> */}
+                <li><Link to="/edit">Edit Profile</Link></li>
+                {/* <li><Link to="/support">Support Us</Link></li> */}
+                <li onClick={handleLogout}>Log Out</li>
             </ul>
         </div>
       </div>
