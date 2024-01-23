@@ -6,6 +6,7 @@ const Experience = () => {
     <div className='experience-container flex column'>
       <div className='experience-text'>
         <h2 className='exp-title'>Navigating the InnovativeML Experience</h2>
+        <br/>
         <p>At InnovativeML we created a eye catching user friendly interface that allows Users to either Experience machine learning , or learn coding throughtout a new experience</p>
       </div>
       <div className='experience-card-container flex'>
