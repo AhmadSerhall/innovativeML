@@ -38,7 +38,7 @@ const Footer = () => {
                 <li><Link to="/landing">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/about">FAQ's</Link></li>
+                <li><Link to="/faq">FAQ's</Link></li>
             </ul>
         </div>
         <div className='third-col flex column'>

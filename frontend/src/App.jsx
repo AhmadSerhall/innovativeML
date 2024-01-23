@@ -12,6 +12,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Vision from './components/Vision';
 import Puzzle from './pages/Puzzle';
+import FAQ from './pages/FAQ'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route className="vision" path="/vision" element={<Vision/>}/>
           <Route className="contact" path="/contact" element={<Contact/>}/>
           <Route className="puzzle" path="/puzzle" element={<Puzzle/>}/>
+          <Route className="faq" path="/faq" element={<FAQ/>}/>
         </Routes>
       </BrowserRouter>
     </div>
