@@ -53,11 +53,10 @@ const SignUp = () => {
     validateInput('password', value);
   };
 
-  const validateInput = (fieldName, value) => {
+  const validateInput = async (fieldName, value) => {
     switch (fieldName) {
       case 'first_name':
       case 'last_name':
-      case 'username':
         if (value.length < 3) {
           setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: `${fieldName} is too short` }));
         } else {
@@ -65,15 +64,41 @@ const SignUp = () => {
         }
         break;
       case 'email':
-        // You can add email validation logic here if needed
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+          setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: 'Invalid email format' }));
+        } else {
+          setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
+        }
+        break;
+      case 'username':
+        try {
+          const response = await axios.post('http://localhost:8000/auth/check-username', {
+            username: value,
+          });
+          if (response.data.message === 'Username already exists') {
+            setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: 'Username already exists' }));
+          } else {
+            setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
+          }
+        } catch (error) {
+          console.error('Error checking username:', error);
+        }
         break;
       case 'password':
-        // You can add password validation logic here if needed
+        // Password must be at least 8 characters and contain numbers, small letters, and capital letters
+        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        if (!passwordRegex.test(value)) {
+          setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: 'Password must be 8 characters and contain numbers, small letters, and capital letters' }));
+        } else {
+          setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
+        }
         break;
       default:
         break;
     }
   };
+  
 
   const handleSignUp = async () => {
     try {
