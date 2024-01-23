@@ -55,14 +55,14 @@ const SignUp = () => {
 
   const validateInput = async (fieldName, value) => {
     switch (fieldName) {
-      case 'first_name':
-      case 'last_name':
-        if (value.length < 3) {
-          setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: `${fieldName} is too short` }));
-        } else {
-          setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
-        }
-        break;
+      // case 'first_name':
+      // case 'last_name':
+      //   if (value.length < 3) {
+      //     setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: `${fieldName} is too short` }));
+      //   } else {
+      //     setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
+      //   }
+      //   break;
       case 'email':
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
