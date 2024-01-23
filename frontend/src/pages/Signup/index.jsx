@@ -55,14 +55,6 @@ const SignUp = () => {
 
   const validateInput = async (fieldName, value) => {
     switch (fieldName) {
-      // case 'first_name':
-      // case 'last_name':
-      //   if (value.length < 3) {
-      //     setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: `${fieldName} is too short` }));
-      //   } else {
-      //     setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
-      //   }
-      //   break;
       case 'email':
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
@@ -76,17 +68,12 @@ const SignUp = () => {
           const response = await axios.post('http://localhost:8000/auth/check-username', {
             username: value,
           });
-          if (response.data.message === 'Username already exists') {
-            setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: 'Username already exists' }));
-          } else {
-            setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
-          }
         } catch (error) {
+          setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: 'Username already exists' }));
           console.error('Error checking username:', error);
         }
         break;
       case 'password':
-        // Password must be at least 8 characters and contain numbers, small letters, and capital letters
         const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
         if (!passwordRegex.test(value)) {
           setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: 'Password must be 8 characters and contain numbers, small letters, and capital letters' }));
@@ -102,7 +89,6 @@ const SignUp = () => {
 
   const handleSignUp = async () => {
     try {
-      // Check for errors before making the API call
       if (Object.values(errors).some((error) => error !== '')) {
         console.log('Validation failed. Please fix errors.');
         return;
@@ -117,7 +103,6 @@ const SignUp = () => {
       });
 
       console.log('Successfully registered:', response.data);
-      // Redirect to the login page
       navigate('/login');
     } catch (error) {
       console.error('Error during registration:', error);

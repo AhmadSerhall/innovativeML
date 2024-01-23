@@ -78,3 +78,6 @@
   .login:hover{
     color:#1c3aa9;
   }
+  .error-message{
+    color:red;
+  }

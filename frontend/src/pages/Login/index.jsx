@@ -92,7 +92,10 @@ const Login = () => {
          {loginError && <p className="error-text">{loginError}</p>}
         <div className='button-container flex row'>
         <Button text="Login" bgColor="#1261A9" onClick={handleLogin} />
-        <GoogleLogin
+        <Button text="login with google" bgColor="#1261A9" onClick={async()=>{
+          await axios.get(`http://localhost:8000/auth/google`)
+        }} />
+        {/* <GoogleLogin
           clientId="58934895291-0in324g2bkdgnq7etl0rds0bspgq6rc6.apps.googleusercontent.com"
           buttonText="Sign in with Google"
           onSuccess={responseGoogle}
@@ -107,7 +110,7 @@ const Login = () => {
               Sign in with Google
             </button>
           )}
-        />
+        /> */}
         </div>
         <h3>
           Don't have an account? <Link to="/signup" className='signup'>Sign up</Link>
