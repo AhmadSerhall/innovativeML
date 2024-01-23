@@ -27,6 +27,9 @@
     width:20vw;
     margin-bottom: 15px;
   }
+  .error-text{
+    color:red;
+  }
 
   .signup{
     color:#1261A9;

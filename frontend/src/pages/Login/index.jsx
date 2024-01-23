@@ -12,6 +12,7 @@ import '../../styles/global.css'
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState(null);
   const navigate=useNavigate();
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -22,6 +23,7 @@ const Login = () => {
   };
 
   const handleLogin = () => {
+    setLoginError(null);
     axios.post('http://localhost:8000/auth/login', {
       username,
       password,
@@ -35,6 +37,7 @@ const Login = () => {
       })
       .catch(error => {
         console.error('Error during login:', error);
+        setLoginError('Username or password is incorrect');
       });
   };
 
@@ -61,6 +64,7 @@ const Login = () => {
           onChange={handlePasswordChange}
           placeholder="Password"
         />
+         {loginError && <p className="error-text">{loginError}</p>}
         <div className='button-container flex row'>
         <Button text="Login" bgColor="#1261A9" onClick={handleLogin} />
         <GoogleLogin
