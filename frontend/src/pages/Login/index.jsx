@@ -12,7 +12,7 @@ import '../../styles/global.css'
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate=useNavigate();
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
@@ -28,21 +28,13 @@ const Login = () => {
     })
       .then(response => {
         console.log('Login successful:', response.data);
-  
-        // Assuming your backend sends a JWT token upon successful login
+        //jwt token
         const token = response.data.token;
-  
-        // Store the token in localStorage or in a state variable (depends on your application structure)
         localStorage.setItem('token', token);
-  
-        // Redirect to a protected route or perform any necessary actions after login
-        // Example: history.push('/dashboard');
+        navigate('/landing')
       })
       .catch(error => {
         console.error('Error during login:', error);
-  
-        // Handle the error as needed
-        // You might want to show an error message to the user
       });
   };
 
