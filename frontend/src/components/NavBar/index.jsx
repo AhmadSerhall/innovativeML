@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../../styles/global.css';
 import './style.css'; 
 import TitleLogo from '../TitleLogo';
@@ -7,8 +7,9 @@ import TitleLogo from '../TitleLogo';
 const NavBar = () => {
   const [showLinks, setShowLinks] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const navLinksRef = useRef(null);//to be able to click anywhere to close the burger
+  const navLinksRef = useRef(null); // to be able to click anywhere to close the burger
   const burgerIconRef = useRef(null);
+  const location = useLocation();
 
   const toggleLinks = () => {
     setShowLinks(!showLinks);
@@ -51,9 +52,9 @@ const NavBar = () => {
         </div>
       )}
       <ul ref={navLinksRef} className={`nav-links ${showLinks ? 'show' : ''}`}>
-        <li><Link to="/landing">Home</Link></li>
-        <li><Link to="/about">About us</Link></li>
-        <li><Link to="/contact">Contact us</Link></li>
+        <li className={location.pathname === '/landing' ? 'active' : ''}><Link to="/landing">Home</Link></li>
+        <li className={location.pathname === '/about' ? 'active' : ''}><Link to="/about">About us</Link></li>
+        <li className={location.pathname === '/contact' ? 'active' : ''}><Link to="/contact">Contact us</Link></li>
       </ul>
     </div>
   );

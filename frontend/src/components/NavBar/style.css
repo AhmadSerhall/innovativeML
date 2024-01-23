@@ -36,6 +36,10 @@
     transition: background-color 0.3s ease;
     border-radius: 20%;
   }
+  .nav-links li.active a {
+  color: #1261A9;
+}
+
   
   @media (max-width: 768px) {
     .nav-bar {
