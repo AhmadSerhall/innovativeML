@@ -44,11 +44,10 @@ const Login = () => {
   
   const responseGoogle = async (response) => {
     console.log('Google Sign-In Response:', response);
-  
     try {
       if (response && response.profileObj) {
         const { email, googleId } = response.profileObj;
-        const backendResponse = await axios.get(`http://localhost:8000/auth/auth/google/callback?email=${email}&googleId=${googleId}`);
+        const backendResponse = await axios.get(`http://localhost:8000/auth/google/callback?email=${email}&googleId=${googleId}`);
         console.log('Backend Response:', backendResponse.data);
         if (backendResponse.data.success) {
           const token = backendResponse.data.token;
@@ -56,20 +55,18 @@ const Login = () => {
           navigate('/landing');
         } else {
           console.error('Google authentication failed on the backend');
-          setLoginError('Google authentication failed');
+          // setLoginError('Google authentication failed');
         }
       } else {
         console.error('Google Sign-In Response structure:', response);
-        setLoginError('Google authentication failed - response structure issue');
+        // setLoginError('Google authentication failed - response structure issue');
       }
     } catch (error) {
       console.error('Error during Google authentication on the backend:', error);
-      setLoginError('Google authentication failed');
+      // setLoginError('Google authentication failed');
     }
   };
   
-  
-
   return (
     <div className="login-container">
       <TitleLogo />
@@ -92,9 +89,7 @@ const Login = () => {
          {loginError && <p className="error-text">{loginError}</p>}
         <div className='button-container flex row'>
         <Button text="Login" bgColor="#1261A9" onClick={handleLogin} />
-        <Button text="login with google" bgColor="#1261A9" onClick={async()=>{
-          await axios.get(`http://localhost:8000/auth/google`)
-        }} />
+        <Link to="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fgoogle%2Fcallback&scope=profile%20email&client_id=58934895291-0in324g2bkdgnq7etl0rds0bspgq6rc6.apps.googleusercontent.com&service=lso&o2v=2&theme=glif&flowName=GeneralOAuthFlow"><Button text="login with google" bgColor="#1261A9" onClick={responseGoogle} /></Link>
         {/* <GoogleLogin
           clientId="58934895291-0in324g2bkdgnq7etl0rds0bspgq6rc6.apps.googleusercontent.com"
           buttonText="Sign in with Google"
