@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Blockly from 'blockly/core';
+import { pythonGenerator } from 'blockly/python';
 import 'blockly/blocks';
 import 'blockly/python';
 import '../../pythonCode/Text';
+
 import './style.css';
 import '../../styles/global.css';
 import Text from '../../components/PuzzleBlocks/Text';
@@ -27,6 +29,7 @@ const Puzzle = () => {
     if (!workspaceRef.current && container) {
       workspaceRef.current = Blockly.inject(container, {
         toolbox: document.getElementById('toolbox'),
+        language: 'python',
       });
 
       // Restore workspace from XML if it exists
@@ -48,6 +51,9 @@ const Puzzle = () => {
           console.log('Block Created:', event);
           // Here you can generate and log Python code
           const pythonCode = generatePythonCode();
+          console.log('Blockly:', Blockly);
+          console.log('Blockly.Python:', Blockly.Python);
+
           console.log('Generated Python Code:', pythonCode);
         }
       });
@@ -80,15 +86,23 @@ const Puzzle = () => {
     if (!workspaceRef.current || typeof Blockly === 'undefined' || typeof Blockly.Python === 'undefined') {
       return 'Blockly or Blockly.Python is not defined.';
     }
-    if (!workspaceRef.current || !Blockly.Python) {
-      return '';
-    }
+
     const allBlocks = workspaceRef.current.getAllBlocks();
     console.log('All Blocks in Workspace:', allBlocks);
 
-    const pythonCode = Blockly.Python.workspaceToCode(workspaceRef.current);
-    return pythonCode;
+    try {
+      const pythonCode = pythonGenerator(workspaceRef.current);
+      return pythonCode;
+    } catch (error) {
+      console.error('Error generating Python code:', error);
+      return 'Error generating Python code.';
+    }
   };
+  
+
+  
+  
+  
 
   return (
     <div>

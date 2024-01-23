@@ -52,11 +52,11 @@ const SignUp = () => {
       navigate('/login');
     } catch (error) {
       console.error('Error during registration:', error);
-      console.error(error.message);
-      console.error('Error response:', error.response);
-      if (error.response && error.response.data && error.response.data.message) {
-        console.error('Server error message:', error.response.data.message);
-      }
+      // console.error(error.message);
+      // console.error('Error response:', error.response);
+      // if (error.response && error.response.data && error.response.data.message) {
+      //   console.error('Server error message:', error.response.data.message);
+      // }
     }
   };
   
@@ -66,7 +66,7 @@ const SignUp = () => {
     <div className="signup-container">
       <TitleLogo />
       <h1 className="center signup-title">Sign Up</h1>
-      <form className="signup-form">
+      <div className="signup-form">
         <Input
           name="first_name"
           type="text"
@@ -107,12 +107,12 @@ const SignUp = () => {
           text="Sign Up"
           bgColor="#1261A9"
           onClick={(e) => handleSignUp(e)}
-          type="submit"
+          
         />
         <h3 className="no-acc">
           Already have an account? <Link to="/login" className="login">Login</Link>
         </h3>
-      </form>
+      </div>
     </div>
   );
 };

@@ -31,7 +31,7 @@ const Login = () => {
     <div className="login-container">
       <TitleLogo />
       <h1 className='center login-title'>Login</h1>
-      <form className="login-form flex column">
+      <div className="login-form flex column">
         <Input
           name="username"
           type="text"
@@ -68,7 +68,7 @@ const Login = () => {
         <h3>
           Don't have an account? <Link to="/signup" className='signup'>Sign up</Link>
         </h3>
-      </form>
+      </div>
     </div>
   );
 };
