@@ -16,6 +16,7 @@ import FAQ from './pages/FAQ'
 import Blog from './pages/Blog';
 import PrivacyPolicy from './pages/Privacy';
 import LearnMore from './pages/LearnMore'
+import AiNews from './pages/AINews';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route className="blog" path="/blog" element={<Blog/>}/>
           <Route className="privacy" path="/privacy" element={<PrivacyPolicy/>}/>
           <Route className="learn" path="/learn" element={<LearnMore/>}/>
+          <Route className="news" path="/news" element={<AiNews/>}/>
 
 
 
