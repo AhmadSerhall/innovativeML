@@ -1,0 +1,54 @@
+.blog-container {
+    max-width: 800px;
+    margin-top: 10%;
+    margin-right:auto;
+    margin-left:auto;
+    margin-bottom:4%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .blog-container h1 {
+    color: #333;
+    padding-bottom:2%;
+  }
+  
+  .blog-post {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+  }
+  
+  .blog-post:hover {
+    background-color: #e9e9e9;
+  }
+  
+  h2 {
+    color: #007bff;
+  }
+  
+  .blog-date {
+    color: #777;
+    font-size: 0.9em;
+  }
+  
+  p {
+    color: #555;
+  }
+  
