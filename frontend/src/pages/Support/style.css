@@ -1,0 +1,50 @@
+.support-container {
+    max-width: 800px;
+    margin-top:10%;
+    margin-bottom: 4%;
+    margin-right: auto;
+    margin-left:auto;
+    padding: 20px;
+    background-color: #ecf0f1; /* Light Gray-Blue */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .support-container h1 {
+    color: #2c3e50; 
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .support-container h2 {
+    color: #3498db;
+    margin-top: 30px;
+  }
+  
+  .support-container h3 {
+    color: #3498db;
+    margin-top: 20px;
+  }
+  
+  .support-container p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .faq-question {
+    margin-bottom: 30px;
+  }
+  
+  

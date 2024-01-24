@@ -17,6 +17,7 @@ import Blog from './pages/Blog';
 import PrivacyPolicy from './pages/Privacy';
 import LearnMore from './pages/LearnMore'
 import AiNews from './pages/AINews';
+import Support from './pages/Support'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
           <Route className="privacy" path="/privacy" element={<PrivacyPolicy/>}/>
           <Route className="learn" path="/learn" element={<LearnMore/>}/>
           <Route className="news" path="/news" element={<AiNews/>}/>
+          <Route className="support" path="/support" element={<Support/>}/>
+
 
 
 
