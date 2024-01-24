@@ -28,9 +28,9 @@ const Footer = () => {
             <div className='title-logo'><TitleLogo/></div>
             <div className='social-icons flex'>
             <Link to="https://www.facebook.com/" target='_blank'><i class="fa-brands fa-facebook"></i></Link>
-            <Link to="https://www.twitter.com/" target='_blank'><i class="fa-brands fa-twitter"></i></Link>
+            <Link to="https://github.com/dashboard" target='_blank'><i class="fa-brands fa-github"></i></Link>
             <Link to="https://www.slack.com/" target='_blank'><i class="fa-brands fa-slack"></i></Link>
-            <Link to="https://www.linkedin.com/" target='_blank'><i class="fa-brands fa-linkedin"></i></Link>
+            <Link to="https://www.linkedin.com/in/ahmadserhal1/" target='_blank'><i class="fa-brands fa-linkedin"></i></Link>
             </div>
         </div>
         <div className='second-col flex column'>

@@ -1,9 +1,4 @@
 import './App.css';
-import Button from './components/Button';
-import Footer from './components/Footer';
-import Input from './components/Input';
-import NavBar from './components/NavBar';
-import TitleLogo from './components/TitleLogo';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import SignUp from './pages/Signup';
@@ -39,9 +34,6 @@ function App() {
           <Route className="learn" path="/learn" element={<LearnMore/>}/>
           <Route className="news" path="/news" element={<AiNews/>}/>
           <Route className="support" path="/support" element={<Support/>}/>
-
-
-
 
         </Routes>
       </BrowserRouter>

@@ -52,7 +52,7 @@ const Landing = () => {
         <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
           <div className='banner-txt-btn flex column'>
             <h3>Learn machine learning at your own pace with guided, bitesized education that's effective and enjoyable</h3>
-            <Button text='get started for free' bgColor='#FFD700' textColor={'black'} />
+            <Link to="/learn"><Button text='Learn More' bgColor='#FFD700' textColor={'black'} /></Link>
           </div>
         </ScrollAnimation>
       </div>

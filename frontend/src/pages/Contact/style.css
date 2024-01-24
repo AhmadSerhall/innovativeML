@@ -1,66 +1,100 @@
-.contact-container{
-    justify-content: space-between;
-    align-items: center;
-    height:100vh;
-}
-.contact-info{
-    justify-content: center;
-    align-items: center;
-    width:30%;
-    margin-left:6%;
-}
-.contact-title{
-    font-size: 3rem;
-    padding-bottom: 1em;
-    margin-left:190px;
-}
-.contact-info .custom-input{
-    width:170%;
-    margin-right:100px;
-}
-.custom-textarea{
-    resize: vertical;
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
 }
 
-.contact-img-container{
-    width:700px;
-    margin-right:9%;
+.contact-info {
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin-left: 6%;
 }
-.contact-img-container img{
-    width:100%;
-    height: 100%;
+
+.contact-title {
+  font-size: 3rem;
+  padding-bottom: 0.7em;
+  text-align: center;
 }
-.contact-info .custom-button{
-    margin-left:190px;
+
+.contact-subtitle {
+  color: #555;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.contact-icon {
+  margin-right: 5px;
+  color: #3498db; 
+  font-size: 1.2rem;
+  margin-top:14px;
+}
+
+.contact-detail h3 {
+  font-size: 1.1em;
+  color: #1261A9
+}
+
+.contact-detail p {
+  padding-top: 9px;
+  color: #555;
+}
+
+.contact-img-container {
+  width: 700px;
+  margin-right: 9%;
+}
+
+.contact-img-container img {
+  width: 100%;
+  height: 100%;
+}
+
 /* Add animation classes */
 @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .contact-title,
-  .contact-info {
-    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
   }
-  
-  .contact-img-container {
-    animation: slideInLeft 1s ease-out;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
+
+.contact-title,
+.contact-info,
+.contact-details,
+.contact-img-container {
+  animation: fadeInUp 1s ease-out;
+}
+
+.contact-img-container {
+  animation: slideInLeft 1s ease-out;
+}

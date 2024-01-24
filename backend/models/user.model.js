@@ -4,13 +4,13 @@ const userSchema=new mongoose.Schema({
     first_name:{
         type:String,
         required:"enter your first name",
-        minlength:3,
+        // minlength:3,
         trim:true
     },
     last_name:{
         type:String,
         required:"enter your last name",
-        minlength:3,
+        // minlength:3,
         trim:true
     },
     email:{

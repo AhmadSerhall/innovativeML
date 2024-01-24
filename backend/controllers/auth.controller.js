@@ -126,6 +126,24 @@ const register = async (req, res) => {
         res.status(500).send({ message: "Cannot create user" });
     }
 };
+const checkUsername = async (req, res) => {
+  const { username } = req.body;
+
+  try {
+    const existingUser = await User.findOne({ username });
+
+    if (existingUser) {
+      return res.status(400).json({ message: 'Username already exists' });
+    }
+
+    res.status(200).json({ message: 'Username available' });
+  } catch (error) {
+    console.error('Error checking username:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+
 const updateProfile = async (req, res) => {
     try {
       const { id } = req.params;
@@ -163,7 +181,7 @@ const updateProfile = async (req, res) => {
     }
   };
 
-module.exports = { login, register,updateProfile,logout };
+module.exports = { login, register,checkUsername,updateProfile,logout };
 
 
     

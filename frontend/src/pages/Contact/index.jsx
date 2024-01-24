@@ -1,46 +1,54 @@
-import React ,{useState}from 'react'
-import './style.css'
-import '../../styles/global.css'
-import '../../components/NavBar'
-import NavBar from '../../components/NavBar'
-import Input from '../../components/Input'
-import Button from '../../components/Button'
-import contactimg from '../../assets/contact2a.jpg'
-import Footer from '../../components/Footer'
-// import '../../styles/animate.css'
+import React from 'react';
+import './style.css';
+import '../../styles/global.css';
+import { FaEnvelope, FaHeadset, FaHandshake } from 'react-icons/fa';
+import { FaPhoneAlt } from 'react-icons/fa';
+
+import NavBar from '../../components/NavBar';
+import contactimg from '../../assets/contact2a.jpg';
+import Footer from '../../components/Footer';
+
 const Contact = () => {
-
-  const [username,setUsername]=useState('');
-  const [message,setMessage]=useState('');
-
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
-  const handleMessageChange = (e) => {
-    setMessage(e.target.value);
-  };
-  
-  const SendMessage=()=>{
-    console.log("sending message")
-  }
-
   return (
     <div>
-      <NavBar/>
-      <div className='contact-container  flex'>
-        <div className='contact-info flex column '>
+      <NavBar />
+      <div className='contact-container flex'>
+        <div className='contact-info flex column'>
           <h1 className='contact-title'>Contact Us</h1>
-          <Input name={"username"}  placeholder={"Enter Your Username"} onChange={handleUsernameChange} />
-          <Input className ="area"name={"message"}  placeholder={"Enter Your Message"} onChange={handleMessageChange} type="textarea"/>
-          <Button text={"Send Message"} bgColor={"#1261A9"} onClick={SendMessage} />
+          <p className='contact-subtitle'>Feel free to reach out to us for any inquiries or support. We're here to help!</p>
+          <div className='contact-details'>
+            <div className='contact-detail'>
+              <FaEnvelope className='contact-icon' />
+              <h3>General Inquiries</h3>
+              <p>info@innovativeML.com</p>
+            </div>
+            <div className='contact-detail'>
+              <FaHeadset className='contact-icon' />
+              <h3>Support</h3>
+              <p>support@innovativeML.com</p>
+            </div>
+            <div className='contact-detail'>
+              <FaHandshake className='contact-icon' />
+              <h3>Business Partnerships</h3>
+              <p>partnerships@innovativeML.com</p>
+            </div>
+          <div className='contact-detail'>
+            <FaPhoneAlt className='contact-icon' />
+            <div>
+              <h3>Phone</h3>
+              <p>+1 (123) 456-7890</p>
+            </div>
           </div>
-          <div className='contact-img-container '>
-            <img src={contactimg} alt="contact img"/>
+            
           </div>
+        </div>
+        <div className='contact-img-container'>
+          <img src={contactimg} alt='contact img' />
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
