@@ -1,0 +1,40 @@
+.learn-more-container {
+    max-width: 800px;
+    margin-top: 10%;
+    margin-bottom: 4%;
+    margin-right:auto;
+    margin-left:auto;
+    padding: 20px;
+    background-color: #ecf0f1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .learn-more-container h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .learn-more-container h2 {
+    color: #3498db;
+    margin-top: 30px;
+  }
+  
+  .learn-more-container p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
