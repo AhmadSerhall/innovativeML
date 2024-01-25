@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Blockly from 'blockly/core';
-import { pythonGenerator } from 'blockly/python';
+// import {pythonGenerator} from 'blockly/python';
 import 'blockly/blocks';
 import 'blockly/python';
 import '../../pythonCode/Text';
@@ -86,18 +86,16 @@ const Puzzle = () => {
     if (!workspaceRef.current || typeof Blockly === 'undefined' || typeof Blockly.Python === 'undefined') {
       return 'Blockly or Blockly.Python is not defined.';
     }
-
-    const allBlocks = workspaceRef.current.getAllBlocks();
-    console.log('All Blocks in Workspace:', allBlocks);
-
+  
     try {
-      const pythonCode = pythonGenerator(workspaceRef.current);
+      const pythonCode = Blockly.Python.workspaceToCode(workspaceRef.current);
       return pythonCode;
     } catch (error) {
       console.error('Error generating Python code:', error);
       return 'Error generating Python code.';
     }
   };
+  
   
 
   

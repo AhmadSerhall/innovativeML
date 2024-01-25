@@ -1,6 +1,7 @@
-import React from 'react'
+import React ,{useEffect} from 'react';
 import Blockly from 'blockly';
-import { useEffect } from 'react';
+import 'blockly/python';
+// import { useEffect } from 'react';
 
 // Blockly.Blocks['text_print'] = {
 //   init: function() {
@@ -43,6 +44,16 @@ Blockly.Blocks['create_text_with'] = {
       this.setColour(160);
       this.setTooltip('Concatenate text with items');
       this.setHelpUrl('');
+    },
+    toPython: function (block) {
+      var value_item1 = Blockly.Python.valueToCode(block, 'ITEM1', Blockly.Python.ORDER_ATOMIC);
+      var value_item2 = Blockly.Python.valueToCode(block, 'ITEM2', Blockly.Python.ORDER_ATOMIC);
+  
+      value_item1 = value_item1 || "''";
+      value_item2 = value_item2 || "''";
+
+      var code = 'str(' + value_item1 + ') + str(' + value_item2 + ')';
+      return [code, Blockly.Python.ORDER_ATOMIC];
     },
   };
   
