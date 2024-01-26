@@ -2,9 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import Blockly from 'blockly/core';
 // import {pythonGenerator} from 'blockly/python';
 import 'blockly/blocks';
-import 'blockly/python';
+import 'blockly/python_compressed.js';
+import 'blockly/python_compressed'
+import 'blockly/python'
 import '../../pythonCode/Text';
-
 import './style.css';
 import '../../styles/global.css';
 import Text from '../../components/PuzzleBlocks/Text';
@@ -30,9 +31,15 @@ const Puzzle = () => {
       workspaceRef.current = Blockly.inject(container, {
         toolbox: document.getElementById('toolbox'),
         language: 'python',
+        zoom:
+        {
+          controls: true,
+          wheel: true
+        },
+       
       });
-
-      // Restore workspace from XML if it exists
+      
+      
       if (workspaceXmlRef.current) {
         Blockly.Xml.domToWorkspace(workspaceXmlRef.current, workspaceRef.current);
       }
@@ -81,14 +88,14 @@ const Puzzle = () => {
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
   };
-
+  
   const generatePythonCode = () => {
     if (!workspaceRef.current || typeof Blockly === 'undefined' || typeof Blockly.Python === 'undefined') {
       return 'Blockly or Blockly.Python is not defined.';
     }
   
     try {
-      const pythonCode = Blockly.Python.workspaceToCode(workspaceRef.current);
+      const pythonCode = Blockly.Python.workspaceToCode(workspaceXmlRef.current);
       return pythonCode;
     } catch (error) {
       console.error('Error generating Python code:', error);
@@ -96,12 +103,6 @@ const Puzzle = () => {
     }
   };
   
-  
-
-  
-  
-  
-
   return (
     <div>
       <NavBar />

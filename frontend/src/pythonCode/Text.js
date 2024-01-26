@@ -1,6 +1,7 @@
 import * as Blockly from 'blockly/core';
 import 'blockly/blocks';
-import 'blockly/python';
+import 'blockly/python_compressed.js';
+
 
 Blockly.Blocks['text_print'] = {
   init: function () {
@@ -16,11 +17,12 @@ Blockly.Blocks['text_print'] = {
   },
   
   toPython: function (block) {
-      const textValue = Blockly.Python.valueToCode(block, 'TEXT', Blockly.Python.ORDER_ATOMIC) || "''";
-      const pythonCode = `print(${textValue})\n`;
-      return pythonCode;
-    },
-  };
+    const textValue = Blockly.Python.valueToCode(block, 'TEXT', Blockly.Python.ORDER_ATOMIC) || "''";
+    const pythonCode = `print(${textValue})\n`;
+    return pythonCode;
+  },
+};
+
   // Blockly.Python['text_print'] = function(block) {
   //   var msg = Blockly.Python.valueToCode(block, 'TEXT',
   //       Blockly.Python.ORDER_NONE) || '\'\'';
