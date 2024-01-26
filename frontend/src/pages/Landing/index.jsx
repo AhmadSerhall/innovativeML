@@ -23,13 +23,13 @@ const Landing = () => {
           <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
             <h1>The best way to learn</h1>
           </ScrollAnimation>
-          <ScrollAnimation animateIn='fadeIn' duration={2} animateOnce>
+          <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>
             <h1>Machine Learning</h1>
           </ScrollAnimation>
           <div className='button-container flex row'>
-            <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>   
+            {/* <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>   
               <Button text='Train Machine' textColor='white' onClick={() => console.log('sup')} />      
-            </ScrollAnimation>
+            </ScrollAnimation> */}
             <Link to="/puzzle">
             <ScrollAnimation animateIn='fadeIn' duration={1} animateOnce>         
               <Button text='Learn by Playing' textColor='black' bgColor='#FFD700' onClick={()=>console.log("button clicked")} /> 

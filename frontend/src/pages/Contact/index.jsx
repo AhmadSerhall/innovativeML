@@ -33,11 +33,10 @@ const Contact = () => {
               <p>partnerships@innovativeML.com</p>
             </div>
           <div className='contact-detail'>
-            <FaPhoneAlt className='contact-icon' />
-            <div>
+            <FaPhoneAlt className='contact-icon' />    
               <h3>Phone</h3>
               <p>+1 (123) 456-7890</p>
-            </div>
+
           </div>
             
           </div>

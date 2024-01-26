@@ -39,6 +39,9 @@
   .nav-links li.active a {
   color: #1261A9;
 }
+.logout:hover{
+  color: #1261A9;
+}
 
   
   @media (max-width: 768px) {
