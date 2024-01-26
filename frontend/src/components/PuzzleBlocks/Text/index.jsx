@@ -1,26 +1,31 @@
 import React ,{useEffect} from 'react';
 import Blockly from 'blockly';
 import 'blockly/python';
-// import { useEffect } from 'react';
+import 'blockly/python_compressed';
 
-// Blockly.Blocks['text_print'] = {
-//   init: function() {
-//     this.appendValueInput('TEXT')
-//         .setCheck('String')
-//         .appendField('print');
+Blockly.Blocks['text_print'] = {
+  init: function() {
+    this.appendValueInput('TEXT')
+        .setCheck('String')
+        .appendField('print');
 
-//     this.setInputsInline(true);
-//     this.setPreviousStatement(true, null);
-//     this.setNextStatement(true, null);
-//     this.setColour('#2196F3');
-//     this.setTooltip('Prints the specified text.');
-//   },
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour('#2196F3');
+    this.setTooltip('Prints the specified text.');
+  },
 
-//   toPython: function() {
-//     const textValue = Blockly.Python.valueToCode(this, 'TEXT', Blockly.Python.ORDER_ATOMIC) || "''";
-//     return `print(${textValue})\n`;
-//   },
-// };
+  // toPython: function() {
+  //   const textValue = Blockly.Python.valueToCode(this, 'TEXT', Blockly.Python.ORDER_ATOMIC) || "''";
+  //   return `print(${textValue})\n`;
+  // },
+  toPython: function (block) {
+    const textValue = Blockly.Generator.prototype.valueToCode(block, 'TEXT', Blockly.Generator.prototype.ORDER_ATOMIC) || "''";
+    const pythonCode = `print(${textValue})\n`;
+    return pythonCode;
+  },
+};
 
 Blockly.Blocks['type_integer'] = {
     init: function () {
@@ -193,8 +198,13 @@ Blockly.Blocks['find_occurence'] = {
       };
 
 const Text = () => {
+      useEffect(() => {
+        const block = new Blockly.Block('text_print');
+        block.initSvg();
+        block.render();
+      }, []);
     useEffect(() => {
-        const block = new Blockly.Block('text_integer');
+        const block = new Blockly.Block('type_integer');
         block.initSvg();
         block.render();
       }, []);
@@ -240,7 +250,8 @@ const Text = () => {
       }, []);
   return (
     <div>
-      <div id="text_integer " style={{ display: 'none' }}></div>
+      <div id="text_print " style={{ display: 'none' }}></div>
+      <div id="type_integer " style={{ display: 'none' }}></div>
       <div id="create_text_with " style={{ display: 'none' }}></div>
       <div id="to_item_append_text " style={{ display: 'none' }}></div>
       <div id="text_is_empty " style={{ display: 'none' }}></div>

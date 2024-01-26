@@ -53,15 +53,13 @@ const Puzzle = () => {
       workspaceRef.current.addChangeListener((event) => {
         console.log('Blockly workspace event:', event);
 
-        // Check if the event is a block creation event
         if (event.type === Blockly.Events.CREATE) {
           console.log('Block Created:', event);
-          // Here you can generate and log Python code
-          const pythonCode = generatePythonCode();
+          // const pythonCode = generatePythonCode();
           console.log('Blockly:', Blockly);
           console.log('Blockly.Python:', Blockly.Python);
-
-          console.log('Generated Python Code:', pythonCode);
+          updatePythonCode();
+          // console.log('Generated Python Code:', pythonCode);
         }
       });
     }
@@ -88,20 +86,32 @@ const Puzzle = () => {
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
   };
+
+  const updatePythonCode = () => {
+    const pythonCode = generatePythonCode();
+    console.log('Generated Python Code:', pythonCode);
+    // You can handle the generated Python code as needed
+  };
   
+
   const generatePythonCode = () => {
-    if (!workspaceRef.current || typeof Blockly === 'undefined' || typeof Blockly.Python === 'undefined') {
-      return 'Blockly or Blockly.Python is not defined.';
+    if (!workspaceRef.current || typeof Blockly === 'undefined' || typeof Blockly.Generator === 'undefined') {
+      return 'Blockly or Blockly.Generator is not defined.';
     }
   
     try {
-      const pythonCode = Blockly.Python.workspaceToCode(workspaceXmlRef.current);
+      // Initialize Blockly Python
+      Blockly.Generator.prototype.init();
+      
+      const pythonCode = Blockly.Generator.prototype.workspaceToCode(workspaceRef.current);
       return pythonCode;
     } catch (error) {
       console.error('Error generating Python code:', error);
       return 'Error generating Python code.';
     }
   };
+  
+
   
   return (
     <div>
