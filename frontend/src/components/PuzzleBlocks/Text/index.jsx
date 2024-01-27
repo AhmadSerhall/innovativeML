@@ -21,7 +21,6 @@ Blockly.Blocks['text_print'] = {
       if (!textInput.connection.isConnected()) {
         return 'print()\n';
       }
-
       const textBlock = textInput.connection.targetBlock();
       const textValue = textBlock.getFieldValue('TEXT') || "''";
       return `print(${textValue})\n`;
@@ -38,7 +37,7 @@ Blockly.Blocks['type_integer'] = {
       this.setHelpUrl('');
     },
   };
-Blockly.Blocks['create_text_with'] = {
+  Blockly.Blocks['create_text_with'] = {
     init: function () {
       this.appendValueInput('ITEM1')
         .setCheck(null)
@@ -51,18 +50,24 @@ Blockly.Blocks['create_text_with'] = {
       this.setColour(160);
       this.setTooltip('Concatenate text with items');
       this.setHelpUrl('');
-    },
-    toPython: function (block) {
-      var value_item1 = Blockly.Python.valueToCode(block, 'ITEM1', Blockly.Python.ORDER_ATOMIC);
-      var value_item2 = Blockly.Python.valueToCode(block, 'ITEM2', Blockly.Python.ORDER_ATOMIC);
-  
-      value_item1 = value_item1 || "''";
-      value_item2 = value_item2 || "''";
-
-      var code = 'str(' + value_item1 + ') + str(' + value_item2 + ')';
-      return [code, Blockly.Python.ORDER_ATOMIC];
+      this.generatePythonCode = function (block) {
+        const item1Block = block.getInput('ITEM1').connection.targetBlock();
+        const item2Block = block.getInput('ITEM2').connection.targetBlock();
+      
+        if (!item1Block && !item2Block) {
+          return "''";
+        }
+        const item1Value = item1Block ? getTextFromTextBlock(item1Block) : "''";
+        const item2Value = item2Block ? getTextFromTextBlock(item2Block) : "''";
+        return `${item1Value}${item2Value}`;
+      };
+      const getTextFromTextBlock = function (textBlock) {
+        return textBlock.getFieldValue('TEXT') || "''";
+      };
+      
     },
   };
+  
   
 Blockly.Blocks['to_item_append_text'] = {
     init: function () {

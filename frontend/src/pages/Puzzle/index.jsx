@@ -5,7 +5,6 @@ import 'blockly/blocks';
 import 'blockly/python_compressed.js';
 import 'blockly/python_compressed'
 import 'blockly/python'
-import '../../pythonCode/Text';
 import './style.css';
 import '../../styles/global.css';
 import Text from '../../components/PuzzleBlocks/Text';
@@ -89,7 +88,6 @@ const Puzzle = () => {
   const updatePythonCode = () => {
     const pythonCode = generatePythonCode();
     console.log('Generated Python Code:', pythonCode);
-    // You can handle the generated Python code as needed
   };
   
 
@@ -140,7 +138,11 @@ const Puzzle = () => {
 
       blocks.forEach((block) => {
         if (typeof block.generatePythonCode === 'function') {
-          pythonCode += block.generatePythonCode();
+          // pythonCode += block.generatePythonCode();
+          const blockCode = block.generatePythonCode(block);
+          if (blockCode) {
+            pythonCode += blockCode ;
+          }
         }
       });
 
@@ -150,8 +152,6 @@ const Puzzle = () => {
       return 'Error generating Python code.';
     }
   };
-  
-
   
   return (
     <div>
