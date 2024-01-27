@@ -279,8 +279,26 @@ Blockly.Blocks["trim_spaces"] = {
     );
     this.setHelpUrl("");
     this.setInputsInline(true);
+    this.generatePythonCode = function (block) {
+      const trimType = block.getFieldValue("TRIM_TYPE");
+      const textBlock = block.getInput("TEXT").connection.targetBlock();
+      if (!textBlock) {
+        return "''";
+      }
+      switch (trimType) {
+        case "BOTH_SIDES":
+          return `${textBlock.generatePythonCode(block)}.strip()`;
+        case "LEFT_SIDE":
+          return `${textBlock.generatePythonCode(block)}.lstrip()`;
+        case "RIGHT_SIDE":
+          return `${textBlock.generatePythonCode(block)}.rstrip()`;
+        default:
+          return "''";
+      };
+    };
   },
 };
+
 Blockly.Blocks["text_length"] = {
   init: function () {
     this.setColour(160);
@@ -288,6 +306,15 @@ Blockly.Blocks["text_length"] = {
     this.setOutput(true, "Number");
     this.setTooltip("Returns the length of a list.");
     this.setHelpUrl("");
+    this.generatePythonCode = function (block) {
+      const textBlock = block.getInput("VALUE").connection.targetBlock();
+
+      if (!textBlock) {
+        return '0';
+      }
+      const textValue = textBlock.getFieldValue("TEXT") || "''";
+      return `len('${textValue}')`;
+    };
   },
 };
 
