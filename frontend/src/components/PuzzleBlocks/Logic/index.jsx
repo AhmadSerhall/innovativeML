@@ -15,16 +15,16 @@ Blockly.Blocks['do_if'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour("#FF9933");
-        this.generatePythonCode = function(block) {
+        this.generatePythonCode = function (block) {
             const conditionBlock = block.getInput('CONDITION').connection.targetBlock();
-            const conditionValue = conditionBlock ? conditionBlock.getFieldValue('TEXT') || "''" : '';
+            const conditionValue = conditionBlock ? conditionBlock.getFieldValue('TEXT') : '';
             const condition = conditionValue ? conditionValue : 'False';
       
             const doBlock = block.getInput('DO').connection.targetBlock();
-            const doValue = doBlock ? doBlock.getFieldValue('TEXT') || "''" : '';
-            const doStatements = doValue ? `${doValue}\n` : '';
+            const doValue = doBlock ? doBlock.getFieldValue('TEXT') : '  pass';
+            const doStatements = doValue ? `\n${doValue}` : '';
       
-            return `if ${condition}:\n  ${doStatements}`;
+            return `if ${condition}:${doStatements}`;
           };
     }
 };
@@ -44,12 +44,12 @@ Blockly.Blocks['do_if_else_if'] = {
         this.setColour("#FF9933");
         this.generatePythonCode = function(block) {
             const conditionBlock = block.getInput('CONDITION').connection.targetBlock();
-            const conditionValue = conditionBlock ? conditionBlock.getFieldValue('TEXT') || "''" : '';
+            const conditionValue = conditionBlock ? conditionBlock.getFieldValue('TEXT') : '';
             const condition = conditionValue ? conditionValue : 'False';
       
             const doBlock = block.getInput('DO').connection.targetBlock();
-            const doValue = doBlock ? doBlock.getFieldValue('TEXT') || "''" : '';
-            const doStatements = doValue ? `${doValue}\n` : '';
+            const doValue = doBlock ? doBlock.getFieldValue('TEXT'): '  pass';
+            const doStatements = doValue ? `${doValue}` : '';
       
             return `elif ${condition}:\n  ${doStatements}`;
           };
@@ -68,7 +68,7 @@ Blockly.Blocks['do_if_else'] = {
         this.setColour("#FF9933");
         this.generatePythonCode = function(block) {
             const doBlock = block.getInput('DO').connection.targetBlock();
-            const doValue = doBlock ? doBlock.getFieldValue('TEXT') || "''" : '';
+            const doValue = doBlock ? doBlock.getFieldValue('TEXT'): '  pass';
             const doStatements = doValue ? `${doValue}\n` : '';
       
             return `else:\n  ${doStatements}`;
@@ -122,7 +122,7 @@ Blockly.Blocks['logic_not'] = {
         this.setHelpUrl("");
         this.generatePythonCode = function(block) {
             const valueBlock = block.getInput('VALUE').connection.targetBlock();
-            const value = valueBlock ? valueBlock.generatePythonCode() : 'False';
+            const value = valueBlock ? valueBlock.generatePythonCode() : 'True';
             return `not ${value}`;
           };
     }
@@ -140,6 +140,15 @@ Blockly.Blocks['logic_connector'] = {
         this.setColour("#FF9933");
         this.setTooltip("Combine two conditions using 'And' or 'Or'");
         this.setHelpUrl("");
+        this.generatePythonCode = function(block) {
+            const leftBlock = block.getInput('LEFT').connection.targetBlock();
+            const rightBlock = block.getInput('RIGHT').connection.targetBlock();
+            const left = leftBlock ? leftBlock.generatePythonCode() : 'False';
+            const right = rightBlock ? rightBlock.generatePythonCode() : 'False';
+            const operator = block.getFieldValue('OPERATOR');
+            return `(${left} ${operator} ${right})`;
+          };
+      
     }
 };
 Blockly.Blocks['true_false'] = {
@@ -152,7 +161,9 @@ Blockly.Blocks['true_false'] = {
         this.setHelpUrl("");
         this.setPreviousStatement(null);
         this.setNextStatement(null);
-        // this.setStyle('logic_blocks'); 
+        this.generatePythonCode = function (block) {
+            return block.getFieldValue('BOOL').toLowerCase();
+          };
     }
 };
 Blockly.Blocks['null_block'] = {
