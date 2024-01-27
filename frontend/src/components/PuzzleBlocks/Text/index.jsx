@@ -178,8 +178,31 @@ Blockly.Blocks['find_occurence'] = {
         this.setTooltip('Find the first or last occurrence of a specific text in the given variable.');
         this.setHelpUrl('');
         this.setInputsInline(true);
-    }
+  
+
+    this.generatePythonCode = function (block) {
+      const variableBlock = block.getInput('VARIABLE').connection.targetBlock();
+      const searchBlock = block.getInput('SEARCH_TEXT').connection.targetBlock();
+      const occurrenceType = block.getFieldValue('OCCURRENCE');
+
+      if (!variableBlock || !searchBlock) {
+        return '0';
+      }
+
+      const variableValue = variableBlock.getFieldValue('TEXT') || "''";
+      const searchValue = searchBlock.getFieldValue('TEXT') || "''";
+
+      switch (occurrenceType) {
+        case 'FIRST':
+          return `${variableValue}.find(${searchValue}) + 1`;
+        case 'LAST':
+          return `${variableValue}.rfind(${searchValue}) + 1`;
+        default:
+          return '0';
+      };
     };
+  },
+};
     Blockly.Blocks['get_letter'] = {
       init: function () {
         this.appendValueInput('VARIABLE')
