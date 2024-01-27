@@ -3,11 +3,7 @@ import Blockly from 'blockly';
 import 'blockly/python';
 import 'blockly/python_compressed';
 
-// const pythonInit = () => {
-//   if (!Blockly.Python) {
-//     Blockly.Python = new Blockly.Generator('Python');
-//   }
-// };
+
 
 Blockly.Blocks['text_print'] = {
   init: function() {
@@ -20,19 +16,19 @@ Blockly.Blocks['text_print'] = {
     this.setNextStatement(true, null);
     this.setColour('160');
     this.setTooltip('Prints the specified text.');
-  }, 
+    this.generatePythonCode = function() {
+      const textInput = this.getInput('TEXT');
+      if (!textInput.connection.isConnected()) {
+        return 'print()\n';
+      }
 
-  generatePythonCode: function() {
-    // pythonInit()
-    const textValue = Blockly.Python.valueToCode(this, 'TEXT', Blockly.Python.ORDER_ATOMIC) || "''";
-    return `print(${textValue})\n`;
-  },
+      const textBlock = textInput.connection.targetBlock();
+      const textValue = textBlock.getFieldValue('TEXT') || "''";
+      return `print(${textValue})\n`;
+    };
+  }, 
 };
-// function generatePythonCodeForTextPrint(textValue) {
-//   const sanitizedTextValue = typeof textValue === 'string' ? textValue : "''";
-//   const pythonCode = `print(${sanitizedTextValue})\n`;
-//   return pythonCode;
-// }
+
 Blockly.Blocks['type_integer'] = {
     init: function () {
       this.appendDummyInput().appendField(new Blockly.FieldNumber(0), 'NAME');
