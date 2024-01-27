@@ -15,6 +15,17 @@ Blockly.Blocks['do_if'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour("#FF9933");
+        this.generatePythonCode = function(block) {
+            const conditionBlock = block.getInput('CONDITION').connection.targetBlock();
+            const conditionValue = conditionBlock ? conditionBlock.getFieldValue('TEXT') || "''" : '';
+            const condition = conditionValue ? conditionValue : 'False';
+      
+            const doBlock = block.getInput('DO').connection.targetBlock();
+            const doValue = doBlock ? doBlock.getFieldValue('TEXT') || "''" : '';
+            const doStatements = doValue ? `${doValue}\n` : '';
+      
+            return `if ${condition}:\n  ${doStatements}`;
+          };
     }
 };
 
@@ -174,8 +185,9 @@ Blockly.Blocks['logic_comparison'] = {
             ]), "OPERATOR");
         this.appendValueInput("RIGHT")
             .setCheck("Number");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
+        this.setPreviousStatement(false, null);//made changes here to review later
+        this.setNextStatement(false, null);
+        this.setOutput(true,Boolean)
         this.setColour("#FF9933");
         this.setTooltip("Perform a math operation");
         this.setHelpUrl("");
