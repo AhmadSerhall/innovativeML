@@ -106,6 +106,15 @@ Blockly.Blocks['text_is_empty']={
       this.setColour(160);
       this.setTooltip('Check if the there is a text or empty Strign')
       this.setHelpUrl('')
+      this.generatePythonCode = function (block) {
+        const textBlock = block.getInput('text').connection.targetBlock();
+  
+        if (!textBlock) {
+          return 'True';
+        }
+        const textValue = textBlock.getFieldValue('TEXT') || "''";
+        return `not len('${textValue}')`;
+      };
     }
     }
 Blockly.Blocks['text_transform'] = {
