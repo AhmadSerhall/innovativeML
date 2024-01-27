@@ -87,26 +87,52 @@ import 'blockly/msg/en';
 
 Blockly.Blocks['lists_create_with_container'] = {
   init: function () {
-    this.setColour(260);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TITLE_ADD);
-    this.appendStatementInput('STACK');
-    this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
-    this.contextMenu = false;
+      this.setColour(260);
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TITLE_ADD);
+      this.appendStatementInput('STACK')    
+      this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
+      this.contextMenu = false;
+
+      this.generatePythonCode = function (block) {
+          let code = '';
+          for (let i = 0; i < block.itemCount_; i++) {
+              const itemBlock = block.getInputTargetBlock('STACK');
+              if (itemBlock) {
+                  const itemCode = itemBlock.generatePythonCode();
+                  code += itemCode + ', ';
+              }
+          }
+
+          if (code.length > 0) {
+              code = code.slice(0, -2);
+          }
+
+          return `[${code}]`;
+      };
   },
 };
 
 Blockly.Blocks['lists_create_with_item'] = {
   init: function () {
-    this.setColour(260);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TITLE);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
-    this.contextMenu = false;
+      this.setColour(260);
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TITLE);
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
+      this.contextMenu = false;
+
+      this.generatePythonCode = function (block) {
+          // Return an empty string for the item block
+          return '';
+      };
   },
 };
+
+
+
+
 Blockly.Blocks['lists_length'] = {
   init: function () {
     this.setColour(260);
@@ -116,13 +142,15 @@ Blockly.Blocks['lists_length'] = {
     this.setOutput(true, 'Number');
     this.setTooltip('Returns the length of a list.');
     this.setHelpUrl('');
+    this.generatePythonCode = function (block) {
+      const valueBlock = block.getInputTargetBlock('VALUE');
+      const valueCode = valueBlock ? valueBlock.generatePythonCode() : '[]';
+
+      return `len(${valueCode})`;
+  };
   },
 };
 
-// Blockly.Python['lists_length'] = function(block) {
-//   var value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC) || '[]';
-//   return [f'len({value})', Blockly.Python.ORDER_FUNCTION_CALL];
-// };
 Blockly.Blocks['lists_isEmpty'] = {
   init: function () {
     this.appendValueInput('VALUE')
@@ -132,6 +160,12 @@ Blockly.Blocks['lists_isEmpty'] = {
     this.setColour(260);
     this.setTooltip('Returns true if the list is empty, false otherwise.');
     this.setHelpUrl('');
+    this.generatePythonCode = function (block) {
+      const valueBlock = block.getInputTargetBlock('VALUE');
+      const valueCode = valueBlock ? valueBlock.generatePythonCode() : '[]';
+
+      return `not ${valueCode}`;
+  };
   },
 };
 Blockly.Blocks['lists_getIndexOfItem'] = {
@@ -151,6 +185,16 @@ Blockly.Blocks['lists_getIndexOfItem'] = {
     this.setColour(260);
     this.setTooltip('Returns the index of the first/last occurrence of the item in the list.');
     this.setHelpUrl('');
+    this.generatePythonCode = function (block) {
+      const listBlock = block.getInputTargetBlock('VALUE');
+      const listCode = listBlock ? listBlock.generatePythonCode() : '[]';
+
+      const type = block.getFieldValue('TYPE');
+      const findBlock = block.getInputTargetBlock('FIND');
+      const findCode = findBlock ? findBlock.generatePythonCode() : '';
+
+      return `${listCode}.index(${findCode}, ${type === 'FIRST' ? 0 : -1})`;
+  };
   },
 };
 Blockly.Blocks['lists_getItem'] = {
@@ -175,35 +219,72 @@ Blockly.Blocks['lists_getItem'] = {
     this.setColour(260);
     this.setTooltip('Get or remove the first/last item from the list.');
     this.setHelpUrl('');
+    this.generatePythonCode = function (block) {
+      const listBlock = block.getInputTargetBlock('LIST');
+      const listCode = listBlock ? listBlock.generatePythonCode() : '[]';
+
+      const op = block.getFieldValue('OP');
+      const type = block.getFieldValue('TYPE');
+
+      let pythonCode;
+      if (op === 'GET') {
+          pythonCode = `${listCode}[${type === 'FIRST' ? 0 : -1}]`;
+      } else if (op === 'GET_REMOVE') {
+          pythonCode = `${listCode}.pop(${type === 'FIRST' ? 0 : -1})`;
+      } else {
+          pythonCode = `${listCode}.remove(${type === 'FIRST' ? 0 : -1})`;
+      }
+
+      return pythonCode;
+  };
   },
+  
 };
 Blockly.Blocks['lists_set_insert_at'] = {
   init: function () {
-    this.appendValueInput('LIST')
-      .setCheck('Array')
-      .appendField('in list')
-      .appendField(new Blockly.FieldVariable('list'), 'VAR')
-      .appendField(new Blockly.FieldDropdown([
-        ['set', 'SET_AT'],
-        ['insert at', 'INSERT_AT']
-      ]), 'OP')
-      .appendField(new Blockly.FieldDropdown([
-        ['first', 'FIRST'],
-        ['last', 'LAST']
-      ]), 'TYPE');
-    // this.appendValueInput('INDEX')
-    //   .setCheck('Number')
-    this.appendDummyInput()
-      .appendField('as');
-    this.appendValueInput('ITEM')
-      .setCheck(null);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(260);
-    this.setTooltip('Set or insert an item at the specified index in the list.');
-    this.setHelpUrl('');
+      this.appendValueInput('LIST')
+          .setCheck('Array')
+          .appendField('in list')
+          .appendField(new Blockly.FieldVariable('list'), 'VAR')
+          .appendField(new Blockly.FieldDropdown([
+              ['set', 'SET_AT'],
+              ['insert at', 'INSERT_AT']
+          ]), 'OP')
+          .appendField(new Blockly.FieldDropdown([
+              ['first', 'FIRST'],
+              ['last', 'LAST']
+          ]), 'TYPE');
+      this.appendDummyInput()
+          .appendField('as');
+      this.appendValueInput('ITEM')
+          .setCheck(null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(260);
+      this.setTooltip('Set or insert an item at the specified index in the list.');
+      this.setHelpUrl('');
+
+      this.generatePythonCode = function (block) {
+          const listBlock = block.getInputTargetBlock('LIST');
+          const listCode = listBlock ? listBlock.generatePythonCode() : '[]';
+
+          const op = block.getFieldValue('OP');
+          const type = block.getFieldValue('TYPE');
+          const itemBlock = block.getInputTargetBlock('ITEM');
+          const itemCode = itemBlock ? itemBlock.generatePythonCode() : '';
+
+          let pythonCode;
+          if (op === 'SET_AT') {
+              pythonCode = `${listCode}[${type === 'FIRST' ? 0 : -1}] = ${itemCode}`;
+          } else {
+              pythonCode = `${listCode}.insert(${type === 'FIRST' ? 0 : -1}, ${itemCode})`;
+          }
+
+          return pythonCode;
+      };
   },
 };
+
 
 const List = () => {
   useEffect(() => {
