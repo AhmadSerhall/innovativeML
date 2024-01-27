@@ -75,142 +75,41 @@ Blockly.Blocks['do_if_else'] = {
           };
     }
 };
-
-
-// Blockly.Extensions.registerMutator('do_if_mutator', {
-//     mutationToDom: function() {
-//         var container = document.createElement('mutation');
-//         container.setAttribute('else', this.elseCount_);
-//         return container;
-//     },
-//     domToMutation: function(xmlElement) {
-//         this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10);
-//         this.updateShape_();
-//     },
-//     decompose: function(workspace) {
-//         var containerBlock = workspace.newBlock('do_if_else');
-//         containerBlock.initSvg();
-//         var connection = containerBlock.getInput('STACK').connection;
-//         for (var i = 0; i < this.elseCount_; i++) {
-//             var elseIfBlock = workspace.newBlock('do_if_else_if');
-//             elseIfBlock.initSvg();
-//             connection.connect(elseIfBlock.previousConnection);
-//             connection = elseIfBlock.nextConnection;
-//         }
-//         return containerBlock;
-//     },
-//     compose: function(containerBlock) {
-//         var clauseBlock = containerBlock.getInputTargetBlock('STACK');
-//         this.elseCount_ = 0;
-//         var clause;
-//         while (clauseBlock) {
-//             switch (clauseBlock.type) {
-//                 case 'do_if_else_if':
-//                     this.elseCount_++;
-//                     clause = this.appendDummyInput('IF' + this.elseCount_)
-//                         .appendField("else if")
-//                         .appendField(new Blockly.FieldVariable(true), "VAR");
-//                     clause.appendStatementInput('DO' + this.elseCount_)
-//                         .setCheck(null)
-//                         .appendField('do');
-//                     break;
-//                 case 'do_if_else':
-//                     this.elseCount_++;
-//                     clause = this.appendDummyInput('ELSE')
-//                         .appendField("else");
-//                     clause.appendStatementInput('ELSE_DO')
-//                         .setCheck(null)
-//                         .appendField('do');
-//                     break;
-//                 default:
-//                     throw TypeError('Unknown block type: ' + clauseBlock.type);
-//             }
-//             clauseBlock = clauseBlock.nextConnection &&
-//                 clauseBlock.nextConnection.targetBlock();
-//         }
-//         this.updateShape_();
-//     },
-//     saveConnections: function(containerBlock) {
-//         var clauseBlock = containerBlock.getInputTargetBlock('STACK');
-//         var i = 1;
-//         while (clauseBlock) {
-//             switch (clauseBlock.type) {
-//                 case 'do_if_else_if':
-//                     var inputDo = this.getInput('DO' + i);
-//                     clauseBlock.valueConnection_ =
-//                         inputDo && inputDo.connection.targetConnection;
-//                     i++;
-//                     break;
-//                 case 'do_if_else':
-//                     var inputElseDo = this.getInput('ELSE_DO');
-//                     clauseBlock.valueConnection_ =
-//                         inputElseDo && inputElseDo.connection.targetConnection;
-//                     break;
-//                 default:
-//                     throw TypeError('Unknown block type: ' + clauseBlock.type);
-//             }
-//             clauseBlock = clauseBlock.nextConnection &&
-//                 clauseBlock.nextConnection.targetBlock();
-//         }
-//     },
-//     updateShape_: function() {
-//         // Delete everything.
-//         var i = 1;
-//         while (this.getInput('IF' + i)) {
-//             this.removeInput('IF' + i);
-//             this.removeInput('DO' + i);
-//             i++;
-//         }
-//         if (this.getInput('ELSE')) {
-//             this.removeInput('ELSE');
-//         }
-//         if (this.getInput('ELSE_DO')) {
-//             this.removeInput('ELSE_DO');
-//         }
-
-//         // Rebuild block.
-//         for (i = 1; i <= this.elseCount_; i++) {
-//             this.appendDummyInput('IF' + i)
-//                 .appendField("else if")
-//                 .appendField(new Blockly.FieldVariable(true), "VAR");
-//             this.appendStatementInput('DO' + i)
-//                 .setCheck(null)
-//                 .appendField('do');
-//         }
-//         if (this.elseCount_ > 0) {
-//             this.appendDummyInput('ELSE')
-//                 .appendField("else");
-//             this.appendStatementInput('ELSE_DO')
-//                 .setCheck(null)
-//                 .appendField('do');
-//         }
-//     }
-// });
-
   
 Blockly.Blocks['logic_comparison'] = {
     init: function () {
-        this.appendValueInput("LEFT")
-            .setCheck("Number");
-        this.appendDummyInput()
-            .appendField(new Blockly.FieldDropdown([
-                ["=", "EQUAL"],
-                ["≠", "DIFFERENT"],
-                ["<", "SMALLER"],
-                ["≤", "SMALLER_OR_EQUAL"],
-                [">", "GREATER"],
-                ["≥", "GREATER_OR_EQUAL"],
-            ]), "OPERATOR");
-        this.appendValueInput("RIGHT")
-            .setCheck("Number");
-        this.setPreviousStatement(true, null);//made changes here to review later
-        this.setNextStatement(false, null);
-        this.setOutput(true,Boolean)
-        this.setColour("#FF9933");
-        this.setTooltip("Perform a math operation");
-        this.setHelpUrl("");
+      this.appendValueInput("LEFT")
+          .setCheck("Number");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([
+              ["=", "EQUAL"],
+              ["≠", "DIFFERENT"],
+              ["<", "SMALLER"],
+              ["≤", "SMALLER_OR_EQUAL"],
+              [">", "GREATER"],
+              ["≥", "GREATER_OR_EQUAL"],
+          ]), "OPERATOR");
+      this.appendValueInput("RIGHT")
+          .setCheck("Number");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(false, null);
+      this.setOutput(true, 'Boolean');
+      this.setColour("#FF9933");
+      this.setTooltip("Perform a logic comparison");
+      this.setHelpUrl("");
+      
+      this.generatePythonCode = function(block) {
+        const leftBlock = block.getInput('LEFT').connection.targetBlock();
+        const rightBlock = block.getInput('RIGHT').connection.targetBlock();
+        const leftValue = leftBlock ? leftBlock.generatePythonCode() : "0";
+        const rightValue = rightBlock ? rightBlock.generatePythonCode() : "0";
+        const operator = block.getFieldValue('OPERATOR');
+        
+        return `${leftValue} ${operator} ${rightValue}`;
+      };
     }
-};
+  };
+  
 Blockly.Blocks['logic_not'] = {
     init: function () {
         this.appendDummyInput()
@@ -221,6 +120,11 @@ Blockly.Blocks['logic_not'] = {
         this.setColour("#FF9933");
         this.setTooltip("Negate a Boolean value");
         this.setHelpUrl("");
+        this.generatePythonCode = function(block) {
+            const valueBlock = block.getInput('VALUE').connection.targetBlock();
+            const value = valueBlock ? valueBlock.generatePythonCode() : 'False';
+            return `not ${value}`;
+          };
     }
 };
 Blockly.Blocks['logic_connector'] = {
