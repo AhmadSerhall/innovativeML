@@ -285,13 +285,14 @@ Blockly.Blocks["trim_spaces"] = {
       if (!textBlock) {
         return "''";
       }
+      const textValue = textBlock.getFieldValue("TEXT") || "''";
       switch (trimType) {
         case "BOTH_SIDES":
-          return `${textBlock.generatePythonCode(block)}.strip()`;
+          return `${textValue}.strip()`;
         case "LEFT_SIDE":
-          return `${textBlock.generatePythonCode(block)}.lstrip()`;
+          return `${textValue}.lstrip()`;
         case "RIGHT_SIDE":
-          return `${textBlock.generatePythonCode(block)}.rstrip()`;
+          return `${textValue}.rstrip()`;
         default:
           return "''";
       };
