@@ -17,15 +17,15 @@ Blockly.Blocks['do_if'] = {
         this.setColour("#FF9933");
         this.generatePythonCode = function (block) {
             const conditionBlock = block.getInput('CONDITION').connection.targetBlock();
-            const conditionValue = conditionBlock ? conditionBlock.getFieldValue('TEXT') : '';
+            const conditionValue = conditionBlock ? conditionBlock.getFieldValue('CONDITION') : '';
             const condition = conditionValue ? conditionValue : 'False';
       
             const doBlock = block.getInput('DO').connection.targetBlock();
             const doValue = doBlock ? doBlock.getFieldValue('TEXT') : '  pass';
-            const doStatements = doValue ? `\n${doValue}` : '';
+            const doStatements = doValue ? `\n  ${doValue.replace(/\n/g, '\n  ')}` : '';
       
             return `if ${condition}:${doStatements}`;
-          };
+        };
     }
 };
 
