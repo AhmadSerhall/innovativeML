@@ -9,6 +9,13 @@ Blockly.Blocks["type_integer"] = {
     this.setColour("#FFD700");
     this.setTooltip("This is a custom integer block");
     this.setHelpUrl("");
+    this.generatePythonCode = function (block) {
+      const value = block.getFieldValue('NAME');
+      return value === '0' ? '0' : value;
+      
+  };
+  
+  
   },
 };
 
