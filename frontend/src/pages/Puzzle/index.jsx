@@ -90,43 +90,6 @@ const Puzzle = () => {
     console.log('Generated Python Code:', pythonCode);
   };
   
-
-  // const generatePythonCode = () => {
-  //   if (!workspaceRef.current || typeof Blockly === 'undefined') {
-  //     return 'Blockly is not defined.';
-  //   }
-  
-  //   try {
-  //     const blocks = workspaceRef.current.getAllBlocks();
-  //     let pythonCode = '';
-  
-  //     blocks.forEach((block) => {
-  //       if (block.type === 'text_print') {
-  //         const textValue = block.getInput('TEXT').connection.targetBlock().getFieldValue('TEXT') || "''";
-  //         pythonCode += `print(${textValue})\n`;
-  //       } else if (block.type === 'other_block_type') {
-  //         // Handle other custom block types
-  //         // Add more conditions for other block types as needed
-  //         // Extract data from blocks and construct Python code
-  //       }
-  
-  //       // Add more conditions for other standard block types if needed
-  
-  //       // Example: Handle if block
-  //       if (block.type === 'controls_if') {
-  //         pythonCode += 'if ' + block.getInputTargetBlock('IF0').valueToCode('CONDITION', Blockly.Python.ORDER_NONE) + ':\n';
-  //         pythonCode += '  # Code for if branch\n';
-  //       }
-  
-  //       // Continue handling other standard blocks as needed
-  //     });
-  
-  //     return pythonCode;
-  //   } catch (error) {
-  //     console.error('Error generating Python code:', error);
-  //     return 'Error generating Python code.';
-  //   }
-  // };
   const generatePythonCode = () => {
     if (!workspaceRef.current || typeof Blockly === 'undefined') {
       return 'Blockly is not defined.';

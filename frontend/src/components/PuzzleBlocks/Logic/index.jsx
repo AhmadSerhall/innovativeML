@@ -17,17 +17,17 @@ Blockly.Blocks['do_if'] = {
         this.setColour("#FF9933");
         this.generatePythonCode = function (block) {
             const conditionBlock = block.getInput('CONDITION').connection.targetBlock();
-            const conditionValue = conditionBlock ? conditionBlock.getFieldValue('CONDITION') : '';
+            const conditionValue = conditionBlock ? conditionBlock.generatePythonCode() : '';
             const condition = conditionValue ? conditionValue : 'False';
       
             const doBlock = block.getInput('DO').connection.targetBlock();
-            const doValue = doBlock ? doBlock.getFieldValue('TEXT') : '  pass';
-            const doStatements = doValue ? `\n  ${doValue.replace(/\n/g, '\n  ')}` : '';
-      
+            const doValue = doBlock ? doBlock.generatePythonCode() : '';
+            const doStatements = doValue ? `\n${doValue}` : '  pass';
             return `if ${condition}:${doStatements}`;
         };
     }
 };
+
 
 Blockly.Blocks['do_if_else_if'] = {
     init: function() {
@@ -159,13 +159,12 @@ Blockly.Blocks['true_false'] = {
         this.setColour('#FF9933')
         this.setTooltip("Select true or false");
         this.setHelpUrl("");
-        this.setPreviousStatement(null);
-        this.setNextStatement(null);
         this.generatePythonCode = function (block) {
-            return block.getFieldValue('BOOL').toLowerCase();
-          };
+            return this.getFieldValue('BOOL').toLowerCase();
+        };
     }
 };
+
 Blockly.Blocks['null_block'] = {
     init: function () {
         this.appendDummyInput()
@@ -174,6 +173,9 @@ Blockly.Blocks['null_block'] = {
         this.setColour("#FF9933"); 
         this.setTooltip("Represents a null value");
         this.setHelpUrl("");
+        this.generatePythonCode = function () {
+            return 'None';
+        };
     }
 };
 Blockly.Blocks['conditional_test_if_else'] = {
@@ -191,6 +193,20 @@ Blockly.Blocks['conditional_test_if_else'] = {
         this.setColour("#FF9933"); 
         this.setTooltip("Conditional block with test, if true, and if false branches");
         this.setHelpUrl("");
+        this.generatePythonCode = function (block) {
+            const conditionBlock = block.getInputTargetBlock('CONDITION');
+            const conditionCode = conditionBlock ? conditionBlock.generatePythonCode() : 'False';
+        
+            const ifTrueBlock = block.getInputTargetBlock('IF_TRUE');
+            const ifFalseBlock = block.getInputTargetBlock('IF_FALSE');
+        
+            const ifTrueCode = ifTrueBlock ? ifTrueBlock.generatePythonCode() : '';
+            const ifFalseCode = ifFalseBlock ? ifFalseBlock.generatePythonCode() : '';
+        
+            return `if ${conditionCode}:\n${ifTrueCode}\nelse:\n${ifFalseCode}`;
+        };
+        
+        
     }
 };
 const Logic = () => {
