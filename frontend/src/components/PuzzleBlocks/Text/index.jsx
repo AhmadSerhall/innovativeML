@@ -24,15 +24,7 @@ Blockly.Blocks["text_print"] = {
   },
 };
 
-Blockly.Blocks["type_integer"] = {
-  init: function () {
-    this.appendDummyInput().appendField(new Blockly.FieldNumber(0), "NAME");
-    this.setOutput(true, "Number");
-    this.setColour("#FFD700");
-    this.setTooltip("This is a custom integer block");
-    this.setHelpUrl("");
-  },
-};
+
 Blockly.Blocks["create_text_with"] = {
   init: function () {
     this.appendValueInput("ITEM1")

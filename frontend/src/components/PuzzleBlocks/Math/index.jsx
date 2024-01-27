@@ -2,6 +2,16 @@ import React from 'react'
 import Blockly from 'blockly';
 import { useEffect } from 'react';
 
+Blockly.Blocks["type_integer"] = {
+  init: function () {
+    this.appendDummyInput().appendField(new Blockly.FieldNumber(0), "NAME");
+    this.setOutput(true, "Number");
+    this.setColour("#FFD700");
+    this.setTooltip("This is a custom integer block");
+    this.setHelpUrl("");
+  },
+};
+
 Blockly.Blocks['math_operations'] = {
     init: function () {
       this.appendValueInput("LEFT")
