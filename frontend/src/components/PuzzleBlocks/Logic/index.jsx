@@ -14,7 +14,7 @@ Blockly.Blocks['do_if'] = {
 
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#5BA58C");
+        this.setColour("#FF9933");
     }
 };
 
@@ -30,7 +30,7 @@ Blockly.Blocks['do_if_else_if'] = {
 
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#5BA58C");
+        this.setColour("#FF9933");
     }
 };
 
@@ -43,7 +43,7 @@ Blockly.Blocks['do_if_else'] = {
 
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#5BA58C");
+        this.setColour("#FF9933");
     }
 };
 
@@ -188,7 +188,7 @@ Blockly.Blocks['logic_not'] = {
         this.appendValueInput("VALUE")
             .setCheck("Boolean")
         this.setOutput(true, "Boolean");
-        this.setColour("#FF6666");
+        this.setColour("#FF9933");
         this.setTooltip("Negate a Boolean value");
         this.setHelpUrl("");
     }
@@ -203,7 +203,7 @@ Blockly.Blocks['logic_connector'] = {
             .setCheck(null);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#5BA58C");
+        this.setColour("#FF9933");
         this.setTooltip("Combine two conditions using 'And' or 'Or'");
         this.setHelpUrl("");
     }
@@ -213,12 +213,12 @@ Blockly.Blocks['true_false'] = {
         this.appendDummyInput()
             .appendField(new Blockly.FieldDropdown([["true", "TRUE"], ["false", "FALSE"]]), "BOOL");
         this.setOutput(true, "Boolean");
-        this.setColour("#6699FF"); 
+        this.setColour('#FF9933')
         this.setTooltip("Select true or false");
         this.setHelpUrl("");
         this.setPreviousStatement(null);
         this.setNextStatement(null);
-        this.setStyle('logic_blocks'); 
+        // this.setStyle('logic_blocks'); 
     }
 };
 Blockly.Blocks['null_block'] = {
@@ -226,7 +226,7 @@ Blockly.Blocks['null_block'] = {
         this.appendDummyInput()
             .appendField("null");
         this.setOutput(true, null);
-        this.setColour("#808080"); 
+        this.setColour("#FF9933"); 
         this.setTooltip("Represents a null value");
         this.setHelpUrl("");
     }
@@ -243,7 +243,7 @@ Blockly.Blocks['conditional_test_if_else'] = {
             .appendField("if false");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#9966FF"); 
+        this.setColour("#FF9933"); 
         this.setTooltip("Conditional block with test, if true, and if false branches");
         this.setHelpUrl("");
     }

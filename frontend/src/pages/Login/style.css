@@ -31,7 +31,10 @@
     color:#1c3aa9;
   }
   .button-container{
-    gap:20px;
+    gap:10px;
+  }
+  .button-container .custom-button{
+    width:100%;
   }
 
 .google-signin-button {

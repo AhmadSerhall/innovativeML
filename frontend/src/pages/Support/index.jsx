@@ -47,7 +47,7 @@ const Support = () => {
         </p>
 
         <p>
-          Phone: +1 (123) 456-6869
+          Phone: +971 71 380 271
         </p>
       </div>
       <Footer />

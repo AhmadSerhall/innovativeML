@@ -63,16 +63,16 @@ const SignUp = () => {
           setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
         }
         break;
-      case 'username':
-        try {
-          const response = await axios.post('http://localhost:8000/auth/check-username', {
-            username: value,
-          });
-        } catch (error) {
-          setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: 'Username already exists' }));
-          console.error('Error checking username:', error);
-        }
-        break;
+      // case 'username':
+      //   try {
+      //     const response = await axios.post('http://localhost:8000/auth/check-username', {
+      //       username: value,
+      //     });
+      //   } catch (error) {
+      //     setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: 'Username already exists' }));
+      //     console.error('Error checking username:', error);
+      //   }
+      //   break;
       case 'password':
         const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
         if (!passwordRegex.test(value)) {

@@ -10,7 +10,7 @@ Blockly.Blocks['create_variable'] = {
         .appendField(new Blockly.FieldVariableButton("variable"), "VAR");
   
       this.setCategory(Blockly.Categories.variables);
-      this.setColour(330);
+      this.setColour('#2196F3');
       this.setTooltip("Create a new variable");
       this.setHelpUrl("");
     }
@@ -35,6 +35,7 @@ Blockly.Blocks['create_variable'] = {
            value={variableName}
            onChange={handleChange}
            placeholder="Enter variable name"
+           color="#2196F3"
          />
          <button onClick={handleClick}>Create Variable</button>
        </div>

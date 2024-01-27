@@ -3,6 +3,12 @@ import Blockly from 'blockly';
 import 'blockly/python';
 import 'blockly/python_compressed';
 
+// const pythonInit = () => {
+//   if (!Blockly.Python) {
+//     Blockly.Python = new Blockly.Generator('Python');
+//   }
+// };
+
 Blockly.Blocks['text_print'] = {
   init: function() {
     this.appendValueInput('TEXT')
@@ -12,26 +18,26 @@ Blockly.Blocks['text_print'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour('#2196F3');
+    this.setColour('160');
     this.setTooltip('Prints the specified text.');
-  },
+  }, 
 
-  // toPython: function() {
-  //   const textValue = Blockly.Python.valueToCode(this, 'TEXT', Blockly.Python.ORDER_ATOMIC) || "''";
-  //   return `print(${textValue})\n`;
-  // },
-  toPython: function (block) {
-    const textValue = Blockly.Generator.prototype.valueToCode(block, 'TEXT', Blockly.Generator.prototype.ORDER_ATOMIC) || "''";
-    const pythonCode = `print(${textValue})\n`;
-    return pythonCode;
+  generatePythonCode: function() {
+    // pythonInit()
+    const textValue = Blockly.Python.valueToCode(this, 'TEXT', Blockly.Python.ORDER_ATOMIC) || "''";
+    return `print(${textValue})\n`;
   },
 };
-
+// function generatePythonCodeForTextPrint(textValue) {
+//   const sanitizedTextValue = typeof textValue === 'string' ? textValue : "''";
+//   const pythonCode = `print(${sanitizedTextValue})\n`;
+//   return pythonCode;
+// }
 Blockly.Blocks['type_integer'] = {
     init: function () {
       this.appendDummyInput().appendField(new Blockly.FieldNumber(0), 'NAME');
       this.setOutput(true, 'Number');
-      this.setColour(230);
+      this.setColour('#FFD700');
       this.setTooltip('This is a custom integer block');
       this.setHelpUrl('');
     },

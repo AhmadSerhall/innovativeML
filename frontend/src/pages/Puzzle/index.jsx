@@ -36,7 +36,6 @@ const Puzzle = () => {
           controls: true,
           wheel: true
         },
-       
       });
       
       
@@ -95,21 +94,63 @@ const Puzzle = () => {
   
 
   const generatePythonCode = () => {
-    if (!workspaceRef.current || typeof Blockly === 'undefined' || typeof Blockly.Generator === 'undefined') {
-      return 'Blockly or Blockly.Generator is not defined.';
+    if (!workspaceRef.current || typeof Blockly === 'undefined') {
+      return 'Blockly is not defined.';
     }
   
     try {
-      // Initialize Blockly Python
-      Blockly.Generator.prototype.init();
-      
-      const pythonCode = Blockly.Generator.prototype.workspaceToCode(workspaceRef.current);
+      const blocks = workspaceRef.current.getAllBlocks();
+      let pythonCode = '';
+  
+      blocks.forEach((block) => {
+        if (block.type === 'text_print') {
+          const textValue = block.getInput('TEXT').connection.targetBlock().getFieldValue('TEXT') || "''";
+          pythonCode += `print(${textValue})\n`;
+        } else if (block.type === 'other_block_type') {
+          // Handle other custom block types
+          // Add more conditions for other block types as needed
+          // Extract data from blocks and construct Python code
+        }
+  
+        // Add more conditions for other standard block types if needed
+  
+        // Example: Handle if block
+        if (block.type === 'controls_if') {
+          pythonCode += 'if ' + block.getInputTargetBlock('IF0').valueToCode('CONDITION', Blockly.Python.ORDER_NONE) + ':\n';
+          pythonCode += '  # Code for if branch\n';
+        }
+  
+        // Continue handling other standard blocks as needed
+      });
+  
       return pythonCode;
     } catch (error) {
       console.error('Error generating Python code:', error);
       return 'Error generating Python code.';
     }
   };
+  // const generatePythonCode = () => {
+  //   if (!workspaceRef.current || typeof Blockly === 'undefined') {
+  //     return 'Blockly is not defined.';
+  //   }
+
+  //   try {
+  //     const blocks = workspaceRef.current.getAllBlocks();
+  //     let pythonCode = '';
+
+  //     blocks.forEach((block) => {
+  //       // Call generatePythonCode method on each block
+  //       if (typeof block.generatePythonCode === 'function') {
+  //         pythonCode += block.generatePythonCode();
+  //       }
+  //     });
+
+  //     return pythonCode;
+  //   } catch (error) {
+  //     console.error('Error generating Python code:', error);
+  //     return 'Error generating Python code.';
+  //   }
+  // };
   
 
   
@@ -136,7 +177,7 @@ const Puzzle = () => {
         {selectedTab === 'puzzle' && (
           <>
             <xml id='toolbox' style={{ display: 'none' }}>
-            <category name="Text" colour="#2196F3" className="category">
+            <category name="Text" colour="160" className="category">2196F3
           <block type="text_print"></block>
           <block type='text'></block>
           <block type='create_text_with'></block>
@@ -149,9 +190,9 @@ const Puzzle = () => {
           <block type='text_length'></block>
         </category>
         {/* review the variable category after */}
-        <category name="Variable" colour="#218762">
+        <category name="Variable" colour="#2196F3">
         {/*<block type="create_variable"></block>*/}
-        <block type="variables_get">
+        <block type="variables_get" colour="#2196F3">
             {/* <field name="VAR" variabletype="">{variableName}</field>
           </block>
           <block type="variables_set">
@@ -161,7 +202,7 @@ const Puzzle = () => {
             <field name="TEXT" variabletype="">{variableName}</field>
           </block> */}
         </category>
-        <category name="logic" colour="#222342">
+        <category name="logic" colour="#FF9933">
           <block type="do_if"></block>
           <block type="do_if_else_if"></block>
           <block type="do_if_else"></block>
@@ -172,14 +213,14 @@ const Puzzle = () => {
           <block type="null_block"></block>
           <block type="conditional_test_if_else"></block>
         </category>
-        <category name="loops" colour="#00FF00">
+        <category name="loops" colour="120">
         <block type="repeat_times_do"></block>
         <block type="repeat_while_until_do"></block>
         <block type="count_with"></block>
         <block type="for_each_item_in_list"></block>
         <block type="loop_control"></block>
         </category>
-        <category name="math" colour="#A020F0">
+        <category name="math" colour="#FFD700">
           <block type='type_integer'></block>
           <block type='math_operations'></block>
           <block type='math_functions'></block>
@@ -188,7 +229,7 @@ const Puzzle = () => {
           <block type='list_operations'></block> 
           <block type='random_integer'></block> 
         </category>
-        <category name="list" colour="#964B00">
+        <category name="list" colour="260">
         <block type='lists_create_with_container'></block>
         <block type='lists_create_with_item'></block>
         <block type='lists_length'></block>  

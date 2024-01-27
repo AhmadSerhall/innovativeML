@@ -19,7 +19,7 @@ Blockly.Blocks['math_operations'] = {
         .appendField("");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#FF9933"); 
+      this.setColour("#FFD700"); 
       this.setTooltip("Perform a math operation");
       this.setHelpUrl("");
     }
@@ -40,7 +40,7 @@ Blockly.Blocks['math_operations'] = {
         .setCheck("Number")
   
       this.setOutput(true, "Number");
-      this.setColour("#FF9933");
+      this.setColour("#FFD700");
       this.setTooltip("Apply a mathematical function to a number");
       this.setHelpUrl("");
       this.setInputsInline(true);
@@ -62,7 +62,7 @@ Blockly.Blocks['math_operations'] = {
         .setCheck("Number");
   
       this.setOutput(true, "Number");
-      this.setColour("#FF9933");
+      this.setColour("#FFD700");
       this.setTooltip("Apply a mathematical function to a number");
       this.setHelpUrl("");
       this.setInputsInline(true);
@@ -88,7 +88,7 @@ Blockly.Blocks['math_operations'] = {
         ]), 'PROPERTY');
   
       this.setOutput(true, 'Boolean');
-      this.setColour('#4C97FF');
+      this.setColour('#FFD700');
       this.setTooltip('Check if a number has a specific property (even, odd, prime).');
       this.setHelpUrl('');
       this.setInputsInline(true);
@@ -110,7 +110,7 @@ Blockly.Blocks['math_operations'] = {
         .appendField('of list');
   
       this.setOutput(true, 'Number');
-      this.setColour('#4C97FF');
+      this.setColour('#FFD700');
       this.setTooltip('Perform an operation on a list by a variable.');
       this.setHelpUrl('');
       this.setInputsInline(true);
@@ -131,7 +131,7 @@ Blockly.Blocks['math_operations'] = {
         .setCheck('Number');
   
       this.setOutput(true, 'Number');
-      this.setColour('#FF9933');
+      this.setColour('#FFD700');
       this.setTooltip('Generate a random integer within the specified range.');
       this.setHelpUrl('');
       this.setInputsInline(true);
