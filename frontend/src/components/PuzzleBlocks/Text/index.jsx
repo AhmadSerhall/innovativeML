@@ -23,7 +23,7 @@ Blockly.Blocks['text_print'] = {
       }
       const textBlock = textInput.connection.targetBlock();
       const textValue = textBlock.getFieldValue('TEXT') || "''";
-      return `print(${textValue})\n`;
+      return `print('${textValue}')\n`;
     };
   }, 
 };
@@ -134,6 +134,26 @@ Blockly.Blocks['text_transform'] = {
         this.setTooltip('Transform text to uppercase, lowercase, or CamelCase.');
         this.setHelpUrl('');
         this.setInputsInline(true);
+        this.generatePythonCode = function (block) {
+          const transformationType = block.getFieldValue('TRANSFORMATION');
+          const textBlock = block.getInput('TEXT').connection.targetBlock();
+    
+          if (!textBlock) {
+            return "''";
+          }
+    
+          const textValue = textBlock.getFieldValue('TEXT') || "''";
+          switch (transformationType) {
+            case 'UPPERCASE':
+              return `${textValue}.upper()`;
+            case 'LOWERCASE':
+              return `${textValue}.lower()`;
+            case 'CAMELCASE':
+              return `${textValue}.title()`;
+            default:
+              return "''";
+          }
+        };
     }
     };
 Blockly.Blocks['find_occurence'] = {
