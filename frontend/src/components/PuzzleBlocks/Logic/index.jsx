@@ -66,6 +66,13 @@ Blockly.Blocks['do_if_else'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour("#FF9933");
+        this.generatePythonCode = function(block) {
+            const doBlock = block.getInput('DO').connection.targetBlock();
+            const doValue = doBlock ? doBlock.getFieldValue('TEXT') || "''" : '';
+            const doStatements = doValue ? `${doValue}\n` : '';
+      
+            return `else:\n  ${doStatements}`;
+          };
     }
 };
 
