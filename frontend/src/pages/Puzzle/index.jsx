@@ -141,7 +141,7 @@ const Puzzle = () => {
           // pythonCode += block.generatePythonCode();
           const blockCode = block.generatePythonCode(block);
           if (blockCode) {
-            pythonCode += blockCode ;
+            pythonCode += blockCode + '\n';
           }
         }
       });

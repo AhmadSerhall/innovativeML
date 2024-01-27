@@ -84,6 +84,17 @@ Blockly.Blocks['to_item_append_text'] = {
       this.setColour(160);
       this.setTooltip('Append text to item');
       this.setHelpUrl('');
+      this.generatePythonCode = function (block) {
+        const itemBlock = block.getInput('ITEM').connection.targetBlock();
+        const textBlock = block.getInput('TEXT').connection.targetBlock();
+  
+        if (!itemBlock || !textBlock) {
+          return '';
+        }
+        const textValue = textBlock.getFieldValue('TEXT') || "''";
+        const itemValue = itemBlock.getFieldValue('TEXT') || "''";
+        return `${itemValue}${textValue}\n`;
+      };
     },
   };
 Blockly.Blocks['text_is_empty']={
