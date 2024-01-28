@@ -56,7 +56,7 @@
 | ---| ---| ---|
 | ![Landing](./readme/demo/landingwireframe.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 
-<img src="./readme/title7.svg"/>
+
 
 | Home screen  | Puzzle | Contact Us |
 | ---| ---| ---|
@@ -65,7 +65,7 @@
 <br><br>
 
 <!-- Implementation -->
-<img src="./readme/title4.svg"/>
+<img src="./readme/title7.svg"/>
 
 <!-- > Using the wireframes and mockups as a guide, we implemented the Coffee Express app with the following features:
 
