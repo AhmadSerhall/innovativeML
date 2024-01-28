@@ -31,6 +31,16 @@
   journey.
 
 <br><br>
+<!-- Tech stacks -->
+<img src="./readme/title5.svg"/>
+
+###  InnovativeML is built using the following technologies:
+
+- This project leverages the React.js (https://reactjs.org/) which is a javascript library that allows for dynamic interfaces and reusabel ui components and is a versatile, cross-platform technology enabling a unified codebase for applications across mobile, desktop, and web platforms.
+- This project utilizes MongoDB 🍃 (https://www.mongodb.com/), a powerful NoSQL database system. MongoDB facilitates the storage and retrieval of data in a flexible and scalable manner.
+- The Backend is Empowered by Node.js 🚀 (https://nodejs.org/en). Efficient, versatile, and high-performing.
+
+<br><br>
 
 <!-- Prototyping -->
 <img src="./readme/title3.svg"/>
@@ -43,7 +53,7 @@
 | ---| ---| ---|
 | ![Landing](./readme/demo/landingwireframe.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 
-### Mockups
+### Preview
 | Home screen  | Puzzle | Contact Us |
 | ---| ---| ---|
 | ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
@@ -71,16 +81,7 @@
 
 <br><br>
 
-<!-- Tech stack -->
-<img src="./readme/title5.svg"/>
 
-###  InnovativeML is built using the following technologies:
-
-- This project leverages the React.js (https://reactjs.org/) which is a javascript library that allows for dynamic interfaces and reusabel ui components and is a versatile, cross-platform technology enabling a unified codebase for applications across mobile, desktop, and web platforms.
-- This project utilizes MongoDB 🍃 (https://www.mongodb.com/), a powerful NoSQL database system. MongoDB facilitates the storage and retrieval of data in a flexible and scalable manner.
-- The Backend is Empowered by Node.js 🚀 (https://nodejs.org/en). Efficient, versatile, and high-performing.
-
-<br><br>
 <!-- How to run -->
 <img src="./readme/title6.svg"/>
 
