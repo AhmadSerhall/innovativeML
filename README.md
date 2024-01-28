@@ -56,7 +56,7 @@
 | ---| ---| ---|
 | ![Landing](./readme/demo/landingwireframe.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 
-<img src="./readme/title6.svg"/>
+### Preview
 | Home screen  | Puzzle | Contact Us |
 | ---| ---| ---|
 | ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
