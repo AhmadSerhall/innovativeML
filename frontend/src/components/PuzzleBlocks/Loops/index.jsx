@@ -19,7 +19,19 @@ Blockly.Blocks['repeat_times_do'] = {
       this.setColour(120);
       this.setTooltip('Repeat a block of code a certain number of times');
       this.setHelpUrl('');
-      
+      this.generatePythonCode = function (block) {
+        const timesBlock = block.getInputTargetBlock('TIMES');
+        const doBlock = block.getInputTargetBlock('DO');
+  
+        if (!timesBlock || !doBlock) {
+          return '';
+        }
+  
+        const times = timesBlock.getFieldValue('NUM') || '0';
+        const doCode = doBlock.generatePythonCode() || '';
+  
+        return `for _ in range(${times}):\n${doCode}`;
+      };
     },
   };
   Blockly.Blocks['repeat_while_until_do'] = {

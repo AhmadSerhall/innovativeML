@@ -115,6 +115,7 @@ const Puzzle = () => {
       return 'Error generating Python code.';
     }
   };
+  
   const copyPythonCode = () => {
     const pythonCode = generatePythonCode();
     navigator.clipboard.writeText(pythonCode).then(() => {
