@@ -1,6 +1,7 @@
 <img src="./readme/title1.svg"/>
 
-<br><br>
+<br>
+<!-- <br> -->
 
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
@@ -30,7 +31,8 @@
 - As an enthusiast, I want a visually engaging and interactive platform that makes learning machine learning through puzzles an enjoyable and immersive experience, keeping me motivated and engaged throughout the 
   journey.
 
-<br><br>
+<br>
+<!-- <br> -->
 <!-- Tech stacks -->
 <img src="./readme/title5.svg"/>
 
