@@ -6,8 +6,8 @@
 <img src="./readme/title2.svg"/>
 
 > InnovativeML is a brilliant website that teaches machine learning throught games like puzzle.
->
->InnovativeML strives to elevate the AI landscape and streamline the machine learning process by offering an intuitive platform. Users can effortlessly instruct machine learning models using text, images, and videos. As a firm believer in the transformative potential of AI, InnovativeML is dedicated to ensuring continual improvement and updates in the field. Embracing AI as the future, our platform provides a user-friendly space for users to actively contribute to the advancement and refinement of machine learning technologies.
+
+>InnovativeML aims to revolutionize the AI landscape, simplifying the machine learning journey through an intuitive platform. Users can seamlessly guide their learning with engaging puzzles. As fervent advocates of AI's transformative power, InnovativeML is committed to constant enhancement and updates. Embracing AI as the future, our user-friendly platform invites active participation, allowing users to shape and refine the future of machine learning through interactive and thought-provoking puzzles.
 ### User Stories
 
 - As a user, I want the platform to regularly update its content and challenges, so I can stay informed about the latest developments in the field of machine learning.
@@ -35,7 +35,8 @@
 <!-- Prototyping -->
 <img src="./readme/title3.svg"/>
 
-> We designed Coffee Express using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
+> InnovativeML was thoughtfully designed using wireframes and mockups, with a dedicated process of iteration to achieve the ideal layout. This approach ensures an effortless user experience and easy navigation 
+  within the platform.
 
 ### Wireframes
 | Login screen  | Register screen |  Landing screen |
@@ -73,9 +74,10 @@
 <!-- Tech stack -->
 <img src="./readme/title5.svg"/>
 
-###  Coffee Express is built using the following technologies:
+###  InnovativeML is built using the following technologies:
 
-- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
+- This project leverages the React.js (https://reactjs.org/) which is a javascript library that allows for dynamic interfaces and reusabel ui components and is a versatile, cross-platform technology enabling a 
+  unified codebase for applications across mobile, desktop, and web platforms.
 - For persistent storage (database), the app uses the [Hive](https://hivedb.dev/) package which allows the app to create a custom storage schema and save it to a local database.
 - To send local push notifications, the app uses the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) package which supports Android, iOS, and macOS.
   - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
