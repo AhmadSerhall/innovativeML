@@ -32,7 +32,7 @@
 <!-- <br> -->
 
 <!-- Prototyping -->
-<img src="./readme/title3.svg"/>
+<img src="./readme/title4.svg"/>
 
 > InnovativeML was thoughtfully designed using wireframes and mockups, with a dedicated process of iteration to achieve the ideal layout. This approach ensures an effortless user experience and easy navigation 
   within the platform.
@@ -51,7 +51,7 @@
 <br><br>
 
 <!-- Implementation -->
-<img src="./readme/title7.svg"/>
+<img src="./readme/title5.svg"/>
 
 <!-- > Using the wireframes and mockups as a guide, we implemented the Coffee Express app with the following features:
 
