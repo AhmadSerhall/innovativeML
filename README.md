@@ -6,15 +6,9 @@
 <img src="./readme/title2.svg"/>
 
 > InnovativeML is a brilliant website that teaches machine learning throught games like puzzle.
->
->InnovativeML strives to elevate the AI landscape and streamline the machine learning process by offering an intuitive platform. Users can effortlessly instruct machine learning models using text, images, and videos. As a firm believer in the transformative potential of AI, InnovativeML is dedicated to ensuring continual improvement and updates in the field. Embracing AI as the future, our platform provides a user-friendly space for users to actively contribute to the advancement and refinement of machine learning technologies.
+
+>InnovativeML aims to revolutionize the AI landscape, simplifying the machine learning journey through an intuitive platform. Users can seamlessly guide their learning with engaging puzzles. As fervent advocates of AI's transformative power, InnovativeML is committed to constant enhancement and updates. Embracing AI as the future, our user-friendly platform invites active participation, allowing users to shape and refine the future of machine learning through interactive and thought-provoking puzzles.
 ### User Stories
-
--  As a learner, I want to explore a variety of machine learning puzzles, so I can gain a comprehensive understanding of different concepts and applications.
-
--  As a learner, I want the user interface to be visually appealing and easy to navigate, so I can focus on the content without unnecessary distractions.
-
--  As a user, I want the option to connect with a community of learners, so I can exchange ideas, seek help, and collaborate on machine learning projects.
 
 - As a user, I want the platform to regularly update its content and challenges, so I can stay informed about the latest developments in the field of machine learning.
 
@@ -22,28 +16,27 @@
 
 - As a user, I want to receive instant feedback on my puzzle-solving attempts, so I can understand how machine learning algorithms analyze my input.
 
+- As a beginner, I want the option to practice with simplified machine learning puzzles that gradually introduce key concepts, helping me learn at my own pace.
+
 - As a beginner, I want access to tutorials and educational resources, so I can build a solid foundation in machine learning principles.
+
+- As a beginner, I want the puzzles to include visual aids or interactive elements that simplify complex concepts, making it easier for me to comprehend machine learning principles.
 
 - As an enthusiast, I want to track my progress and achievements, so I can monitor my learning journey and set personal goals.
 
-- As a developer, I want to contribute my own machine learning puzzles to the platform, so I can share my knowledge and challenge the community.
-  
-- As an educator, I want to use InnovativeML as a supplementary tool in my machine learning courses, so I can provide students with interactive and practical learning experiences.
+- As an enthusiast, I want to explore real-world applications of machine learning by solving puzzles that simulate practical scenarios, allowing me to see the direct impact of my learning on solving actual   
+  problems.
 
-- As an admin, I want to be able to access and manage user accounts,including the ability to modify and deactivate accounts when necessary
-
-- As an admin,I  want to have the capability to view and analyze user engagement data,including user progress, completion rates, and any common challenges faced by users.
-
-- As an admin,I want to be notified of any technical issues or bugs on the platform and have access to a dashboard that displays performance metrics
-
-- As an admin,I want the ability to monitor and respond to user feedback, adressing their concerns and incorporating valuable suggestions to improve the overall user experience
+- As an enthusiast, I want a visually engaging and interactive platform that makes learning machine learning through puzzles an enjoyable and immersive experience, keeping me motivated and engaged throughout the 
+  journey.
 
 <br><br>
 
 <!-- Prototyping -->
 <img src="./readme/title3.svg"/>
 
-> We designed Coffee Express using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
+> InnovativeML was thoughtfully designed using wireframes and mockups, with a dedicated process of iteration to achieve the ideal layout. This approach ensures an effortless user experience and easy navigation 
+  within the platform.
 
 ### Wireframes
 | Login screen  | Register screen |  Landing screen |
@@ -81,16 +74,13 @@
 <!-- Tech stack -->
 <img src="./readme/title5.svg"/>
 
-###  Coffee Express is built using the following technologies:
+###  InnovativeML is built using the following technologies:
 
-- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
-- For persistent storage (database), the app uses the [Hive](https://hivedb.dev/) package which allows the app to create a custom storage schema and save it to a local database.
-- To send local push notifications, the app uses the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) package which supports Android, iOS, and macOS.
-  - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
-- The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
+- This project leverages the React.js (https://reactjs.org/) which is a javascript library that allows for dynamic interfaces and reusabel ui components and is a versatile, cross-platform technology enabling a unified codebase for applications across mobile, desktop, and web platforms.
+- This project utilizes MongoDB 🍃 (https://www.mongodb.com/), a powerful NoSQL database system. MongoDB facilitates the storage and retrieval of data in a flexible and scalable manner.
+- The Backend is Empowered by Node.js 🚀 (https://nodejs.org/en). Efficient, versatile, and high-performing.
 
 <br><br>
-
 <!-- How to run -->
 <img src="./readme/title6.svg"/>
 
