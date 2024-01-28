@@ -150,6 +150,37 @@ const Puzzle = () => {
       alert('Failed to download layout. Please try again.');
     }
   };
+
+  const importLayout = async () => {
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = '.xml';
+    fileInput.click();
+  
+    fileInput.addEventListener('change', async (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        try {
+          const xmlText = await file.text();
+  
+          if (workspaceRef.current && typeof Blockly !== 'undefined') {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+            Blockly.Xml.clearWorkspaceAndLoadFromXml(xmlDoc, workspaceRef.current);
+          } else {
+            throw new Error('Blockly is not defined or workspaceRef is not set.');
+          }
+        } catch (error) {
+          console.error('Error importing layout:', error);
+          alert('Failed to import layout. Please make sure the file is a valid XML file and try again.');
+        }
+      }
+    });
+  };
+  
+  
+  
+  
   
   
   
@@ -182,6 +213,12 @@ const Puzzle = () => {
           textColor={'white'}
           bgColor={'#2196F3'}
           onClick={downloadLayout}
+        />
+        <Button
+          text='Import Layout'
+          textColor={'white'}
+          bgColor={'#FF5722'}
+          onClick={importLayout}
         />
       </div>
       <div className='puzzle-container'>
