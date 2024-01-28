@@ -44,9 +44,9 @@
 | ![Landing](./readme/demo/landingwireframe.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 
 ### Mockups
-| Home screen  | Menu Screen | Order Screen |
+| Home screen  | Puzzle | Contact Us |
 | ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
 
 <br><br>
 
