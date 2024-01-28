@@ -297,7 +297,6 @@ const Puzzle = () => {
           </div>
         )}
       </div>
-      <Footer />
     </div>
   );
 };
