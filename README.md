@@ -42,7 +42,8 @@
 - This project utilizes MongoDB 🍃 (https://www.mongodb.com/), a powerful NoSQL database system. MongoDB facilitates the storage and retrieval of data in a flexible and scalable manner.
 - The Backend is Empowered by Node.js 🚀 (https://nodejs.org/en). Efficient, versatile, and high-performing.
 
-<br><br>
+<br>
+<!-- <br> -->
 
 <!-- Prototyping -->
 <img src="./readme/title3.svg"/>
@@ -55,7 +56,7 @@
 | ---| ---| ---|
 | ![Landing](./readme/demo/landingwireframe.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 
-### Preview
+<img src="./readme/title6.svg"/>
 | Home screen  | Puzzle | Contact Us |
 | ---| ---| ---|
 | ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
