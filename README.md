@@ -17,24 +17,10 @@
 
 - As a user, I want to receive instant feedback on my puzzle-solving attempts, so I can understand how machine learning algorithms analyze my input.
 
-- As a beginner, I want the option to practice with simplified machine learning puzzles that gradually introduce key concepts, helping me learn at my own pace.
-
-- As a beginner, I want access to tutorials and educational resources, so I can build a solid foundation in machine learning principles.
-
-- As a beginner, I want the puzzles to include visual aids or interactive elements that simplify complex concepts, making it easier for me to comprehend machine learning principles.
-
-- As an enthusiast, I want to track my progress and achievements, so I can monitor my learning journey and set personal goals.
-
-- As an enthusiast, I want to explore real-world applications of machine learning by solving puzzles that simulate practical scenarios, allowing me to see the direct impact of my learning on solving actual   
-  problems.
-
-- As an enthusiast, I want a visually engaging and interactive platform that makes learning machine learning through puzzles an enjoyable and immersive experience, keeping me motivated and engaged throughout the 
-  journey.
-
 <br>
 <!-- <br> -->
 <!-- Tech stacks -->
-<img src="./readme/title5.svg"/>
+<img src="./readme/title3.svg"/>
 
 ###  InnovativeML is built using the following technologies:
 
