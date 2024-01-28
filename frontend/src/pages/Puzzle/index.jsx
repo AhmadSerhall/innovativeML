@@ -165,8 +165,8 @@ const Puzzle = () => {
   
           if (workspaceRef.current && typeof Blockly !== 'undefined') {
             const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-            Blockly.Xml.clearWorkspaceAndLoadFromXml(xmlDoc, workspaceRef.current);
+            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+            Blockly.Xml.clearWorkspaceAndLoadFromXml(xmlDoc.documentElement, workspaceRef.current);
           } else {
             throw new Error('Blockly is not defined or workspaceRef is not set.');
           }
@@ -177,6 +177,8 @@ const Puzzle = () => {
       }
     });
   };
+  
+  
   
   
   
