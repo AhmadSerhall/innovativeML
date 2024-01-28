@@ -2,7 +2,6 @@ const User = require("../models/user.model");
 const bcrypt =require("bcrypt");
 const jwt=require("jsonwebtoken");
 
-const admin = require("../config/firebaseAdminInit");
 
 const login = async (req, res) => {
   const { username, password } = req.body;
