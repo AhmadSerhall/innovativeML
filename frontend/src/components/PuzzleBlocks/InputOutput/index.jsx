@@ -20,6 +20,14 @@ Blockly.Blocks['print'] = {
       this.setColour('#333');
       this.setTooltip('Prints the specified text with the chosen end character.');
       this.setHelpUrl('');
+      this.generatePythonCode = function (block) {
+        const textBlock = block.getInputTargetBlock('TEXT');
+        const textCode = textBlock ? textBlock.generatePythonCode() : '';
+
+        const endCharacter = block.getFieldValue('END');
+
+        return `print(${textCode}, end='${endCharacter}')`;
+    };
     },
   };
   Blockly.Blocks['input'] = {
@@ -30,6 +38,10 @@ Blockly.Blocks['print'] = {
       this.setColour('#333');
       this.setTooltip('Reads input from the user.');
       this.setHelpUrl('');
+      
+      this.generatePythonCode = function (block) {
+        return `input('')`;
+    };
     },
   };
 const InputOutput = () => {

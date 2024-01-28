@@ -41,23 +41,27 @@ Blockly.Blocks["create_text_with"] = {
       const item2Block = block.getInput("ITEM2").connection.targetBlock();
 
       if (!item1Block && !item2Block) {
-        return "''";
+          return "''";
       }
       const item1Value = item1Block ? getTextFromTextBlock(item1Block) : "''";
       const item2Value = item2Block ? getTextFromTextBlock(item2Block) : "''";
-      return `${item1Value}${item2Value}`;
-    };
-    const getTextFromTextBlock = function (textBlock) {
+      return `'${item1Value}' + '${item2Value}'`;
+  };
+
+  const getTextFromTextBlock = function (textBlock) {
       return textBlock.getFieldValue("TEXT") || "''";
-    };
+  };
   },
 };
 
 Blockly.Blocks["to_item_append_text"] = {
   init: function () {
     this.appendDummyInput().appendField("to");
-    this.appendValueInput("ITEM").setCheck(["String", "Variable"]); // Allowed here either String or Variable
-    this.appendValueInput("TEXT").setCheck("String").appendField("append");
+    this.appendValueInput("ITEM")
+      .setCheck(["String", "Variable"]); // Allowed here either String or Variable
+    this.appendValueInput("TEXT")
+      .setCheck("String")
+      .appendField("append");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -69,12 +73,12 @@ Blockly.Blocks["to_item_append_text"] = {
       const textBlock = block.getInput("TEXT").connection.targetBlock();
 
       if (!itemBlock || !textBlock) {
-        return "";
+          return "";
       }
       const textValue = textBlock.getFieldValue("TEXT") || "''";
       const itemValue = itemBlock.getFieldValue("TEXT") || "''";
-      return `${itemValue}${textValue}\n`;
-    };
+      return `${itemValue} += '${textValue}'\n`;
+  };
   },
 };
 Blockly.Blocks["text_is_empty"] = {
@@ -91,7 +95,7 @@ Blockly.Blocks["text_is_empty"] = {
         return "True";
       }
       const textValue = textBlock.getFieldValue("TEXT") || "''";
-      return `not len('${textValue}')`;
+      return `not len(${textValue})`;
     };
   },
 };
@@ -189,66 +193,51 @@ Blockly.Blocks["find_occurence"] = {
 };
 Blockly.Blocks["get_letter"] = {
   init: function () {
-    this.appendValueInput("VARIABLE")
-      .setCheck("String")
-      .appendField("in text");
-    this.appendDummyInput()
-      .appendField("get")
-      .appendField(
-        new Blockly.FieldDropdown(
-          [
-            ["first letter", "FIRST_LETTER"],
-            ["last letter", "LAST_LETTER"],
-            ["random letter", "RANDOM_LETTER"],
-            ["letter # from start", "LETTER_FROM_START"],
-            ["letter # from end", "LETTER_FROM_END"],
-          ],
-          function (option) {
-            return (
-              option !== "FIRST_LETTER" &&
-              option !== "LAST_LETTER" &&
-              option !== "RANDOM_LETTER"
-            );
-          }
-        ),
-        "LETTER_TYPE"
+      this.appendValueInput("VARIABLE")
+          .setCheck("String")
+          .appendField("in text");
+      this.appendDummyInput()
+          .appendField("get")
+          .appendField(
+              new Blockly.FieldDropdown(
+                  [
+                      ["first letter", "FIRST_LETTER"],
+                      ["last letter", "LAST_LETTER"],
+                      ["random letter", "RANDOM_LETTER"],
+                  ],
+              ),
+              "LETTER_TYPE"
+          );
+      this.setColour(160);
+      this.setTooltip(
+          "Get the first letter, last letter, random letter, or a letter at a specific position in a given text."
       );
+      this.setHelpUrl("");
+      this.setInputsInline(true);
 
-    this.appendValueInput("POSITION")
-      .setCheck("Number")
-      .appendField("of");
-    this.setOutput(true, "String");
-    this.setColour(160);
-    this.setTooltip(
-      "Get the first letter, last letter, random letter, or a letter at a specific position in a given text."
-    );
-    this.setHelpUrl("");
-    this.setInputsInline(true);
-    this.generatePythonCode = function (block) {
-      const variableBlock = block.getInput("VARIABLE").connection.targetBlock();
-      const letterType = block.getFieldValue("LETTER_TYPE");
-      const positionBlock = block.getInput("POSITION").connection.targetBlock();
+      this.generatePythonCode = function (block) {
+          const variableBlock = block.getInput("VARIABLE").connection.targetBlock();
+          const letterType = block.getFieldValue("LETTER_TYPE");
+          const positionBlock = block.getInput("POSITION").connection.targetBlock();
 
-      if (!variableBlock || !positionBlock) {
-        return "''"; 
-      }
-      switch (letterType) {
-        case "FIRST_LETTER":
-          return `${variableBlock.generatePythonCode()}[0]`;
-        case "LAST_LETTER":
-          return `${variableBlock.generatePythonCode()}[-1]`;
-        case "RANDOM_LETTER":
-          return `random.choice(${variableBlock.generatePythonCode()})`;
-        case "LETTER_FROM_START":
-          return `${variableBlock.generatePythonCode()}[${positionBlock.generatePythonCode()} - 1]`;
-        case "LETTER_FROM_END":
-          return `${variableBlock.generatePythonCode()}[-${positionBlock.generatePythonCode()}]`;
-        default:
-          return "''";
+          if (!variableBlock) {
+              return "''";
+          }
+
+          switch (letterType) {
+              case "FIRST_LETTER":
+                  return `${variableBlock.generatePythonCode()}[0]`;
+              case "LAST_LETTER":
+                  return `${variableBlock.generatePythonCode()}[-1]`;
+              case "RANDOM_LETTER":
+                  return `random.choice(${variableBlock.generatePythonCode()})`;
+              default:
+                  return "''";
+          }
       };
-    };
   },
 };
+
 
 Blockly.Blocks["trim_spaces"] = {
   init: function () {

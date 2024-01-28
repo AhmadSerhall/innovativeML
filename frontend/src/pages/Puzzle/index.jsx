@@ -115,6 +115,43 @@ const Puzzle = () => {
       return 'Error generating Python code.';
     }
   };
+  const copyPythonCode = () => {
+    const pythonCode = generatePythonCode();
+    navigator.clipboard.writeText(pythonCode).then(() => {
+      alert('Python code copied to clipboard!');
+    }).catch((error) => {
+      console.error('Error copying Python code to clipboard:', error);
+      alert('Failed to copy Python code. Please try again.');
+    });
+  };
+
+  const downloadLayout = () => {
+    if (!workspaceRef.current || typeof Blockly === 'undefined') {
+      alert('Blockly is not defined.');
+      return;
+    }
+  
+    try {
+      const workspace = workspaceRef.current;
+      const xmlDom = Blockly.Xml.workspaceToDom(workspace);
+      const xmlText = Blockly.Xml.domToText(xmlDom);
+  
+      const blob = new Blob([xmlText], { type: 'text/xml' });
+      const url = URL.createObjectURL(blob);
+  
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'layout.xml';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } catch (error) {
+      console.error('Error downloading layout:', error);
+      alert('Failed to download layout. Please try again.');
+    }
+  };
+  
+  
   
   return (
     <div>
@@ -133,6 +170,18 @@ const Puzzle = () => {
           bgColor={'#1261A9'}
           onClick={() => handleTabChange('python')}
           className={selectedTab === 'python' ? 'active-tab' : 'inactive-tab'}
+        />
+        <Button
+          text='Copy Python Code'
+          textColor={'white'}
+          bgColor={'#4CAF50'}
+          onClick={copyPythonCode}
+        />
+        <Button
+          text='Download Layout'
+          textColor={'white'}
+          bgColor={'#2196F3'}
+          onClick={downloadLayout}
         />
       </div>
       <div className='puzzle-container'>
@@ -153,16 +202,9 @@ const Puzzle = () => {
         </category>
         {/* review the variable category after */}
         <category name="Variable" colour="#2196F3">
-        {/*<block type="create_variable"></block>*/}
         <block type="variables_get" colour="#2196F3">
-            {/* <field name="VAR" variabletype="">{variableName}</field>
-          </block>
-          <block type="variables_set">
-            <field name="VAR" variabletype="">{variableName}</field> */}
-          </block>
-          {/* <block type="create_variable_button">
-            <field name="TEXT" variabletype="">{variableName}</field>
-          </block> */}
+          <field name="VAR" >j</field></block>
+          <block type="set_variable_to" colour='#2196F3'></block>
         </category>
         <category name="logic" colour="#FF9933">
           <block type="do_if"></block>
