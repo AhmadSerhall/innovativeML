@@ -73,7 +73,10 @@
 
 <img src="./readme/title8.svg"/>
 
-###  InnovativeML is built using the following technologies:
+###  WS Integration Excellence: Unleashing Potential with Seamless Deployment:
+- This project strategically employs AWS deployment strategies for the seamless incorporation and deployment of    natural language processing models. Prioritizing scalability, reliability, and optimal performance, our aim is to ensure applications powered by these models deliver robust and responsive solutions across diverse use cases. Experience the synergy of streamlined implementation and AWS capabilities for unparalleled efficiency in unleashing the full potential of technology.
+
+
 
 
 <!-- How to run -->
@@ -91,20 +94,29 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_To run the InnovativeML project locally, follow these steps:
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/AhmadSerhall/innovativeML
    ```
-3. Install NPM packages
+2. Navigate to Frontend folder
    ```sh
-   npm install
+   cd innovativeML/frontend
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Install the most import NPM packages
+   ```sh
+   npm install react axios blockly react-router-dom
+   ```
+### Explication of the frontend dependencies
+- React which is the library that this project have been created with , it allows for dynamic interfaces and reusable UI components
+-  Axios simplifies making HTTP requests and handling responses, providing a clean and intuitive interface for sending asynchronous requests to a server.
+- Blockly is a visual programming language developed by Google. It allows users to create programs by stacking visual blocks representing code logic. Blockly is often used for educational purposes and creating visual programming interfaces and is the main idea of this project
+- React Router Dom is a library for handling navigation and routing in React applications.It allows developers to manage the UI state and URL changes seamlessly in a single-page application.
+
+4. Start Frontend Development server
+   ```sh
+   npm start
    ```
 
-Now, you should be able to run Coffee Express locally and explore its features.
+Now, you should be able to access the InnovativeML project locally by navigating to http://localhost:3000 in your web browser. Explore its features and innovations!
