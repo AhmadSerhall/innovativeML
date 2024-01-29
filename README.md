@@ -84,14 +84,6 @@
 
 > To set up InnovativeML locally, follow these steps:
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
 ### Installation
 
 _To run the InnovativeML project locally, follow these steps:
@@ -142,7 +134,8 @@ _To run the InnovativeML project locally, follow these steps:
    MONGODB_URI=your_mongodb_connection_uri
    ```
 9. Start your Backend server
-  ```sh
-    node index.js
-    ```
-### Now, you should be able to access the InnovativeML project locally by navigating to http://localhost:3000 in your web browser. Explore its features and innovations!
+```sh
+   node index.js
+   ```
+
+> Now, you should be able to access the InnovativeML project locally by navigating to http://localhost:3000 in your web browser. Explore its features and innovations!
