@@ -82,11 +82,9 @@
 <!-- How to run -->
 <img src="./readme/title10.svg"/>
 
-> To set up InnovativeML locally, follow these steps:
-
 ### Installation
 
-_To run the InnovativeML project locally, follow these steps:
+> To run the InnovativeML project locally, follow these steps:
 
 1. Clone the repo
    ```sh
