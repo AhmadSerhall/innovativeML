@@ -104,7 +104,7 @@ _To run the InnovativeML project locally, follow these steps:
    ```sh
    cd innovativeML/frontend
    ```
-3. Install the most import NPM packages
+3. Install the most import NPM dependencies
    ```sh
    npm install react axios blockly react-router-dom
    ```
@@ -118,5 +118,31 @@ _To run the InnovativeML project locally, follow these steps:
    ```sh
    npm start
    ```
+5. Navigate to the backend folder
+  ```sh
+   cd ../backend
+   ```
+6. Install the most important Backend dependencies
+  ```sh
+   npm install express nodemon mongoose passport
+   ```
+### Explication of the backend dependencies
+- Express is a  flexible Node.js web application framework that helps  build robust and scalable web applications and APIs. It provides a set of features for routing, middleware management, and handling HTTP requests and responses, making it a popular choice for creating server-side applications.
+- Nodemon is a utility tool for Node.js that  automatically restarts the server when changes are detected. It enhances the development workflow by eliminating the need for manual server restarts, making it easier for developers to test and iterate on their code.
+- Mongoose is a library for MongoDB and Node.js. It simplifies interactions with MongoDB by providing a straightforward solution for modeling application data. Mongoose allows developers to define data models, perform CRUD operations, and many other useful things
+- Passport is a middleware for Node.js-based applications that facilitates user authentication. It support various authentication strategies, it is commonly used for integrating third-party authentication providers, such as social media and google logins enhancing security and user experience.
 
-Now, you should be able to access the InnovativeML project locally by navigating to http://localhost:3000 in your web browser. Explore its features and innovations!
+7. Set up mongoDB
+- Ensure you have mongoDB installed on your machine
+- Create mongoDB database for the project
+8. Configure Backend environment
+- In the backend directory, create a `.env` file.
+- Add the following configuration with your MongoDB connection URI:
+```sh
+   MONGODB_URI=your_mongodb_connection_uri
+   ```
+9. Start your Backend server
+  ```sh
+    node index.js
+    ```
+### Now, you should be able to access the InnovativeML project locally by navigating to http://localhost:3000 in your web browser. Explore its features and innovations!
