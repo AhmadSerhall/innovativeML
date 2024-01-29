@@ -10,11 +10,11 @@
 
 ### User Stories
 
-- As a user, I want the platform to regularly update its content and challenges, so I can stay informed about the latest developments in the field of machine learning.
+- As a user, i want the platform to regularly update its content and challenges, so I can stay informed about the latest developments in the field of machine learning.
 
-- As a user, I want the platform to support multiple media types (text, images, and videos) for teaching machine learning, so I can choose the most suitable method for my learning style.
+- As a user , i want to easily navigate through the InnovativeML platform, So that I can seamlessly access interactive puzzles.
 
-- As a user, I want to receive instant feedback on my puzzle-solving attempts, so I can understand how machine learning algorithms analyze my input.
+- As a user , i want to engage with fun and interactive puzzles on InnovativeML, So that I can grasp machine learning concepts in an entertaining way.
 
 <br>
 <!-- <br> -->
@@ -37,17 +37,6 @@
 > InnovativeML was thoughtfully designed using wireframes, with a dedicated process of iteration to achieve the ideal layout. This approach ensures an effortless user experience and easy navigation 
   within the platform. Here is the [figma](https://www.figma.com/file/ekKPE7a5FD487XY2dVlEGq/final-project?type=design&node-id=0-1&mode=design&t=V2El9MHaW0zmCemw-0) file for this project
 
-<!-- ### Wireframes
-| Login screen  | Register screen |  Landing screen |
-| ---| ---| ---|
-| ![Landing](./readme/demo/landingwireframe.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
-
-
-<!-- | Home screen  | Puzzle | Contact Us |
-| ---| ---| ---|
-| ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup2.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
-|---| ---| ---|
-| ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup2.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) | -->
 
 | Sign Up   | Home | Puzzle |
 | ---| ---| ---|
@@ -62,14 +51,14 @@
 <!-- Implementation -->
 <img src="./readme/title5.svg"/>
 
-<!-- > Using the wireframes and mockups as a guide, we implemented the Coffee Express app with the following features:
 
-### User Screens (Mobile)
-| Login screen  | Register screen | Landing screen | Loading screen |
-| ---| ---| ---| ---|
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
-| Home screen  | Menu Screen | Order Screen | Checkout Screen |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | -->
+<!-- ### Demo
+| Google Authentication  | Project Preview |  Puzzle Workspace|
+| ---| ---| ---|
+| ![Landing](./readme/demo/loginshowcase.gif) | ![fsdaf](./readme/demo/loginshowcase2.gif) | ![fsdaf](./readme/demo/puzzleshowcase1.gif) |
+| Python Conversion  | Export & Import  | 
+| ![Landing](./readme/demo/puzzleshowcase2.gif) | ![fsdaf](./readme/demo/puzzleshowcase3.gif) | 
+<br><br> -->
 
 ### Demo
 | Google Authentication  | Project Preview |  Puzzle Workspace|
@@ -82,8 +71,34 @@
 
 <img src="./readme/title8.svg"/>
 
-###  WS Integration Excellence: Unleashing Potential with Seamless Deployment:
-- This project strategically employs AWS deployment strategies for the seamless incorporation and deployment of    natural language processing models. Prioritizing scalability, reliability, and optimal performance, our aim is to ensure applications powered by these models deliver robust and responsive solutions across diverse use cases. Experience the synergy of streamlined implementation and AWS capabilities for unparalleled efficiency in unleashing the full potential of technology.
+- This project strategically utilizes AWS EC2 instance deployment strategies to seamlessly integrate and deploy natural language processing models. Here's how its done:
+```sh
+   sudo yum install -y gcc-c++ make
+curl -sL https://rpm.nodesource.com/setup_21.x | sudo -E bash -
+sudo yum install -y nodejs
+sudo yum install -y git
+sudo vim /etc/systemd/system/innovativeML.service
+    [Unit]
+  	Description=innovativeML
+  	After=multi-user.target
+
+  	[Service]
+  	ExecStart=/usr/bin/node /home/ec2-user/innovativeML/backend/index.js
+  	Restart=always
+  	RestartSec=10
+    StandardOutput=syslog
+  	StandardError=syslog
+  	SyslogIdentifier=innovativeML
+  	User=ec2-user
+  	EnvironmentFile=/home/ec2-user/innovativeML/backend/.env
+
+      [Install]
+      WantedBy=multi-user.target
+
+sudo systemctl enable innovativeML
+sudo systemctl start innovativeML
+   ``` 
+
 
 <!-- Unit Testing -->
 <img src="./readme/title9.svg"/>
