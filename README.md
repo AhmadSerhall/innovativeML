@@ -44,10 +44,11 @@
 
 
 
-| Home screen  | Puzzle | Contact Us |
-| ---| ---| ---|
-| ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup2.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
-
+<!-- | Home Page  | Puzzle | Contact Us | -->
+| Sign Up  | Home | Puzzle |
+| Our Vision | Our Experience |Contact Us |
+| ![Signup](./readme/demo/Signupmokup.png) ![Landing](./readme/demo/Landing%20mockup.png) | ![puzzle](./readme/demo/PuzzleMockup2.png) | ![vision](./readme/demo/About1.png) ![experience](./readme/demo/AboutMockup.png) ![contact](./readme/demo/ContactUsMockup.png) |
+ 
 <br><br>
 
 <!-- Implementation -->
