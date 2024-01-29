@@ -26,7 +26,7 @@
 - This project leverages the [React.js](https://reactjs.org/)
  which is a javascript library that allows for dynamic interfaces and reusabel ui components and is a versatile, cross-platform technology enabling a unified codebase for applications across mobile, desktop, and web platforms.
 - This project utilizes [MongoDB 🍃](https://www.mongodb.com/), a powerful NoSQL database system. MongoDB facilitates the storage and retrieval of data in a flexible and scalable manner.
-- The Backend is Empowered by [Node.js 🚀] (https://nodejs.org/en). Efficient, versatile, and high-performing.
+- The Backend is Empowered by [Node.js🚀](https://nodejs.org/en). Efficient, versatile, and high-performing.
 
 <br>
 <!-- <br> -->
@@ -34,8 +34,8 @@
 <!-- Prototyping -->
 <img src="./readme/title4.svg"/>
 
-> InnovativeML was thoughtfully designed using wireframes and mockups, with a dedicated process of iteration to achieve the ideal layout. This approach ensures an effortless user experience and easy navigation 
-  within the platform.
+> InnovativeML was thoughtfully designed using wireframes, with a dedicated process of iteration to achieve the ideal layout. This approach ensures an effortless user experience and easy navigation 
+  within the platform. Here is the [figma](https://www.figma.com/file/ekKPE7a5FD487XY2dVlEGq/final-project?type=design&node-id=0-1&mode=design&t=V2El9MHaW0zmCemw-0) file for this project
 
 <!-- ### Wireframes
 | Login screen  | Register screen |  Landing screen |
