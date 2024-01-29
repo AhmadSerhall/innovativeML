@@ -43,9 +43,18 @@
 | ![Landing](./readme/demo/landingwireframe.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 
 
-| Home screen  | Puzzle | Contact Us |
+<!-- | Home screen  | Puzzle | Contact Us |
 | ---| ---| ---|
 | ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup2.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
+|---| ---| ---|
+| ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup2.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) | -->
+
+| Sign Up   | Home | Puzzle |
+| ---| ---| ---|
+| ![Landing](./readme/demo/Signupmokup.png) | ![fsdaf](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup2.png) |
+| About | Benefits| Contact|
+| ![Landing](./readme/demo/About1.png) | ![fsdaf](./readme/demo/AboutMockup.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
+
 
 
 <br><br>
