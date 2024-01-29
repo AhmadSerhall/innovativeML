@@ -43,10 +43,10 @@
 | ![Landing](./readme/demo/landingwireframe.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | -->
 
 
-
-| Home Page  | Puzzle | Contact Us |
-| Sign Up| About | |
+| Home screen  | Puzzle | Contact Us |
+| ---| ---| ---|
 | ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup2.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
+
 
 <br><br>
 
