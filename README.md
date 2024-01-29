@@ -6,9 +6,8 @@
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
 
-> InnovativeML is a brilliant website that teaches machine learning throught games like puzzle.
+> InnovativeML is a dynamic platform that revolutionizes education by integrating interactive puzzles. With its user-friendly design, the platform encourages active engagement, enabling users to delve into the complexities of the subject in an enjoyable and accessible manner. The seamless navigation facilitated by the user-friendly design fosters a dynamic environment, ensuring an enriched learning experience for all.
 
->InnovativeML aims to revolutionize the AI landscape, simplifying the machine learning journey through an intuitive platform. Users can seamlessly guide their learning with engaging puzzles. As fervent advocates of AI's transformative power, InnovativeML is committed to constant enhancement and updates. Embracing AI as the future, our user-friendly platform invites active participation, allowing users to shape and refine the future of machine learning through interactive and thought-provoking puzzles.
 ### User Stories
 
 - As a user, I want the platform to regularly update its content and challenges, so I can stay informed about the latest developments in the field of machine learning.
@@ -76,8 +75,8 @@
 ###  WS Integration Excellence: Unleashing Potential with Seamless Deployment:
 - This project strategically employs AWS deployment strategies for the seamless incorporation and deployment of    natural language processing models. Prioritizing scalability, reliability, and optimal performance, our aim is to ensure applications powered by these models deliver robust and responsive solutions across diverse use cases. Experience the synergy of streamlined implementation and AWS capabilities for unparalleled efficiency in unleashing the full potential of technology.
 
-
-
+<!-- Unit Testing -->
+<img src="./readme/title9.svg"/>
 
 <!-- How to run -->
 <img src="./readme/title10.svg"/>
