@@ -46,7 +46,7 @@
 
 | Home screen  | Puzzle | Contact Us |
 | ---| ---| ---|
-| ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
+| ![Landing](./readme/demo/Landing%20mockup.png) | ![fsdaf](./readme/demo/PuzzleMockup2.png) | ![fsdaf](./readme/demo/ContactUsMockup.png) |
 
 <br><br>
 
