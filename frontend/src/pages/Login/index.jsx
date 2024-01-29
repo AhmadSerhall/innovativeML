@@ -87,15 +87,16 @@ const Login = () => {
          {loginError && <p className="error-text">{loginError}</p>}
         <div className='button-container flex column'>
         <Button text="Login" bgColor="#1261A9" onClick={handleLogin} />
-        {/* <Link to="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fgoogle%2Fcallback&scope=profile%20email&client_id=58934895291-0in324g2bkdgnq7etl0rds0bspgq6rc6.apps.googleusercontent.com&service=lso&o2v=2&theme=glif&flowName=GeneralOAuthFlow"><Button text="login with google" bgColor="#1261A9"/></Link> */}
+       
         <h3>Or</h3>
-        <GoogleLogin
+        <Link to="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fgoogle%2Fcallback&scope=profile%20email&client_id=58934895291-0in324g2bkdgnq7etl0rds0bspgq6rc6.apps.googleusercontent.com&service=lso&o2v=2&theme=glif&flowName=GeneralOAuthFlow"><Button text="login with google" bgColor="#1261A9"/></Link>
+        {/* <GoogleLogin
             clientId="58934895291-0in324g2bkdgnq7etl0rds0bspgq6rc6.apps.googleusercontent.com"
             buttonText="Login with Google"
             onSuccess={responseGoogle}
             onFailure={responseGoogle}
             cookiePolicy={'single_host_origin'}
-          />
+          /> */}
 
         {/* <GoogleLogin
           clientId="58934895291-0in324g2bkdgnq7etl0rds0bspgq6rc6.apps.googleusercontent.com"
