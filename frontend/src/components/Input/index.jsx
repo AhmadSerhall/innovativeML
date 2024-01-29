@@ -3,7 +3,7 @@ import './style.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 const Input = ({ name, type, value, onChange, placeholder }) => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(type === 'password' ? false : true);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -14,7 +14,7 @@ const Input = ({ name, type, value, onChange, placeholder }) => {
       <input
         className="custom-input"
         name={name}
-        type={showPassword ? 'text' : 'password'}
+        type={showPassword ? 'text' : type}
         value={value}
         onChange={onChange}
         placeholder={placeholder}

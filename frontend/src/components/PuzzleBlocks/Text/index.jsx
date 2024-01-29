@@ -19,7 +19,7 @@ Blockly.Blocks["text_print"] = {
       }
       const textBlock = textInput.connection.targetBlock();
       const textValue = textBlock.getFieldValue("TEXT") || "''";
-      return `print('${textValue}')\n`;
+      return `print(${textValue})\n`;
     };
   },
 };
