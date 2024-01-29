@@ -71,6 +71,11 @@
 <br><br>
 
 
+<img src="./readme/title8.svg"/>
+
+###  InnovativeML is built using the following technologies:
+
+
 <!-- How to run -->
 <img src="./readme/title10.svg"/>
 
