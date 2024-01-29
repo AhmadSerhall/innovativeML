@@ -112,7 +112,6 @@ This will execute the unit tests for the backend, ensuring the reliability of th
 ### Testing Guidelines
 - Make sure to have the necessary dependencies installed for both frontend and backend testing by running npm install in the respective directories.
 - All tests should pass without errors or failures. If any issues are identified, please review the error messages and verify your installation and configuration.
-- For developers interested in contributing or modifying the codebase, we recommend running the unit tests before submitting any changes to maintain the stability of the application.
 
 > Running these unit tests will help ensure the robustness of the InnovativeML application, providing confidence in its functionality and reliability.
 
