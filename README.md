@@ -125,11 +125,11 @@ _To run the InnovativeML project locally, follow these steps:
 - Passport is a middleware for Node.js-based applications that facilitates user authentication. It support various authentication strategies, it is commonly used for integrating third-party authentication providers, such as social media and google logins enhancing security and user experience.
 
 7. Set up mongoDB
-- Ensure you have mongoDB installed on your machine
-- Create mongoDB database for the project
+  - Ensure you have mongoDB installed on your machine
+  - Create mongoDB database for the project
 8. Configure Backend environment
-- In the backend directory, create a `.env` file.
-- Add the following configuration with your MongoDB connection URI:
+  - In the backend directory, create a `.env` file.
+  - Add the following configuration with your MongoDB connection URI:
 ```sh
    MONGODB_URI=your_mongodb_connection_uri
    ```
