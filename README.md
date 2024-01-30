@@ -46,7 +46,7 @@
 
 
 
-<br><br>
+<br>
 
 <!-- Implementation -->
 <img src="./readme/title5.svg"/>
@@ -66,19 +66,19 @@
 | ![Landing](./readme/demo/loginshowcase.gif) | ![fsdaf](./readme/demo/loginshowcase2.gif) | ![fsdaf](./readme/demo/puzzleshowcase1.gif) |
 | Python Conversion  | Export & Import  | 
 | ![Landing](./readme/demo/puzzleshowcase2.gif) | ![fsdaf](./readme/demo/puzzleshowcase3.gif) | 
-<br><br>
+<!-- <br><br> -->
 
 
 <img src="./readme/title8.svg"/>
 
 - This project strategically utilizes AWS EC2 instance deployment strategies to seamlessly integrate and deploy natural language processing models. Here's how its done:
 ```sh
-   sudo yum install -y gcc-c++ make
+sudo yum install -y gcc-c++ make
 curl -sL https://rpm.nodesource.com/setup_21.x | sudo -E bash -
 sudo yum install -y nodejs
 sudo yum install -y git
 sudo vim /etc/systemd/system/innovativeML.service
-    [Unit]
+   [Unit]
   	Description=innovativeML
   	After=multi-user.target
 
@@ -86,19 +86,19 @@ sudo vim /etc/systemd/system/innovativeML.service
   	ExecStart=/usr/bin/node /home/ec2-user/innovativeML/backend/index.js
   	Restart=always
   	RestartSec=10
-    StandardOutput=syslog
+   StandardOutput=syslog
   	StandardError=syslog
   	SyslogIdentifier=innovativeML
   	User=ec2-user
   	EnvironmentFile=/home/ec2-user/innovativeML/backend/.env
 
-      [Install]
-      WantedBy=multi-user.target
+   [Install]
+   WantedBy=multi-user.target
 
 sudo systemctl enable innovativeML
 sudo systemctl start innovativeML
    ``` 
-
+<br>
 
 <!-- Unit Testing -->
 <img src="./readme/title9.svg"/>
