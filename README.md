@@ -104,42 +104,25 @@ sudo systemctl start innovativeML
 <img src="./readme/title9.svg"/>
 
 ### To ensure the reliability of innovativeML , we must implement a suite of unit tests. Follow these steps to run these tests locally on your machine:
-
-Frontend Tests
-1. Navigate to the Frontend Directory:
-  ```sh
-   git innovativeML/frontend
-   ``` 
-2. Install frontend Test Depencies:
-  ```sh
-   git install
+1. download jest
+ ```sh
+   npm install --save-dev jest supertest
    ```
-3. Run Frontend Unit Tests
-  ```sh
+2. Create a jest.config.js file in the root of your backend directory:
+```sh
+   module.exports = {
+  testEnvironment: 'node', };
+   ```
+3. Create a test.mjs extension file and include our backend api endpoints
+4. Add a script in our packages 'package.json' file
+```sh
+   "scripts": {
+  "test": "jest", }
+   ```
+5. Run the test:
+ ```sh
    npm test
    ```
-This will exectute the unit tests for the frontend, providing insights into the functionality and integrity of the user interface components
-Backend Tests
-1. Navigate to the Backend Directory
-  ```sh
-   git innovativeML/backend
-   ``` 
-2. Install Backend Test Dependencies
-  ```sh
-   npm install
-   ``` 
-3. Run Backend Unit Tests
-  ```sh
-   npm test
-   ``` 
-This will execute the unit tests for the backend, ensuring the reliability of the server-side logic.
-
-### Testing Guidelines
-- Make sure to have the necessary dependencies installed for both frontend and backend testing by running npm install in the respective directories.
-- All tests should pass without errors or failures. If any issues are identified, please review the error messages and verify your installation and configuration.
-
-> Running these unit tests will help ensure the robustness of the InnovativeML application, providing confidence in its functionality and reliability.
-
 <br>
 
 <!-- How to run -->
